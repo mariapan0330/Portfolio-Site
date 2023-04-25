@@ -1,0 +1,13 @@
+html, body {
+    height: 100vh;
+}
+  
+#root {
+height: 100vh;
+}
+
+.component {
+height: 100vh;
+width: 100%;
+background-color: bisque;
+}
