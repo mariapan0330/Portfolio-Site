@@ -4,12 +4,16 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import ContactMe from './pages/ContactMe'
+import Plx from 'react-plx'
 
 
 function App() {
   return (
     <>
     <div className="App">
+      <Plx>
+        
+      </Plx>
     <Navbar />
     <Home />
     <About />
