@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/ContactMe.css'
 
 export default function ContactMe() {
     return (

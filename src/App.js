@@ -11,11 +11,11 @@ function App() {
   const parallaxData = [
     {
       start: 0,
-      end: 800,
+      end: 8000,
       properties: [
         {
           startValue: 1,
-          endValue: 1.6,
+          endValue: 1.1,
           property: "scale",
         },
       ],
@@ -24,6 +24,7 @@ function App() {
 
   const parallaxStyle = {
     'position': "fixed",
+    'zIndex':90,
     'left':0,
     "top":0,
     "width": "100%",

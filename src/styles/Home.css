@@ -1,0 +1,8 @@
+#home {
+    z-index: 90;
+    position: relative;
+    /* padding: 150%; */
+    /* background-color: red; */
+    /* color:green; */
+    font-style: italic;
+}
