@@ -7,12 +7,12 @@ export default function Navbar() {
         <>
         <div className="nav">
         <ul>
-            <li><HashLink to="#home">Home</HashLink></li>
-            <li><HashLink to="#about">About</HashLink></li>
-            <li><HashLink to="#projects">Projects</HashLink></li>
-            <li><HashLink to="#contactme">Contact Me</HashLink></li>
+            <li><HashLink className='navLinks' to="#home" >Home</HashLink></li>
+            <li><HashLink className='navLinks' to="#about" >About</HashLink></li>
+            <li><HashLink className='navLinks' to="#projects" >Projects</HashLink></li>
+            <li><HashLink className='navLinks' to="#contactme" >Contact Me</HashLink></li>
         </ul>
         </div>
         </>
     )
-}
+}c
