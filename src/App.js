@@ -8,10 +8,14 @@ import Plx from 'react-plx'
 
 
 function App() {
-  const parallaxData = [
+  const plxBg = [
     {
-      start: 0,
-      end: 8000,
+      start: 0, // when the animation starts: currently when scroll hits 0px. 
+      // can also be other HTML elements, which activate when the specified el enters the viewport
+      end: 8000, // ends when: currently when scroll hits 8000px.
+      // can also be other HTML elements.
+      // maybe try using duration instead which if you enter another HTML element will last for as 
+      // tall as that element. 
       properties: [
         {
           startValue: 1,
@@ -22,7 +26,29 @@ function App() {
     },
   ];
 
-  const parallaxStyle = {
+  const plxBgStyle = {
+    'position': "fixed",
+    'zIndex':90,
+    'left':0,
+    "top":0,
+    "width": "100%",
+  }
+
+  const plxFg = [
+    {
+      start: 0,
+      end: 2000,
+      properties: [
+        {
+          startValue: 1000,
+          endValue: -1500,
+          property: "translateX",
+        },
+      ],
+    },
+  ];
+
+  const plxFgStyle = {
     'position': "fixed",
     'zIndex':90,
     'left':0,
@@ -34,8 +60,11 @@ function App() {
   return (
     <>
     <div className="App">
-      <Plx parallaxData={parallaxData} style={parallaxStyle}>
+      <Plx parallaxData={plxBg} style={plxBgStyle}>
         <img style={{ width: "100%" }} src={require("./images/forest2.jpg")} alt="background" />
+      </Plx>
+      <Plx parallaxData={plxFg} style={plxFgStyle}>
+        <img style={{ width: "25%", paddingTop:"5%" }} src={require("./images/rocket.png")} alt="background" />
       </Plx>
       <Navbar />
       <Home />

@@ -15,4 +15,4 @@ export default function Navbar() {
         </div>
         </>
     )
-}c
+}
