@@ -19,7 +19,12 @@ ul {
 
 li {
     width:25%;
+    display: flex;
+}
+
+.navLinks {
     padding:20px;
+    width:100%;
 }
 
 li:hover{
