@@ -8,6 +8,7 @@ import Plx from 'react-plx'
 
 
 function App() {
+  // TODO: make each animated image into its own react component
   const plxBg = [
     {
       start: 0, // when the animation starts: currently when scroll hits 0px. 
