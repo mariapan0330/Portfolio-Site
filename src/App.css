@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-image: url('./images/green-fabric.png');
+  background-image: url('./images/texture.png');
+  /* background-color: rgb(255, 255, 255); */
 }
 
 .App-logo {

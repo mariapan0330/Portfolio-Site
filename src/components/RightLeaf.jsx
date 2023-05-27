@@ -11,7 +11,7 @@ export default function RightLeaf(props) {
           properties: [
             {
                 // translateX start and end:
-              startValue: 800,
+              startValue: 0,
               endValue: 1500,
               property: "translateX",
             },
@@ -22,7 +22,7 @@ export default function RightLeaf(props) {
   return (
     <>
     <Plx parallaxData={animation} id="right-leaf-plx">
-        <img id='right-leaf-img' src={require("../images/leaf.png")} alt="background" />
+        <img id='right-leaf-img' src={require("../images/leaf3.png")} alt="background" />
       </Plx>
     </>
   )
