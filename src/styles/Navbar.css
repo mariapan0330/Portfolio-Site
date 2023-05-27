@@ -1,5 +1,5 @@
 .nav {
-    background-color: #333;
+    background-color: #9e7c5a;
     color: #fff;
     position:fixed;
     top:0;
@@ -18,21 +18,20 @@ ul {
 }
 
 li {
+    font-family:'Righteous', Courier, sans-serif;
     width:25%;
     display: flex;
 }
 
 .navLinks {
-    padding:20px;
     width:100%;
 }
 
 li:hover{
-    background-color: red;
+    background-color: #664320;
 }
 
 a {
     color: #fff;
     text-decoration: none;
-    padding:10px;
 }
