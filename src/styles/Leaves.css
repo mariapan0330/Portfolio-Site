@@ -1,0 +1,25 @@
+#left-leaf-plx {
+    position: fixed;
+    z-index:90;
+    left:0;
+    top:100px;
+    width: 100%;
+}
+
+#left-leaf-img {
+    transform: rotate(45deg);
+    width: 35%;
+}
+
+#right-leaf-plx {
+    position: fixed;
+    z-index:90;
+    left:0;
+    top:100px;
+    width: 100%;
+}
+
+#right-leaf-img {
+    transform: rotate(-45deg);
+    width: 35%;
+}
