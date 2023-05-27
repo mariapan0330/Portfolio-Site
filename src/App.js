@@ -12,35 +12,9 @@ import Plx from 'react-plx'
 function App() {
   // TODO: make each animated image into its own react component
 
-  const plxFg = [
-    {
-      start: 0,
-      end: 2000,
-      properties: [
-        {
-          startValue: 1000,
-          endValue: -1500,
-          property: "translateX",
-        },
-      ],
-    },
-  ];
-
-  const plxFgStyle = {
-    'position': "fixed",
-    'zIndex':90,
-    'left':0,
-    "top":0,
-    "width": "100%",
-  }
-
-
   return (
     <>
     <div className="App">
-      {/* <Plx parallaxData={plxBg} style={plxBgStyle}> */}
-        {/* <img style={{ width: "100%" }} src={require("./images/forest2.jpg")} alt="background" /> */}
-      {/* </Plx> */}
       <LeftLeaf />
       <RightLeaf />
       <Navbar />

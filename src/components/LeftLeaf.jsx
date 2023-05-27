@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Leaves.css'
 import Plx from 'react-plx'
 
 export default function LeftLeaf(props) {
-    const animation = [
+
+    const animate = (speed) => {
+      return [
         {
             // vertical start and end (how long it takes to get to last position):
           start: 0,
-          end: 1000,
+          end: speed,
           properties: [
             {
                 // translateX start and end:
@@ -17,13 +19,20 @@ export default function LeftLeaf(props) {
             },
           ],
         },
-      ];
+      ]
+    }
 
   return (
     <>
-    <Plx parallaxData={animation} id="left-leaf-plx">
-        <img id='left-leaf-img' src={require("../images/leaf2.png")} alt="background" />
-      </Plx>
+    <Plx parallaxData={animate(1300)} className="left-leaf-plx">
+        <img className='left-leaf-img' src={require("../images/leaf L-1.png")} alt="background" />
+    </Plx>
+    <Plx parallaxData={animate(1700)} className="left-leaf-plx">
+        <img className='left-leaf-img' src={require("../images/leaf L-2.png")} alt="background" />
+    </Plx>
+    <Plx parallaxData={animate(2000)} className="left-leaf-plx">
+        <img id='l-leaf-3' className='left-leaf-img' src={require("../images/leaf L-3.png")} alt="background" />
+    </Plx>
     </>
   )
 }
