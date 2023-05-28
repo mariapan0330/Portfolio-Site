@@ -12,6 +12,15 @@
     filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435))
 }
 
-#leaf-3 {
-    margin-top: 80px;
+#l-leaf-3, r-leaf-3 {
+    margin-top: 0px;
+}
+
+@media screen and (max-width:768px) {
+    #l-leaf-3 {
+        margin-top: 50px;
+    }   
+    #r-leaf-3 {
+        margin-top: 60px;
+    }   
 }

@@ -31,7 +31,7 @@ export default function LeftLeaf(props) {
         <img className='leaf-img' src={require("../images/leaf L-2.png")} alt="background" />
     </Plx>
     <Plx parallaxData={animate(2000)} className="leaf-plx">
-        <img id='leaf-3' className='leaf-img' src={require("../images/leaf L-3.png")} alt="background" />
+        <img id='l-leaf-3' className='leaf-img' src={require("../images/leaf L-3.png")} alt="background" />
     </Plx>
     </>
   )

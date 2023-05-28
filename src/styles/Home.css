@@ -16,8 +16,14 @@ h1 {
     position: absolute;
     left: 29vw;
     font-size: 3.5vw;
-
 }
+
+@media screen and (max-width: 1000px){
+    #hi-im {
+        font-size: 5vw;
+    }
+}
+
 
 #main-name {
     font-size: 15vw;

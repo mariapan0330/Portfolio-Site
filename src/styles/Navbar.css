@@ -18,11 +18,15 @@ ul {
 }
 
 li {
-    font-family:'Berkshire Swash', Courier, sans-serif;
     font-family: 'Dangrek', sans-serif; /* nice in lowercase */
-    /* font-weight: normal; */
     width:25%;
-    display: flex;
+    font-size: .9vw;
+}
+
+@media screen and (max-width: 768px) {
+    li {
+        font-size: 2.5vw;
+    }
 }
 
 .navLinks {
