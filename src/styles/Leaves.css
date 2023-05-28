@@ -1,6 +1,5 @@
-/* === LEFT === */
-.left-leaf-plx {
-    margin-top: 80px;
+.leaf-plx {
+    margin-top: 70px;
     position: fixed;
     z-index:90;
     left:0;
@@ -8,28 +7,11 @@
     width: 100%;
 }
 
-.left-leaf-img {
+.leaf-img {
     width: 100%;
-    filter: drop-shadow(3px 3px 3px rgb(154, 154, 154))
+    filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435))
 }
 
-/* === BOTH === */
-#l-leaf-3, #r-leaf-3 {
+#leaf-3 {
     margin-top: 80px;
-}
-
-
-/* === RIGHT === */
-.right-leaf-plx {
-    margin-top: 60px;
-    position: fixed;
-    z-index:90;
-    left:0;
-    top:0;
-    width: 100%;
-    filter: drop-shadow(3px 3px 3px rgb(154, 154, 154))
-}
-
-.right-leaf-img {
-    width: 100%;
 }

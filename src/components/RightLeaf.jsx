@@ -25,14 +25,14 @@ export default function RightLeaf(props) {
 
   return (
     <>
-    <Plx parallaxData={animate(1300)} className="right-leaf-plx">
-        <img className='right-leaf-img' src={require("../images/leaf R-1.png")} alt="background" />
+    <Plx parallaxData={animate(1300)} className="leaf-plx">
+        <img className='leaf-img' src={require("../images/leaf R-1.png")} alt="background" />
     </Plx>
-    <Plx parallaxData={animate(1700)} className="right-leaf-plx">
-        <img id='r-leaf-2' className='right-leaf-img' src={require("../images/leaf R-2.png")} alt="background" />
+    <Plx parallaxData={animate(1700)} className="leaf-plx">
+        <img id='r-leaf-2' className='leaf-img' src={require("../images/leaf R-2.png")} alt="background" />
     </Plx>
-    <Plx parallaxData={animate(2000)} className="right-leaf-plx">
-        <img id='r-leaf-3' className='right-leaf-img' src={require("../images/leaf R-3.png")} alt="background" />
+    <Plx parallaxData={animate(2000)} className="leaf-plx">
+        <img id='leaf-3' className='leaf-img' src={require("../images/leaf R-3.png")} alt="background" />
     </Plx>
     </>
   )
