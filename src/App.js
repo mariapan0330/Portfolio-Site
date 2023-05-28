@@ -6,8 +6,6 @@ import RightLeaf from './components/RightLeaf'
 import About from './components/About'
 import Projects from './components/Projects'
 import ContactMe from './components/ContactMe'
-import Plx from 'react-plx'
-
 
 function App() {
   // TODO: make each animated image into its own react component
@@ -15,10 +13,10 @@ function App() {
   return (
     <>
     <div className="App">
+      <Home />
       <LeftLeaf />
       <RightLeaf />
       <Navbar />
-      <Home />
       <About />
       <Projects />
       <ContactMe />

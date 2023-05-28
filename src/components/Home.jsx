@@ -5,26 +5,12 @@ export default function Home() {
 
     return (
         <>
-        <div className="component" id='home'>
-            {/* <img style={{ width: "100%" }} src={"./images/rocket.png"} alt="background" /> */}
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            <div>home</div>
-            Home!
+        <div id="home">
+            <div className="component" id='home-container'>
+                <h1 id='hi-im'>Hi, I'm</h1> <br/> <br/>
+                <h1 id='main-name'>Maria</h1>
+                <h2>I make things.</h2>
+            </div>
         </div>
         </>
     )

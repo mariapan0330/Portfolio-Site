@@ -1,5 +1,6 @@
 /* === LEFT === */
 .left-leaf-plx {
+    margin-top: 80px;
     position: fixed;
     z-index:90;
     left:0;
@@ -9,6 +10,7 @@
 
 .left-leaf-img {
     width: 100%;
+    filter: drop-shadow(3px 3px 3px rgb(154, 154, 154))
 }
 
 /* === BOTH === */
@@ -19,11 +21,13 @@
 
 /* === RIGHT === */
 .right-leaf-plx {
+    margin-top: 60px;
     position: fixed;
     z-index:90;
     left:0;
     top:0;
     width: 100%;
+    filter: drop-shadow(3px 3px 3px rgb(154, 154, 154))
 }
 
 .right-leaf-img {
