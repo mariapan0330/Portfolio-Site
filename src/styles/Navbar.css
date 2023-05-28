@@ -32,6 +32,9 @@ li {
 .navLinks {
     width:100%;
 }
+.navLinks h1 {
+    margin: 0;
+}
 
 li:hover{
     /* background-color: #213f23; */
