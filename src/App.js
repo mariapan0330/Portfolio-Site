@@ -8,7 +8,6 @@ import Projects from './components/Projects'
 import ContactMe from './components/ContactMe'
 
 function App() {
-  // TODO: make each animated image into its own react component
 
   return (
     <>

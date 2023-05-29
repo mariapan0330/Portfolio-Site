@@ -50,36 +50,3 @@
         /* background-color: red; */
     }
 }
-
-#description {
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-}
-
-.empty-col {
-    flex: 3.5;
-}
-
-.middle-column {
-    flex: 5;
-    text-align: left;
-    color:#161e16;
-}
-
-#description > * {
-    font-family: 'Dangrek', sans-serif; /* nice in lowercase */
-    line-height: 1.5;
-    text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.47);
-    font-size: 2.5vw;
-}
-
-@media screen and (max-width: 1000px){
-    #description > * {
-        font-size: 6vw;
-    }
-}
-
-.fading {
-    transition-duration: 250ms;
-}
