@@ -1,4 +1,52 @@
 #about {
     z-index: 90;
+    display: flex;
+}
+
+.about-bg {
     position: relative;
+    background: url('../images/cardboard-blue.png');
+    background-size:cover;
+}
+
+#leaf-border {
+    width: 99vw;
+    position: absolute;
+    left:0;
+    top: 95vh;
+    z-index: 1;
+    filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435))
+
+}
+
+@media screen and (max-width: 1000px){
+    #leaf-border{
+        top: 98vh;
+    }
+}
+
+#about-hero-text {
+    flex:1;
+    text-align: start;
+    z-index: 89;
+    margin-top: 3vw;
+    margin-left: 6vw; 
+    padding: 0 1vw; /* in this font, letters get cut off to the left */
+    font-size: 8vw;
+    font-family: 'Berkshire Swash', sans-serif; /* nice in lowercase */
+
+    /* Clip the fixed image onto the text */
+    background-image: url('../images/rough-marker-blue.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+@media screen and (max-width: 1000px){
+    #about-hero-text {
+        font-size: 15vw;
+    }
 }

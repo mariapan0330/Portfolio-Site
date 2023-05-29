@@ -35,7 +35,7 @@
     font-weight: bolder;
 
     /* Clip the fixed image onto the text */
-    background-image: url('../images/name-leaves3.png');
+    background-image: url('../images/rough-marker.png');
     background-size: cover;
     background-attachment: fixed;
     background-clip: text;

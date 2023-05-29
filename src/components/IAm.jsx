@@ -13,7 +13,7 @@ export default function IAm() {
         'a crocheter.',
         'a creator.',
         'big brained.',
-        'Iron Man.',
+        'Batman.',
     ]
     const [iAm, setIAm] = useState("I am ")
     const [word, setWord] = useState(words[0])
