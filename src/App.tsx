@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import LeftLeaf from './components/LeftLeaf'
@@ -8,7 +9,6 @@ import Projects from './components/Projects'
 import ContactMe from './components/ContactMe'
 
 const App:React.FC = () => {
-  // TODO: convert files to typescript
 
   return (
     <>
