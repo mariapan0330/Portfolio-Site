@@ -28,6 +28,19 @@ const About: React.FC = () => {
               },
             ],
           },
+          
+          {
+            start: '10vh',
+            end: '70vh',
+            properties: [
+              {
+                //   starts 600px(?) to the right of its normal placement
+                startValue: 0,
+                endValue: 1,
+                property: 'opacity',
+              },
+            ]
+          }
         ]
     
     return (
@@ -35,10 +48,23 @@ const About: React.FC = () => {
         <img src={require("../images/leaf-border.png")} alt="" id='leaf-border' />
         <div className="about-bg">
             <div className="component" id='about'>
-                <Plx parallaxData={aboutPLX}>
+                <Plx parallaxData={aboutPLX} className='about-flex'>
+                  <div className="about-col-1">
                     <div id="about-hero-text">
                         About
                     </div>
+                    <h2 className='about-p'>
+                      I'm Maria, friendly neighborhood doodler and creator of many types of things.
+                      I found my passion in coding through Minecraft, and I have been an avid programmer ever since.
+                      My coding journey started with Minecraft. I spent countless hours creating games by assembling
+                      Minecraft's built-in commands, and my dad recognized my process as programming.
+                      <br />
+                      He suggested I try a coding course, and I was hooked after my first Java lesson off Youtube. 
+                    </h2>
+                  </div>
+                  <div className="about-col-2">
+                    <img src={require("../images/selfportrait.png")} id='self-portrait' className='about-image' />
+                  </div>
                 </Plx>
             </div>
         </div>

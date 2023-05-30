@@ -1,6 +1,40 @@
-#about {
+.about-flex {
     z-index: 90;
     display: flex;
+}
+
+.about-col-1 {
+    display: flex;
+    flex-basis: 60%;
+    flex-direction: column;
+}
+
+.about-col-2 {
+    flex-basis: 40%;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    filter: brightness(1.1) drop-shadow(0px 0px 10px rgba(105, 105, 105, 0.435));
+}
+
+.about-p{
+    /* flex: 1; */
+    flex-grow: 1;
+    margin: 0 6vw;
+    font-size: 1.8vw;
+    text-align: start;
+    font-family: 'Dangrek', sans-serif;
+    font-weight: normal;
+    color:rgb(47, 63, 78);
+    text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.47);
 }
 
 .about-bg {
@@ -26,7 +60,7 @@
 }
 
 #about-hero-text {
-    flex:1;
+    flex-basis: 30%;
     text-align: start;
     z-index: 89;
     margin-top: 3vw;

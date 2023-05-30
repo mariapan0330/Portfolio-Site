@@ -18,8 +18,7 @@ const IAm: React.FC = () => {
     const [iAm, setIAm] = useState<string>("I am ")
     const [word, setWord] = useState<string>(words[0])
     const [isWhite, setIsWhite] = useState<boolean>(true)
-    // white: '#aecebd'
-    // green: '#3b4f44'
+    // white: '#aecebd', green: '#3b4f44'
     const [myColor, setMyColor] = useState<string>('#3b4f44') // default green
     const [intervalTime, setIntervalTime] = useState<number>(2000) // just for me to more quickly mess with timings
 
