@@ -64,6 +64,7 @@ const About: React.FC = () => {
                   </div>
                   <div className="about-col-2">
                     <img src={require("../images/selfportrait.png")} id='self-portrait' className='about-image' />
+                    <img src={require("../images/selfphoto.png")} id='self-portrait' className='about-image' />
                   </div>
                 </Plx>
             </div>

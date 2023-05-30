@@ -1,6 +1,7 @@
 .about-flex {
     z-index: 90;
     display: flex;
+    height: 100%;
 }
 
 .about-col-1 {
@@ -31,7 +32,7 @@
     margin: 0 6vw;
     font-size: 1.8vw;
     text-align: start;
-    font-family: 'Dangrek', sans-serif;
+    font-family: 'Cherry Swash', sans-serif;
     font-weight: normal;
     color:rgb(47, 63, 78);
     text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.47);
