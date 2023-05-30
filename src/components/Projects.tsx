@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Projects.css'
 
-export default function Projects() {
+const Projects: React.FC = () => {
     return (
         <>
         <div className="component" id='projects'>
@@ -10,3 +10,5 @@ export default function Projects() {
         </>
     )
 }
+
+export default Projects;

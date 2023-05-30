@@ -2,8 +2,19 @@ import React from 'react'
 import '../styles/About.css'
 import Plx from 'react-plx'
 
-export default function About() {
-    const aboutPLX = [
+type PLXItem = {
+  start: string | number;
+  end: string | number;
+  duration?: string | number;
+  properties: {
+    startValue: number;
+    endValue: number;
+    property: string;
+  }[];
+}
+
+const About: React.FC = () => {
+    const aboutPLX: PLXItem[] = [
           {
               // start moving when I am at [start], reach end position when I'm at [end]
             start: '10vh',
@@ -34,3 +45,5 @@ export default function About() {
         </>
     )
 }
+
+export default About;

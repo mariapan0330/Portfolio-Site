@@ -2,7 +2,7 @@ import React from 'react'
 import { HashLink } from 'react-router-hash-link'
 import '../styles/Navbar.css'
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
     return (
         <>
         <div className="nav">
@@ -16,3 +16,5 @@ export default function Navbar() {
         </>
     )
 }
+
+export default Navbar;

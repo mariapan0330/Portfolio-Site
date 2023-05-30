@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/ContactMe.css'
 
-export default function ContactMe() {
+const ContactMe: React.FC = () => {
     return (
         <>
         <div className="component" id='contactme'>
@@ -10,3 +10,5 @@ export default function ContactMe() {
         </>
     )
 }
+
+export default ContactMe;

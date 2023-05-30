@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../styles/Home.css'
 import IAm from './IAm'
 
-export default function Home() {
-    // TODO: maybe break the "I am -" stuff into its own component so you can move it
+const Home: React.FC = () => {
     return (
         <>
         <div id="home">
@@ -16,3 +15,5 @@ export default function Home() {
         </>
     )
 }
+
+export default Home;

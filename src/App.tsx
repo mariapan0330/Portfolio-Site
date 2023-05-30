@@ -7,7 +7,8 @@ import About from './components/About'
 import Projects from './components/Projects'
 import ContactMe from './components/ContactMe'
 
-function App() {
+const App:React.FC = () => {
+  // TODO: convert files to typescript
 
   return (
     <>

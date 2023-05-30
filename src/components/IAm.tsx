@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/IAm.css'
 
-export default function IAm() {
-    const words = [
+const IAm: React.FC = () => {
+    const words: string[] = [
         'a Software Developer!',
         'a friend.',
         'an entrepreneur.',
@@ -15,19 +15,19 @@ export default function IAm() {
         'big brained.',
         'Batman.',
     ]
-    const [iAm, setIAm] = useState("I am ")
-    const [word, setWord] = useState(words[0])
-    const [isWhite, setIsWhite] = useState(true)
+    const [iAm, setIAm] = useState<string>("I am ")
+    const [word, setWord] = useState<string>(words[0])
+    const [isWhite, setIsWhite] = useState<boolean>(true)
     // white: '#aecebd'
     // green: '#3b4f44'
-    const [myColor, setMyColor] = useState('#3b4f44') // default green
-    const [intervalTime, setIntervalTime] = useState(2000) // just for me to more quickly mess with timings
+    const [myColor, setMyColor] = useState<string>('#3b4f44') // default green
+    const [intervalTime, setIntervalTime] = useState<number>(2000) // just for me to more quickly mess with timings
 
     // Every 3000ms, start The Loop over. 
     // The Loop: fade white, wait 200ms(experiment), fade green.
     useEffect(() => {
-        let i = 0
-        const wordsInterval = setInterval(() => {
+        let i: number = 0
+        const wordsInterval: NodeJS.Timeout = setInterval(() => {
             i = (i + 1) % words.length
             setMyColor('#aecebd') // set white
             setTimeout(() => {
@@ -56,3 +56,5 @@ export default function IAm() {
         </>
     )
 }
+
+export default IAm;

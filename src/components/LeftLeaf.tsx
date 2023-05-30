@@ -2,9 +2,21 @@ import React, { useState } from 'react'
 import '../styles/Leaves.css'
 import Plx from 'react-plx'
 
-export default function LeftLeaf(props) {
+type PLXItem = {
+  start: string | number;
+  end: string | number;
+  duration?: string | number;
+  properties: {
+    startValue: number;
+    endValue: number;
+    property: string;
+  }[];
+}
 
-    const animate = (speed) => {
+
+const LeftLeaf: React.FC = () => {
+
+    const animate = (speed: number): PLXItem[] => {
       return [
         {
             // vertical start and end (how long it takes to get to last position):
@@ -36,3 +48,5 @@ export default function LeftLeaf(props) {
     </>
   )
 }
+
+export default LeftLeaf;
