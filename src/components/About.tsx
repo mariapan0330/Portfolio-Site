@@ -76,8 +76,16 @@ const About: React.FC = () => {
                     <div className="about-col-2">
                         <img src={require("../images/one-big-leaf.png")} id='one-big-leaf' className='about-image' alt='leaf'/>
                         <img 
-                            src={isDrawing ? require('../images/selfportrait.png') : require('../images/selfphoto.png')}
-                            id={isDrawing ? 'self-portrait' : 'self-photo' }
+                            src={require('../images/selfportrait.png')}
+                            id='self-portrait'
+                            className='about-image'
+                            style={isDrawing ? {opacity:'100%'}: {opacity:'0'}}
+                            alt='self-portrait'
+                        />
+                        <img 
+                            src={require('../images/selfphoto.png')}
+                            id='self-photo'
+                            style={isDrawing ? {opacity:'0'}: {opacity:'100%'}}
                             className='about-image'
                             alt='self-portrait'
                         />
