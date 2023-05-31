@@ -9,13 +9,14 @@ type PLXItem = {
   properties: {
     startValue: number;
     endValue: number;
+    unit?: string;
     property: string;
   }[];
 }
 
 const RightLeaf: React.FC = () => {
 
-    const animate = (speed:number): PLXItem[] => {
+    const animate = (speed:number, start:number): PLXItem[] => {
       return [
         {
             // vertical start and end (how long it takes to get to last position):
@@ -24,8 +25,9 @@ const RightLeaf: React.FC = () => {
           properties: [
             {
                 // translateX start and end:
-              startValue: 0,
-              endValue: 1500,
+              startValue: start,
+              endValue: 128,
+              unit: 'vw',
               property: "translateX",
             },
           ],
@@ -36,15 +38,17 @@ const RightLeaf: React.FC = () => {
 
   return (
     <>
-    <Plx parallaxData={animate(1300)} className="leaf-plx">
+    <div className="leaves-container">
+    <Plx parallaxData={animate(1300, 86.6)} className="leaf-plx">
         <img className='leaf-img' src={require("../images/leaf R-1.png")} alt="background" />
     </Plx>
-    <Plx parallaxData={animate(1700)} className="leaf-plx">
+    <Plx parallaxData={animate(1700, 78.5)} className="leaf-plx">
         <img id='r-leaf-2' className='leaf-img' src={require("../images/leaf R-2.png")} alt="background" />
     </Plx>
-    <Plx parallaxData={animate(2000)} className="leaf-plx">
+    <Plx parallaxData={animate(2000, 70.5)} className="leaf-plx">
         <img id='r-leaf-3' className='leaf-img' src={require("../images/leaf R-3.png")} alt="background" />
     </Plx>
+    </div>
     </>
   )
 }
