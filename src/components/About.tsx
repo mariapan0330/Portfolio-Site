@@ -68,12 +68,35 @@ const About: React.FC = () => {
                                 About
                             </div>
                             <h2 className='about-p'>
-                            Hi there! I'm Maria, friendly neighborhood software developer who thrives on a
-                            perfect balance of logic and creativity. 
-                            I'm Maria, friendly neighborhood doodler, puzzle-lover, and creator of things.
-                            I specialize in creating robust and exciting applications that leave users impressed.
+                            Hi there! I'm Maria, friendly neighborhood software developer with a background in psychology and statistics
+                            who finds her niche in the balance of logic and creativity.
+                            <br />
+                            <br />
+                            {/* With a background in psychology and statistics, I hold a deep appreciation for data-driven, */}
+                            {/* human-centric problem-solving. */}
+                            If you're looking for a versatile, passionate team member,
+                            let's connect! Together we can bring your ideas to life.
+                            <br />
+                            <br />
+                            When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like sewing,
+                            crocheting, whittling, painting, pyrography, and making little popsicle stick houses for my parakeet, Samwise.
                             </h2>
                         </Plx>
+                        <div className="about-skills-row">
+                            <div className="about-skills-col-1">
+                                <div id="about-skills-title">
+                                        Skills
+                                </div>
+                            </div>
+                            <div className="about-skills-col-2">
+                                <h1 id='about-skills-list'>
+                                        Skill 1
+                                        Skill 2
+                                        Skill 3
+                                        Skill 4
+                                </h1>
+                            </div>
+                        </div>
                     </div>
                     <div className="about-col-2">
                         <img src={require("../images/one-big-leaf.png")} id='one-big-leaf' className='about-image' alt='leaf'/>

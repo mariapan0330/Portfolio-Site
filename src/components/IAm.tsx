@@ -8,10 +8,11 @@ const IAm: React.FC = () => {
         'an entrepreneur.',
         'a nerd.',
         'an artist.',
-        'a seamstress.',
-        'a whittler.',
-        'a crocheter.',
+        // 'a seamstress.',
+        // 'a whittler.',
+        // 'a crocheter.',
         'a creator.',
+        'a statistician.',
         // 'big brained.',
         // 'Batman.',
     ]
@@ -20,7 +21,6 @@ const IAm: React.FC = () => {
     const [isWhite, setIsWhite] = useState<boolean>(true)
     // white: '#aecebd', green: '#3b4f44'
     const [myColor, setMyColor] = useState<string>('#3b4f44') // default green
-    const [intervalTime, setIntervalTime] = useState<number>(2000) // just for me to more quickly mess with timings
 
     // Every 3000ms, start The Loop over. 
     // The Loop: fade white, wait 200ms(experiment), fade green.
