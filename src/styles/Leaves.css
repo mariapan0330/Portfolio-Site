@@ -10,7 +10,7 @@
 
 .leaf-img {
     z-index:100;
-    height:100vh;
+    height:50vw;
     filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435))
 }
 
@@ -24,5 +24,9 @@
     }   
     #r-leaf-3 {
         margin-top: 60px;
-    }   
+    }
+
+    /* .leaf-img {
+        height:30vw
+    } */
 }

@@ -39,13 +39,13 @@ const RightLeaf: React.FC = () => {
   return (
     <>
     <div className="leaves-container">
-    <Plx parallaxData={animate(1300, 86.6)} className="leaf-plx">
+    <Plx parallaxData={animate(1300, 90)} className="leaf-plx">
         <img className='leaf-img' src={require("../images/leaf R-1.png")} alt="background" />
     </Plx>
-    <Plx parallaxData={animate(1700, 78.5)} className="leaf-plx">
+    <Plx parallaxData={animate(1700, 80)} className="leaf-plx">
         <img id='r-leaf-2' className='leaf-img' src={require("../images/leaf R-2.png")} alt="background" />
     </Plx>
-    <Plx parallaxData={animate(2000, 70.5)} className="leaf-plx">
+    <Plx parallaxData={animate(2000, 71)} className="leaf-plx">
         <img id='r-leaf-3' className='leaf-img' src={require("../images/leaf R-3.png")} alt="background" />
     </Plx>
     </div>

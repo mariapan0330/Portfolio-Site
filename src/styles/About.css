@@ -52,10 +52,12 @@
     margin: 0 6vw;
     font-size: 1.8vw;
     text-align: start;
-    font-family: 'Cherry Swash', serif;
+    /* font-family: 'Cherry Swash', serif; */
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Quicksand', sans-serif;
     font-weight: normal;
     color:rgb(47, 63, 78);
-    text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.47);
+    text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.289);
 }
 
 .about-bg {

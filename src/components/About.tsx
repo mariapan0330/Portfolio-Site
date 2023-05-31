@@ -68,6 +68,8 @@ const About: React.FC = () => {
                                 About
                             </div>
                             <h2 className='about-p'>
+                            Hi there! I'm Maria, friendly neighborhood software developer who thrives on a
+                            perfect balance of logic and creativity. 
                             I'm Maria, friendly neighborhood doodler, puzzle-lover, and creator of things.
                             I specialize in creating robust and exciting applications that leave users impressed.
                             </h2>
