@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/About.css'
 import Plx from 'react-plx'
 
@@ -14,7 +14,17 @@ type PLXItem = {
 }
 
 const About: React.FC = () => {
-    const [isHovering, setIsHovering] = useState<boolean>(false)
+    const [isDrawing, setIsDrawing] = useState<boolean>(true)
+
+    useEffect(() => {
+        const wordsInterval: NodeJS.Timeout = setInterval(() => {
+            setIsDrawing(prevState => !prevState)
+        }, 4000)
+
+        return () => {
+            clearInterval(wordsInterval)
+        }
+    }, [])
 
     const aboutPLX: PLXItem[] = [
           {
@@ -44,9 +54,6 @@ const About: React.FC = () => {
             ]
           }
         ]
-    const handleMouseEnter: React.MouseEventHandler<HTMLImageElement> = () => { setIsHovering(true) }
-
-    const handleMouseLeave: React.MouseEventHandler<HTMLImageElement> = () => { setIsHovering(false) }
     
     
     return (
@@ -61,25 +68,18 @@ const About: React.FC = () => {
                                 About
                             </div>
                             <h2 className='about-p'>
-                            <a href=''>I'm Maria,</a> friendly neighborhood doodler and creator of many types of things.
-                            I found my passion in coding through Minecraft, and I have been an avid programmer ever since.
-                            My coding journey started with Minecraft. I spent countless hours creating games by assembling
-                            Minecraft's built-in commands, and my dad <a href=''>recognized</a> my process as programming.
-                            <br />
-                            He suggested I try a coding course, and I was hooked after my first Java lesson off Youtube. 
+                            I'm Maria, friendly neighborhood doodler, puzzle-lover, and creator of things.
+                            I specialize in creating robust and exciting applications that leave users impressed.
                             </h2>
                         </Plx>
                     </div>
                     <div className="about-col-2">
                         <img src={require("../images/one-big-leaf.png")} id='one-big-leaf' className='about-image' alt='leaf'/>
                         <img 
-                            src={isHovering ? require('../images/selfphoto.png') : require('../images/selfportrait.png')}
-                            id={isHovering ? 'self-photo' : 'self-portrait'}
+                            src={isDrawing ? require('../images/selfportrait.png') : require('../images/selfphoto.png')}
+                            id={isDrawing ? 'self-portrait' : 'self-photo' }
                             className='about-image'
                             alt='self-portrait'
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                            
                         />
                     </div>
                 </div>

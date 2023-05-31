@@ -4,7 +4,7 @@ import '../styles/IAm.css'
 const IAm: React.FC = () => {
     const words: string[] = [
         'a Software Developer!',
-        'a friend.',
+        // 'a friend.',
         'an entrepreneur.',
         'a nerd.',
         'an artist.',
@@ -12,8 +12,8 @@ const IAm: React.FC = () => {
         'a whittler.',
         'a crocheter.',
         'a creator.',
-        'big brained.',
-        'Batman.',
+        // 'big brained.',
+        // 'Batman.',
     ]
     const [iAm, setIAm] = useState<string>("I am ")
     const [word, setWord] = useState<string>(words[0])
