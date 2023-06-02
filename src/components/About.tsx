@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/About.css'
+import SkillsList from './SkillsList'
 import Plx from 'react-plx'
 
 type PLXItem = {
@@ -68,18 +69,14 @@ const About: React.FC = () => {
                                 About
                             </div>
                             <h2 className='about-p'>
-                            Hi there! I'm Maria, friendly neighborhood software developer with a background in psychology and statistics
-                            who finds her niche in the balance of logic and creativity.
+                            &emsp; Hi there! I'm Maria, friendly neighborhood software developer with a background in <span className='emphasis'>psychology</span>{'\u00A0'}
+                            who finds her niche in the balance of <span className='emphasis'>logic and creativity</span>.
                             <br />
                             <br />
-                            {/* With a background in psychology and statistics, I hold a deep appreciation for data-driven, */}
-                            {/* human-centric problem-solving. */}
-                            If you're looking for a versatile, passionate team member,
-                            let's connect! Together we can bring your ideas to life.
-                            <br />
-                            <br />
-                            When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like sewing,
-                            crocheting, whittling, painting, pyrography, and making little popsicle stick houses for my parakeet, Samwise.
+                            {/* If you're looking for a versatile, passionate team member,
+                            let's connect! Together we can bring your ideas to life.*/}
+                            &emsp; When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like sewing,
+                            crocheting, whittling, painting, pyrography, Tetris and making little popsicle stick houses for my parakeet, Samwise.
                             </h2>
                         </Plx>
                         <div className="about-skills-row">
@@ -89,12 +86,8 @@ const About: React.FC = () => {
                                 </div>
                             </div>
                             <div className="about-skills-col-2">
-                                <h1 id='about-skills-list'>
-                                        Skill 1
-                                        Skill 2
-                                        Skill 3
-                                        Skill 4
-                                </h1>
+                                {/* skills list (horizontal) */}
+                                <SkillsList />
                             </div>
                         </div>
                     </div>

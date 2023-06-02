@@ -54,7 +54,7 @@
 #self-photo {
     transition-duration: 500ms;
     left: 10%;
-    width: 70%;
+    width: 73%;
     filter:
         saturate(70%) 
         brightness(1.05) 
@@ -64,24 +64,28 @@
 .about-p{
     flex-grow: 1;
     margin: 0 6vw;
-    font-size: 1.4vw;
+    font-size: 1.6vw;
     text-align: start;
     /* font-family: 'Cherry Swash', serif; */
     /* font-family: 'Montserrat', sans-serif; */
-    font-family: 'Dangrek', sans-serif;
     font-family: 'Space Grotesk', sans-serif;
     font-family: 'Quicksand', sans-serif;
-    /* letter-spacing: 0.02rem; */
-    line-height: 140%;
-    font-weight: bold;
+    font-family: 'Dangrek', sans-serif;
+    letter-spacing: 0.02rem;
+    line-height: 130%;
+    font-weight: normal;
     color:rgb(54, 69, 84);
     /* text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.289); */
+}
+
+.emphasis {
+    /* text-decoration: underline; */
+    color:rgb(81, 120, 119);
 }
 
 .about-bg {
     position: relative;
     background: url('../images/cardboard-blue.png');
-    background-blend-mode: multiply;
     background-size:cover;
 }
 

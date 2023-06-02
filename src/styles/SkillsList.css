@@ -1,0 +1,27 @@
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Dangrek', sans-serif;
+}
+
+.skills-list-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+}
+
+.skills-list-imgs{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.skills-list-imgs img {
+    max-height: 100%;
+    max-width: 100%;
+    /* margin:0.2rem; */
+}

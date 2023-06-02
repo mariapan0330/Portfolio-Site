@@ -9,7 +9,7 @@
 
 }
   
-ul {
+.nav ul {
     display: flex;
     list-style: none;
     margin: 0;
@@ -17,7 +17,7 @@ ul {
     width:100%;
 }
 
-li {
+.nav li {
     font-family: 'Dangrek', sans-serif; /* nice in lowercase */
     width:25%;
     font-size: .9vw;
@@ -36,12 +36,12 @@ li {
     margin: 0;
 }
 
-li:hover{
+.nav li:hover{
     /* background-color: #213f23; */
     background-color: #2a3a2b;
 }
 
-a {
+.nav a {
     color: #fff;
     text-decoration: none;
 }
