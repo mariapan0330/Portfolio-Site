@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
 type HandleHobbyEnterT = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobby: string) => void;
+type SetShowTetris = (x:boolean) => void;
 
 interface HobbiesListProps {
-    handleHobbyEnter:HandleHobbyEnterT
+    handleHobbyEnter:HandleHobbyEnterT,
+    setShowTetris: SetShowTetris
 }
 
-const HobbiesList: React.FC<HobbiesListProps> = ({ handleHobbyEnter }) => {
+const HobbiesList: React.FC<HobbiesListProps> = ({ handleHobbyEnter, setShowTetris }) => {
     const hobbiesList: string[] = [
         'sewing',
         'crocheting',
@@ -17,7 +19,8 @@ const HobbiesList: React.FC<HobbiesListProps> = ({ handleHobbyEnter }) => {
       ]
 
     const tetris = () => {
-    console.log('tetris')
+        console.log('tetris')
+        setShowTetris(true)
     }
 
     return (

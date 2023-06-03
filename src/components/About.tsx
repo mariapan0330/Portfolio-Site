@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/About.css'
+import '../styles/HobbiesList.css'
 import SkillsList from './SkillsList'
 import HobbiesList from './HobbiesList'
 import Plx from 'react-plx'
@@ -19,7 +20,27 @@ type HandleHobbyEnterT = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobb
 
 const About: React.FC = () => {
     const [isDrawing, setIsDrawing] = useState<boolean>(true)
+    const [showTetris, setShowTetris] = useState<boolean>(false)
+    const [animateTetris, setAnimateTetris] = useState<boolean>(false)
     const [currHobby, setCurrHobby] = useState<string>('')
+    const [currTetris, setCurrTetris] = useState<string>('i')
+    const tetrisPieces:string[] = ['t', 's', 'z', 'l', 'i', 'o']
+
+    useEffect(() => {
+      // console.log('show tetris has been activated')
+      if (showTetris){
+        setAnimateTetris(true)
+        let num:number = Math.floor(Math.random()*6)
+        setCurrTetris(tetrisPieces[num])
+        const tetrisTimeout: NodeJS.Timeout = setTimeout(() => {
+          setAnimateTetris(false)
+          setShowTetris(false)
+        }, 900)
+        return () => {
+          clearTimeout(tetrisTimeout)
+        }
+      }
+    }, [showTetris, animateTetris, currTetris])
 
 
     // self portrait carousel
@@ -70,60 +91,61 @@ const About: React.FC = () => {
         <>
         <img src={require("../images/leaf-border.png")} alt="horizontal leaf border" id='leaf-border' />
         <div className="about-bg">
-            <div className="about-flex" id='about'>
-                    <div className="about-col-1">
-                        <Plx parallaxData={aboutPLX} className=''>
-                            <div id="about-hero-text" onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>
-                                About
-                            </div>
-                            <h2 className='about-p'>
-                            &emsp; Hi there! I'm Maria, friendly neighborhood software developer with a background in&nbsp;
-                            <span className='emphasis' style={{cursor:'auto'}} onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>psychology</span>{'\u00A0'}
-                            who finds her niche in the balance of&nbsp;
-                            <span className='emphasis' style={{cursor:'auto'}} onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>logic and creativity</span>.
-                            {/* <br /> */}
-                            <br />
-                            {/* If you're looking for a versatile, passionate team member,
-                            let's connect! Together we can bring your ideas to life.*/}
-                            &emsp; When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like&nbsp;
-                            {/* HobbiesList component */}
-                            <HobbiesList handleHobbyEnter={handleHobbyEnter} />
-                            </h2>
-                        </Plx>
-                        <div className="about-skills">
-                            <div id="about-skills-title">
-                                    Skills
-                            </div>
-                            {/* Include Skills List component */}
-                            <SkillsList />
-                        </div>
-                    </div>
-                    <div className="about-col-2">
-                      { currHobby ? 
+          {showTetris ? 
+          <img src={require(`../images/tetris/tetris-${currTetris}.png`)}
+          className= {`${animateTetris ? 'tetris-piece-after' : 'tetris-piece-before'}`} /> : <></> }
+          <div className="about-flex" id='about'>
+                  <div className="about-col-1">
+                      <Plx parallaxData={aboutPLX} className=''>
+                          <div id="about-hero-text" onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>
+                              About
+                          </div>
+                          <h2 className='about-p'>
+                          &emsp; Hi there! I'm Maria, friendly neighborhood software developer with a background in&nbsp;
+                          <span className='emphasis' style={{cursor:'auto'}} onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>psychology</span>{'\u00A0'}
+                          who finds her niche in the balance of&nbsp;
+                          <span className='emphasis' style={{cursor:'auto'}} onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>logic and creativity</span>.
+                          {/* <br /> */}
+                          <br />
+                          &emsp; When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like&nbsp;
+                          {/* HobbiesList component */}
+                          <HobbiesList handleHobbyEnter={handleHobbyEnter} setShowTetris={setShowTetris} />
+                          </h2>
+                      </Plx>
+                      <div className="about-skills">
+                          <div id="about-skills-title">
+                                  Skills
+                          </div>
+                          {/* Include Skills List component */}
+                          <SkillsList />
+                      </div>
+                  </div>
+                  <div className="about-col-2">
+                    { currHobby ? 
+                    <>
+                    <img src={require(`../images/hobbies/${currHobby}.jpg`)} className='hobby-img' />
+                    </>
+                    :
                       <>
-                      <img src={require(`../images/hobbies/${currHobby}.jpg`)} className='hobby-img' />
+                      <img src={require("../images/one-big-leaf.png")} id='one-big-leaf' className='about-image' alt='leaf'/>
+                      <img 
+                          src={require('../images/selfportrait.png')}
+                          id='self-portrait'
+                          className='about-image'
+                          style={isDrawing ? {opacity:'100%'}: {opacity:'0'}}
+                          alt='self-portrait'
+                      />
+                      <img 
+                          src={require('../images/selfphoto.png')}
+                          id='self-photo'
+                          style={isDrawing ? {opacity:'0'}: {opacity:'100%'}}
+                          className='about-image'
+                          alt='self-portrait'
+                      />
                       </>
-                      :
-                        <>
-                        <img src={require("../images/one-big-leaf.png")} id='one-big-leaf' className='about-image' alt='leaf'/>
-                        <img 
-                            src={require('../images/selfportrait.png')}
-                            id='self-portrait'
-                            className='about-image'
-                            style={isDrawing ? {opacity:'100%'}: {opacity:'0'}}
-                            alt='self-portrait'
-                        />
-                        <img 
-                            src={require('../images/selfphoto.png')}
-                            id='self-photo'
-                            style={isDrawing ? {opacity:'0'}: {opacity:'100%'}}
-                            className='about-image'
-                            alt='self-portrait'
-                        />
-                        </>
-                      }
-                    </div>
-            </div>
+                    }
+                  </div>
+          </div>
         </div>
         {/* <img src={require("../images/leaf-border.png")} alt="horizontal leaf border" id='leaf-border-end' /> */}
         </>

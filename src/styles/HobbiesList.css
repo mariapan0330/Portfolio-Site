@@ -1,2 +1,18 @@
 /* .emphasis{} is defined in About.css */
 
+.tetris-piece-before {
+    width:30vw;
+    position: absolute;
+    right:0;
+    top:-45vh;
+    z-index: 3;
+}
+
+.tetris-piece-after {
+    width:30vw;
+    position: absolute;
+    right:0;
+    top: 200vh;
+    z-index: 3;
+    transition-duration: 1900ms;
+}
