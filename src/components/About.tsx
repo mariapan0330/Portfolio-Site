@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/About.css'
 import SkillsList from './SkillsList'
+import HobbiesList from './HobbiesList'
 import Plx from 'react-plx'
 
 type PLXItem = {
@@ -14,18 +15,12 @@ type PLXItem = {
   }[];
 }
 
+type HandleHobbyEnterT = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobby: string) => void;
+
 const About: React.FC = () => {
     const [isDrawing, setIsDrawing] = useState<boolean>(true)
-    const [currHobby, setCurrHobby] = useState('')
+    const [currHobby, setCurrHobby] = useState<string>('')
 
-    const hobbiesList = [
-      'sewing',
-      'crocheting',
-      'whittling',
-      'painting',
-      'pyrography',
-      // 'Tetris',
-    ]
 
     // self portrait carousel
     useEffect(() => {
@@ -67,16 +62,8 @@ const About: React.FC = () => {
           }
         ]
     
-    const handleHobbyEnter = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobby:string) => {
-      if (hobby !== 'Tetris'){
+    const handleHobbyEnter: HandleHobbyEnterT = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobby:string) => {
         setCurrHobby(hobby)
-      } else {
-        tetris()
-      }
-    }
-
-    const tetris = () => {
-      console.log('tetris')
     }
     
     return (
@@ -99,33 +86,15 @@ const About: React.FC = () => {
                             {/* If you're looking for a versatile, passionate team member,
                             let's connect! Together we can bring your ideas to life.*/}
                             &emsp; When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like&nbsp;
-                            
-                            {hobbiesList.map((hobby:string, i:number) => (
-                              <React.Fragment key={`hobby-${i}`}>
-                              <span
-                              className='emphasis'
-                              onMouseEnter={(e) => handleHobbyEnter(e, hobby)}
-                              >
-                              {hobby}</span>
-                              <span
-                              style={{color:'rgb(54, 69, 84)',}}
-                              >, &nbsp;</span>
-                              </React.Fragment >
-                            ))}
-                            and making little&nbsp;
-                            <span className='emphasis' onMouseEnter={(e) => handleHobbyEnter(e, 'popsicle')}>
-                            popsicle stick houses
-                            </span>
-                            &nbsp;for my parakeet,&nbsp;
-                            <span className='emphasis' onMouseEnter={(e) => handleHobbyEnter(e, 'bird')}>
-                            Samwise
-                            </span>.
+                            {/* HobbiesList component */}
+                            <HobbiesList handleHobbyEnter={handleHobbyEnter} />
                             </h2>
                         </Plx>
                         <div className="about-skills">
                             <div id="about-skills-title">
                                     Skills
                             </div>
+                            {/* Include Skills List component */}
                             <SkillsList />
                         </div>
                     </div>
