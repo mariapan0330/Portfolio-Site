@@ -40,7 +40,7 @@
 
 @media screen and (min-width: 769px){
     .about-col-1 {
-        flex-basis: 60%;
+        flex-basis: 70%;
     }
 
     .about-col-2 {
@@ -48,6 +48,15 @@
     }
 }
 
+.hobby-img {
+    position:absolute;
+    bottom:10%;
+    right:5%;
+    width:80%;
+    border-radius: 1vw;
+    border: 10px solid white;
+    box-shadow: 0 0 10px rgba(86, 82, 119, 0.726);
+}
 
 .about-image{
     position: absolute;
@@ -104,6 +113,13 @@
     color:rgb(81, 120, 119);
 }
 
+.emphasis:hover {
+    background-color: rgb(81, 120, 119);
+    color:white;
+    border-radius: 0.4vw;
+    cursor: default;
+}
+
 .about-bg {
     position: relative;
     background: url('../images/cardboard-blue.png');
@@ -141,6 +157,7 @@
 }
 
 #about-hero-text {
+    cursor:default;
     flex-basis: 30%;
     text-align: start;
     z-index: 89;

@@ -16,7 +16,21 @@ type PLXItem = {
 
 const About: React.FC = () => {
     const [isDrawing, setIsDrawing] = useState<boolean>(true)
+    const [currHobby, setCurrHobby] = useState('')
+    const [extras, setExtras] = useState('')
 
+    const hobbiesList = [
+      'sewing',
+      'crocheting',
+      'whittling',
+      'painting',
+      'pyrography',
+      // 'Tetris',
+      // 'popsicle stick houses',
+      // 'Samwise'
+    ]
+
+    // self portrait carousel
     useEffect(() => {
         const wordsInterval: NodeJS.Timeout = setInterval(() => {
             setIsDrawing(prevState => !prevState)
@@ -56,6 +70,13 @@ const About: React.FC = () => {
           }
         ]
     
+    const handleHobbyEnter = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobby:string) => {
+      setCurrHobby(hobby)
+    }
+    
+    const handleHobbyLeave = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobby:string) => {
+      setCurrHobby('')
+    }
     
     return (
         <>
@@ -64,18 +85,46 @@ const About: React.FC = () => {
             <div className="about-flex" id='about'>
                     <div className="about-col-1">
                         <Plx parallaxData={aboutPLX} className=''>
-                            <div id="about-hero-text">
+                            <div id="about-hero-text" onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>
                                 About
                             </div>
                             <h2 className='about-p'>
-                            &emsp; Hi there! I'm Maria, friendly neighborhood software developer with a background in <span className='emphasis'>psychology</span>{'\u00A0'}
-                            who finds her niche in the balance of <span className='emphasis'>logic and creativity</span>.
+                            &emsp; Hi there! I'm Maria, friendly neighborhood software developer with a background in&nbsp;
+                            <span className='emphasis' style={{cursor:'auto'}} onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>psychology</span>{'\u00A0'}
+                            who finds her niche in the balance of&nbsp;
+                            <span className='emphasis' style={{cursor:'auto'}} onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>logic and creativity</span>.
                             {/* <br /> */}
                             <br />
                             {/* If you're looking for a versatile, passionate team member,
                             let's connect! Together we can bring your ideas to life.*/}
-                            &emsp; When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like sewing,
-                            crocheting, whittling, painting, pyrography, Tetris and making little popsicle stick houses for my parakeet, Samwise.
+                            &emsp; When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like&nbsp;
+                            
+                            {hobbiesList.map((hobby:string) => (
+                              <>
+                              <span 
+                              className='emphasis'
+                              onMouseEnter={(e) => handleHobbyEnter(e, hobby)}
+                              >
+                              {hobby}</span>
+                              <span
+                              style={{color:'rgb(54, 69, 84)',}}
+                              >, &nbsp;</span>
+                              </>
+                            ))}
+                            and making little&nbsp;
+                            <span
+                            className='emphasis'
+                            onMouseEnter={(e) => handleHobbyEnter(e, 'popsicle')}
+                            >
+                            popsicle stick houses
+                            </span>
+                            &nbsp;for my parakeet,&nbsp;
+                            <span
+                            className='emphasis'
+                            onMouseEnter={(e) => handleHobbyEnter(e, 'bird')}
+                            >
+                            Samwise
+                            </span>.
                             </h2>
                         </Plx>
                         <div className="about-skills">
@@ -86,6 +135,12 @@ const About: React.FC = () => {
                         </div>
                     </div>
                     <div className="about-col-2">
+                      { currHobby ? 
+                      <>
+                      <img src={require(`../images/hobbies/${currHobby}.jpg`)} className='hobby-img' />
+                      </>
+                      :
+                        <>
                         <img src={require("../images/one-big-leaf.png")} id='one-big-leaf' className='about-image' alt='leaf'/>
                         <img 
                             src={require('../images/selfportrait.png')}
@@ -101,6 +156,8 @@ const About: React.FC = () => {
                             className='about-image'
                             alt='self-portrait'
                         />
+                        </>
+                      }
                     </div>
             </div>
         </div>
