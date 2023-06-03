@@ -7,34 +7,47 @@
 .about-flex {
     z-index: 2;
     display: flex;
-    /* min-height: 100vh; */
 }
 
 .about-col-1 {
     display: flex;
-    flex-basis: 60%;
-    flex-direction: column;
-}
-
-
-.about-skills{
-    /* display: flex; */
+    flex: 1;
     margin-left: 5vw;
-}
-
-.about-col-1-a{
     flex-direction: column;
 }
 
-.about-col-1-b{
-    flex-direction: column;
-}
 
 .about-col-2 {
-    flex-basis: 40%;
-    flex-direction: column;
+    /* flex-basis: 40%; */
+    flex:1;
     position: relative;
 }
+
+@media screen and (max-width: 768px){
+    .about-flex {
+        flex-direction: column;
+    }
+
+    .about-col-1 {
+        flex-basis:100%;
+    }
+
+    .about-col-2 {
+        flex-basis:100%;
+    }
+    
+}
+
+@media screen and (min-width: 769px){
+    .about-col-1 {
+        flex-basis: 60%;
+    }
+
+    .about-col-2 {
+        flex-basis: 50%;
+    }
+}
+
 
 .about-image{
     position: absolute;
@@ -73,7 +86,6 @@
 
 .about-p{
     flex-grow: 1;
-    margin: 0 6vw;
     font-size: 1.6vw;
     text-align: start;
     /* font-family: 'Cherry Swash', serif; */
@@ -133,7 +145,7 @@
     text-align: start;
     z-index: 89;
     margin-top: 3vw;
-    margin-left: 6vw; 
+    /* margin-left: 6vw;  */
     padding: 0 1vw; /* in this font (B. Swash), letters get cut off to the left */
     font-size: 8vw;
     font-family: 'Berkshire Swash', sans-serif; /* nice in lowercase */
