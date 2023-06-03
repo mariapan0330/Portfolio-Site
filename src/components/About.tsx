@@ -17,7 +17,6 @@ type PLXItem = {
 const About: React.FC = () => {
     const [isDrawing, setIsDrawing] = useState<boolean>(true)
     const [currHobby, setCurrHobby] = useState('')
-    const [extras, setExtras] = useState('')
 
     const hobbiesList = [
       'sewing',
@@ -26,8 +25,6 @@ const About: React.FC = () => {
       'painting',
       'pyrography',
       // 'Tetris',
-      // 'popsicle stick houses',
-      // 'Samwise'
     ]
 
     // self portrait carousel
@@ -71,11 +68,15 @@ const About: React.FC = () => {
         ]
     
     const handleHobbyEnter = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobby:string) => {
-      setCurrHobby(hobby)
+      if (hobby !== 'Tetris'){
+        setCurrHobby(hobby)
+      } else {
+        tetris()
+      }
     }
-    
-    const handleHobbyLeave = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, hobby:string) => {
-      setCurrHobby('')
+
+    const tetris = () => {
+      console.log('tetris')
     }
     
     return (
@@ -99,9 +100,9 @@ const About: React.FC = () => {
                             let's connect! Together we can bring your ideas to life.*/}
                             &emsp; When I'm not making and fixing bugs, I enjoy all sorts of old-lady activities like&nbsp;
                             
-                            {hobbiesList.map((hobby:string) => (
-                              <>
-                              <span 
+                            {hobbiesList.map((hobby:string, i:number) => (
+                              <React.Fragment key={`hobby-${i}`}>
+                              <span
                               className='emphasis'
                               onMouseEnter={(e) => handleHobbyEnter(e, hobby)}
                               >
@@ -109,20 +110,14 @@ const About: React.FC = () => {
                               <span
                               style={{color:'rgb(54, 69, 84)',}}
                               >, &nbsp;</span>
-                              </>
+                              </React.Fragment >
                             ))}
                             and making little&nbsp;
-                            <span
-                            className='emphasis'
-                            onMouseEnter={(e) => handleHobbyEnter(e, 'popsicle')}
-                            >
+                            <span className='emphasis' onMouseEnter={(e) => handleHobbyEnter(e, 'popsicle')}>
                             popsicle stick houses
                             </span>
                             &nbsp;for my parakeet,&nbsp;
-                            <span
-                            className='emphasis'
-                            onMouseEnter={(e) => handleHobbyEnter(e, 'bird')}
-                            >
+                            <span className='emphasis' onMouseEnter={(e) => handleHobbyEnter(e, 'bird')}>
                             Samwise
                             </span>.
                             </h2>

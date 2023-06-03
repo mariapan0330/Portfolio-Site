@@ -27,8 +27,8 @@ const SkillsList: React.FC = () => {
 
   return (
     <div className="skills-list"> 
-    {skills.map((skill: string) => (
-        <div className='skills-list-item'>
+    {skills.map((skill: string, i:number) => (
+        <div className='skills-list-item' key={`skill-${i}`}>
             <div className="skills-list-imgs">
                 <img src={require(`../images/tech stack/${skill.toLowerCase()}.png`)} alt={skill} />
             </div>
