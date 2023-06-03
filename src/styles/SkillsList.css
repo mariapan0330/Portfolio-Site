@@ -1,27 +1,41 @@
 .skills-list {
     display: flex;
     flex-wrap: wrap;
+    color:rgb(37, 45, 53);
     font-family: 'Dangrek', sans-serif;
+    font-size: 1.3vw;
+    margin-bottom: 5%;
 }
 
 .skills-list-item {
+    /* width:10%; */
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 0.2rem;
+    padding: 0 0.2rem;
+}
+
+.skills-list-item:hover {
+    background-color: rgba(34, 39, 111, 0.254);
+    border-radius: 0.5vw;
+}
+
+.skills-list-item p {
+    margin: 0;
 }
 
 .skills-list-imgs{
-    width: 3rem;
-    height: 3rem;
-    border-radius: 0.5rem;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 0.5vw;
     padding: 0.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    filter:drop-shadow(0px 0px 5px rgba(37, 40, 69, 0.218))
 }
 .skills-list-imgs img {
     max-height: 100%;
     max-width: 100%;
-    /* margin:0.2rem; */
 }

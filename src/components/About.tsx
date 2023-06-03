@@ -61,8 +61,7 @@ const About: React.FC = () => {
         <>
         <img src={require("../images/leaf-border.png")} alt="horizontal leaf border" id='leaf-border' />
         <div className="about-bg">
-            <div className="component" id='about'>
-                <div className="about-flex">
+            <div className="about-flex" id='about'>
                     <div className="about-col-1">
                         <Plx parallaxData={aboutPLX} className=''>
                             <div id="about-hero-text">
@@ -71,7 +70,7 @@ const About: React.FC = () => {
                             <h2 className='about-p'>
                             &emsp; Hi there! I'm Maria, friendly neighborhood software developer with a background in <span className='emphasis'>psychology</span>{'\u00A0'}
                             who finds her niche in the balance of <span className='emphasis'>logic and creativity</span>.
-                            <br />
+                            {/* <br /> */}
                             <br />
                             {/* If you're looking for a versatile, passionate team member,
                             let's connect! Together we can bring your ideas to life.*/}
@@ -79,16 +78,11 @@ const About: React.FC = () => {
                             crocheting, whittling, painting, pyrography, Tetris and making little popsicle stick houses for my parakeet, Samwise.
                             </h2>
                         </Plx>
-                        <div className="about-skills-row">
-                            <div className="about-skills-col-1">
-                                <div id="about-skills-title">
-                                        Skills
-                                </div>
+                        <div className="about-skills">
+                            <div id="about-skills-title">
+                                    Skills
                             </div>
-                            <div className="about-skills-col-2">
-                                {/* skills list (horizontal) */}
-                                <SkillsList />
-                            </div>
+                            <SkillsList />
                         </div>
                     </div>
                     <div className="about-col-2">
@@ -108,7 +102,6 @@ const About: React.FC = () => {
                             alt='self-portrait'
                         />
                     </div>
-                </div>
             </div>
         </div>
         {/* <img src={require("../images/leaf-border.png")} alt="horizontal leaf border" id='leaf-border-end' /> */}

@@ -27,7 +27,7 @@ const LeftLeaf: React.FC = () => {
             {
                 // translateX start and end:
               startValue: start,
-              endValue: -55,
+              endValue: -56,
               unit: 'vw',
               property: "translateX",
             },

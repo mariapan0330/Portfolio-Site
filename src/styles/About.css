@@ -1,7 +1,13 @@
+#about {
+    display: flex;
+    min-height: 100vh;
+    max-height: fit-content;
+}
+
 .about-flex {
     z-index: 2;
     display: flex;
-    height: 100%;
+    /* min-height: 100vh; */
 }
 
 .about-col-1 {
@@ -10,8 +16,10 @@
     flex-direction: column;
 }
 
-.about-skills-row {
-    display: flex;
+
+.about-skills{
+    /* display: flex; */
+    margin-left: 5vw;
 }
 
 .about-col-1-a{
@@ -31,17 +39,19 @@
 .about-image{
     position: absolute;
     bottom: 0;
-    left:0;
+    /* top: 0%; */
+    right: 10%;
     filter: brightness(1.1) drop-shadow(0px 0px 10px rgba(31, 31, 31, 0.658));
 }
 
 #one-big-leaf {
+    right: 5%;
     width: 80%;
     filter: brightness(0.8) drop-shadow(0px 0px 10px rgba(31, 31, 31, 0.408));
 }
 
 #self-portrait {
-    left: 20%;
+    right: 15%;
     width: 50%;
     filter: 
         hue-rotate(-10deg) 
@@ -53,7 +63,7 @@
 
 #self-photo {
     transition-duration: 500ms;
-    left: 10%;
+    right: 10%;
     width: 73%;
     filter:
         saturate(70%) 
@@ -71,7 +81,6 @@
     font-family: 'Space Grotesk', sans-serif;
     font-family: 'Quicksand', sans-serif;
     font-family: 'Dangrek', sans-serif;
-    letter-spacing: 0.02rem;
     line-height: 130%;
     font-weight: normal;
     color:rgb(54, 69, 84);
@@ -150,8 +159,7 @@
     flex-basis: 30%;
     text-align: start;
     z-index: 89;
-    margin-top: 3vw;
-    margin-left: 6vw; 
+    margin-top: 1vw;
     padding: 0 1vw; /* in this font (B. Swash), letters get cut off to the left */
     font-size: 5vw;
     font-family: 'Berkshire Swash', sans-serif; /* nice in lowercase */
