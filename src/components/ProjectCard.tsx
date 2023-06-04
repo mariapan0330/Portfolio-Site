@@ -10,16 +10,22 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, technologies, live, repo }) => {
     const [liveRepo, setLiveRepo] = useState<React.ReactElement>(<p></p>)
+    const [hasLive, setHasLive] = useState<boolean>(live !== '')
+    const [hasRepo, setHasRepo] = useState<boolean>(repo !== '')
 
     useEffect(() => {
-        if (live !== '' && repo === '') {
-            setLiveRepo(<p className='project-card-links'><a href={live}>LIVE</a></p>)
-        } else if (live === '' && repo !== ''){
-            setLiveRepo(<p className='project-card-links'><a href={repo}>REPO</a></p>)
-        } else if (live !== '' && repo !== '') {
-            setLiveRepo(<p className='project-card-links'><a href={live}>LIVE</a> | <a href={repo}>REPO</a></p>)
-        }
-    }, [])
+        console.log(hasLive, live)
+    }, [live])
+
+    // useEffect(() => {
+    //     if (live !== '' && repo === '') {
+    //         setLiveRepo(<p className='project-card-links'><a href={live}>LIVE</a></p>)
+    //     } else if (live === '' && repo !== ''){
+    //         setLiveRepo(<p className='project-card-links'><a href={repo}>REPO</a></p>)
+    //     } else if (live !== '' && repo !== '') {
+    //         setLiveRepo(<p className='project-card-links'><a href={live}>LIVE</a> | <a href={repo}>REPO</a></p>)
+    //     }
+    // }, [])
 
   return (
     <>
@@ -28,8 +34,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, technologies, l
         <h1 className='project-card-title'>{title}</h1>
         {/* {liveRepo} */}
         <p className='project-card-links'>
-            <a href={live}>LIVE</a>
-            <a href={repo}>REPO</a>
+            {hasLive && <a href={live}>LIVE</a>}
+            {hasRepo && <a href={repo}>REPO</a>}
             </p>
         <p className='project-card-tech'>{technologies}</p>
     </div>

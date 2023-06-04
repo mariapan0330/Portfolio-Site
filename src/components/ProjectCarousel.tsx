@@ -16,12 +16,12 @@ interface ProjectCarouselProps {
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
   const [startIdx, setStartIdx] = useState<number>(0) // inclusive
   const [endIdx, setEndIdx] = useState<number>(2) // exclusive
-  const [continueR, setContinueR] = useState<boolean>(endIdx < projects.length-1)
+  const [continueR, setContinueR] = useState<boolean>(endIdx < projects.length)
   const [continueL, setContinueL] = useState<boolean>(startIdx > 0)
 
   useEffect(() => {
     setContinueL(startIdx > 0)
-    setContinueR(endIdx < projects.length-1)
+    setContinueR(endIdx < projects.length)
   }, [startIdx, endIdx])
 
   const handleForward = () => {
