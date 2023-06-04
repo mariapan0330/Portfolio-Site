@@ -13,11 +13,39 @@ const Projects: React.FC = () => {
     const projects = [
         {
             image: 'blog',
-            title: 'Typewriter Blog',
+            title: 'Typewriter Blog1',
             live: 'abc',
             repo: 'repo',
             technologies: 'Flask, Python, React, JavaScript, NodeJS'
-        }
+        },
+        {
+            image: 'blog',
+            title: 'Typewriter Blog2',
+            live: 'abc',
+            repo: 'repo',
+            technologies: 'Flask, Python, React, JavaScript, NodeJS'
+        },
+        {
+            image: 'blog',
+            title: 'Typewriter Blog3',
+            live: '',
+            repo: 'repo',
+            technologies: 'Flask, Python, React, JavaScript, NodeJS'
+        },
+        {
+            image: 'blog',
+            title: 'Typewriter Blog4',
+            live: 'abc',
+            repo: '',
+            technologies: 'Flask, Python, React, JavaScript, NodeJS'
+        },
+        {
+            image: 'blog',
+            title: 'Typewriter Blog5',
+            live: 'abc',
+            repo: '',
+            technologies: 'Flask, Python, React, JavaScript, NodeJS'
+        },
     ]
     return (
         <>

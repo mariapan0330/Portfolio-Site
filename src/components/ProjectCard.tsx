@@ -12,11 +12,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, technologies, l
     const [liveRepo, setLiveRepo] = useState<React.ReactElement>(<p></p>)
 
     useEffect(() => {
-        if (live && !repo) {
+        if (live !== '' && repo === '') {
             setLiveRepo(<p className='project-card-links'><a href={live}>LIVE</a></p>)
-        } else if (!live && repo){
+        } else if (live === '' && repo !== ''){
             setLiveRepo(<p className='project-card-links'><a href={repo}>REPO</a></p>)
-        } else if (live && repo) {
+        } else if (live !== '' && repo !== '') {
             setLiveRepo(<p className='project-card-links'><a href={live}>LIVE</a> | <a href={repo}>REPO</a></p>)
         }
     }, [])
@@ -26,8 +26,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, technologies, l
     <div className="project-card">
         <img src={require(`../images/projects/${image}.png`)} alt={title} className='project-card-image'/>
         <h1 className='project-card-title'>{title}</h1>
-        {liveRepo}
-        <p className='project-card-technologies'>{technologies}</p>
+        {/* {liveRepo} */}
+        <p className='project-card-links'>
+            <a href={live}>LIVE</a>
+            <a href={repo}>REPO</a>
+            </p>
+        <p className='project-card-tech'>{technologies}</p>
     </div>
     </>
   )
