@@ -1,5 +1,71 @@
+.projects-flex {
+    display: flex;
+    height:100vh;
+    flex-direction: column;
+    max-height: fit-content;
+}
+
 #projects {
-    z-index: 90;
-    position: relative;
-    /* background-color: rgb(55, 55, 103); */
+    background-color: rgb(25, 13, 60);
+    color:gold;
+    padding-top: 4vw;
+    padding-right:6vw;
+    display: flex;
+    min-height: 100vh;
+    max-height: fit-content;
+}
+
+.projects-hero-text {
+    margin-block-start:0;
+    text-align: right;
+    /* flex-direction: column; */
+    font-size: 6vw;
+    font-weight: normal;
+    /* font-family: 'Silkscreen', monospace; MC */
+    /* font-family: 'Nabla', monospace; 3d */
+    font-family: 'Press Start 2P', monospace; /* Nice */
+    text-shadow: 
+    10px 10px rgb(202, 119, 18),
+    20px 20px rgb(180, 23, 23);
+}
+
+@media screen and (max-width: 1000px){
+    .projects-hero-text {
+        font-size: 10vw;
+    }
+}
+
+
+.project-card {
+    top:0;
+    font-weight: bold;
+    font-family: 'Silkscreen', monospace;
+    background-image: url('../images/projects/background.png');
+    background-size: cover;
+    color: rgb(49, 47, 63);
+    background-repeat: no-repeat;
+    width:30vw;
+    height:40vw;
+    /* background-color: white; */
+    line-height: 100%;
+}
+
+.project-card-image {
+    padding-top: 7%;
+    width: 90%;
+}
+
+.project-card-title {
+    padding-top: 5%;
+    font-size: 2rem;
+
+}
+
+.project-card-links {
+    font-size: 1.5rem;
+}
+
+.projects-carousel-button {
+    background-color: red;
+    height:30vw;
 }

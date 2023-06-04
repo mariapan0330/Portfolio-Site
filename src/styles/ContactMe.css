@@ -1,4 +1,7 @@
 #contactme {
     z-index: 90;
     position: relative;
+    background-color: rgb(13, 22, 60);
+    /* background-color: rgb(25, 13, 60); */
+    color:white
 }
