@@ -1,21 +1,23 @@
 .projects-flex {
     display: flex;
-    height:100vh;
+    min-height: 100vh;
     flex-direction: column;
-    max-height: fit-content;
 }
 
 #projects {
     background-color: rgb(25, 13, 60);
     color:gold;
-    padding-top: 4vw;
-    padding-right:6vw;
+    /* padding-top: 4vw; */
+    /* padding-right:6vw; */
+    padding: 4vw 6vw 0 6vw;
     display: flex;
     min-height: 100vh;
     max-height: fit-content;
 }
 
 .projects-hero-text {
+    line-height: 0;
+    padding-top: 3vw;
     margin-block-start:0;
     text-align: right;
     /* flex-direction: column; */
@@ -40,18 +42,24 @@
     top:0;
     font-weight: bold;
     font-family: 'Silkscreen', monospace;
-    background-image: url('../images/projects/background.png');
-    background-size: cover;
+    /* background-image: url('../images/projects/background.png'); */
+    /* background-size:auto; */
+
     color: rgb(49, 47, 63);
     background-repeat: no-repeat;
     width:30vw;
-    height:40vw;
-    /* background-color: white; */
+    /* height:30vw; */
     line-height: 100%;
+    padding: 4vw 3vw;
+    border-radius: 1.5vw;
+    margin:0vw 2vw;
+    background-color: rgb(223, 223, 223);
+}
+.project-card:hover {
+    background-color: white;
 }
 
 .project-card-image {
-    padding-top: 7%;
     width: 90%;
 }
 
@@ -65,7 +73,33 @@
     font-size: 1.5rem;
 }
 
-.projects-carousel-button {
-    background-color: red;
-    height:30vw;
+.project-card-links > a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(49, 47, 63);
+    text-shadow: 2px 2px gold;
+}
+
+.project-card-links > a:hover {
+    text-shadow: 2px 2px rgb(202, 119, 18);
+}
+
+.projects-carousel-btn-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.projects-carousel-btn {
+    font-family: 'Silkscreen', monospace;
+    font-size: 5vw;
+    margin:1vw;
+    width:50vw;
+    border-radius: 0.5vw;
+}
+
+.projects-carousel-btn:hover {
+    cursor: pointer;
+    /* color: rgb(202, 119, 18); */
+    text-shadow: 4px 4px rgb(202, 98, 18);
+    background-color: rgb(39, 23, 85);
 }

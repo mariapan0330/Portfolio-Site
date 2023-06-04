@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, technologies, l
     <div className="project-card">
         <img src={require(`../images/projects/${image}.png`)} alt={title} className='project-card-image'/>
         <h1 className='project-card-title'>{title}</h1>
-        <p className='project-card-links'>{liveRepo}</p>
+        {liveRepo}
         <p className='project-card-technologies'>{technologies}</p>
     </div>
     </>

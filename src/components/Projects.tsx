@@ -24,7 +24,6 @@ const Projects: React.FC = () => {
         <div className="projects-flex" id='projects'>
             <h1 className='projects-hero-text'>PROJECTS</h1>
             <ProjectCarousel projects={projects} />
-            <h1>test</h1>
         </div>
         </>
     )

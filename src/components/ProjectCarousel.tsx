@@ -16,17 +16,19 @@ interface ProjectCarouselProps {
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
   return (
     <div className="projects-carousel">
-        <div className="projects-carousel-cards">
-            <ProjectCard
-                image={projects[0].image}
-                title={projects[0].title}
-                live={projects[0].live}
-                repo={projects[0].repo}
-                technologies={projects[0].technologies}
-                />
-        </div>
-        <button className='projects-carousel-button'>&lt;</button>
-        <button className='projects-carousel-button'>&gt;</button>
+      <div className="projects-carousel-cards">
+          <ProjectCard
+              image={projects[0].image}
+              title={projects[0].title}
+              live={projects[0].live}
+              repo={projects[0].repo}
+              technologies={projects[0].technologies}
+              />
+      </div>
+      <div className="projects-carousel-btn-flex">
+        <h1 className='projects-carousel-btn'>&lt;&lt;&lt;</h1>
+        <h1 className='projects-carousel-btn'>&gt;&gt;&gt;</h1>
+      </div>
     </div>
   )
 }
