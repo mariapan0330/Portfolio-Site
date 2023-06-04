@@ -162,7 +162,6 @@
     text-align: start;
     z-index: 89;
     margin-top: 3vw;
-    /* margin-left: 6vw;  */
     padding: 0 1vw; /* in this font (B. Swash), letters get cut off to the left */
     font-size: 8vw;
     font-family: 'Berkshire Swash', sans-serif; /* nice in lowercase */
