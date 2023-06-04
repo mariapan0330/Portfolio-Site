@@ -24,6 +24,7 @@ const About: React.FC = () => {
     const [animateTetris, setAnimateTetris] = useState<boolean>(false)
     const [currHobby, setCurrHobby] = useState<string>('')
     const [currTetris, setCurrTetris] = useState<string>('i')
+    const [o, setO] = useState<boolean>(false)
     const tetrisPieces:string[] = ['t', 's', 'z', 'l', 'i', 'o']
 
     useEffect(() => {
@@ -32,10 +33,12 @@ const About: React.FC = () => {
         setAnimateTetris(true)
         let num:number = Math.floor(Math.random()*6)
         setCurrTetris(tetrisPieces[num])
+        setO(currTetris === 'o')
+
         const tetrisTimeout: NodeJS.Timeout = setTimeout(() => {
           setAnimateTetris(false)
           setShowTetris(false)
-        }, 900)
+        }, 2000)
         return () => {
           clearTimeout(tetrisTimeout)
         }
@@ -93,7 +96,8 @@ const About: React.FC = () => {
         <div className="about-bg">
           {showTetris ? 
           <img src={require(`../images/tetris/tetris-${currTetris}.png`)}
-          className= {`${animateTetris ? 'tetris-piece-after' : 'tetris-piece-before'}`} /> : <></> }
+          className={`${animateTetris ? 'tetris-piece-after' : 'tetris-piece-before'}`}
+          /> : <></> }
           <div className="about-flex" id='about'>
                   <div className="about-col-1">
                       <Plx parallaxData={aboutPLX} className=''>

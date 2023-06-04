@@ -6,13 +6,15 @@
     right:0;
     top:-45vh;
     z-index: 3;
+    filter:saturate(60%);
 }
 
 .tetris-piece-after {
+    z-index: 3;
+    filter:saturate(60%);
     width:30vw;
     position: absolute;
     right:0;
-    top: 200vh;
-    z-index: 3;
-    transition-duration: 1900ms;
+    top: 70vh;
+    transition-duration: 1700ms;
 }
