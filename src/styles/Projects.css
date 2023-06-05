@@ -6,7 +6,7 @@
 
 #projects {
     background-color: rgb(25, 13, 60);
-    color:gold;
+    color: var(--yellow);
     /* padding-top: 4vw; */
     /* padding-right:6vw; */
     padding: 4vw 6vw 0 6vw;
@@ -27,8 +27,8 @@
     /* font-family: 'Nabla', monospace; 3d */
     font-family: 'Press Start 2P', monospace; /* Nice */
     text-shadow: 
-    10px 10px rgb(202, 119, 18),
-    20px 20px rgb(180, 23, 23);
+    10px 10px var(--orange),
+    20px 20px var(--red);
 }
 
 @media screen and (max-width: 1000px){
@@ -53,15 +53,20 @@
     border-radius: 1.5vw;
     margin: 0vw 2vw;
     background-color: white;
-}
-
-.project-card:hover {
-    /* background-color: white; */
-    box-shadow: -10px 10px 0 rgb(202, 119, 18);
+    box-shadow: 10px 10px 0 var(--orange);
 }
 
 .project-card-image {
     width: 90%;
+    border-radius: 0.2vw;
+}
+
+.project-card-image:hover {
+    /* width: 100%; */
+    box-shadow: 7px 7px 0px rgb(49, 47, 63);
+    border-radius: 0.1vw;
+    /* filter:brightness(110%); */
+    cursor:pointer;
 }
 
 .project-card-title {
@@ -82,11 +87,11 @@
     line-height: 100%;
     text-decoration: none;
     color: rgb(49, 47, 63);
-    text-shadow: 2px 2px gold;
+    text-shadow: 2px 2px var(--yellow);
 }
 
 .project-card-links > a:hover {
-    text-shadow: 2px 2px rgb(202, 119, 18);
+    text-shadow: 2px 2px var(--orange);
     /* background-color: rgba(255, 217, 0, 0.357); */
     border-radius: 0.5vw;
 }
@@ -104,10 +109,6 @@
     display: flex;
 }
 
-/* .projects-carousel-btn-flex {
-    display: flex;
-    justify-content: space-around;
-} */
 
 .projects-carousel-btn {
     flex:1;
@@ -116,13 +117,35 @@
     padding: 20vh 0;
     border-radius: 0.5vw;
     user-select: none;
-    /* filter:grayscale(90%) */
-    filter:opacity(0%);
+    filter: opacity(100%);
     cursor: pointer;
-    /* cursor: default; */
 }
 
 .projects-carousel-btn:hover {
-    text-shadow: 4px 4px rgb(202, 98, 18);
+    text-shadow: 4px 4px var(--orange);
     background-color: rgb(39, 23, 85);
+}
+
+
+.img-enlarged-container {
+    cursor: pointer;
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.489);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: 999;
+}
+
+.img-enlarged {
+    position:fixed;
+    top: 10vh;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 1vw;
+    box-shadow: 0 0 10px black;
 }

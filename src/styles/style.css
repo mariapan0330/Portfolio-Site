@@ -4,6 +4,9 @@ html, body {
   
 #root {
 height: 100vh;
+--yellow: gold;
+--orange: rgb(202, 119, 18);
+--red: rgb(180, 23, 23);
 }
 
 .component {

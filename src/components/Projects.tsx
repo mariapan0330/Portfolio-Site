@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Projects.css'
 import ProjectCarousel from './ProjectCarousel';
 

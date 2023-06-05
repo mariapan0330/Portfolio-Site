@@ -56,6 +56,7 @@
     border-radius: 1vw;
     border: 10px solid white;
     box-shadow: 0 0 10px rgba(86, 82, 119, 0.726);
+    filter: brightness(120%) saturate(120%);
 }
 
 .about-image{

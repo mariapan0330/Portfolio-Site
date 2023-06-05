@@ -41,7 +41,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
     <div className="projects-carousel">
       <h1 
         className='projects-carousel-btn' 
-        style={continueL ? {filter:'opacity(100%)'} : {filter:'opacity(0%)', cursor:'default'}}
+        style={continueL ? {} : {filter:'opacity(0%)', cursor:'default'}}
         onClick={continueL ? ()=>{handleBackward()} : ()=>{console.log('noback', startIdx, endIdx)}}
         >
           &lt;</h1>
@@ -60,7 +60,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
       <h1 
         className='projects-carousel-btn' 
         onClick={continueR ? ()=>{handleForward()} : ()=>{console.log('noforw', startIdx, endIdx)}} 
-        style={continueR ? {filter:'opacity(100%)'} : {filter:'opacity(0%)', cursor:'default'}}
+        style={continueR ? {} : {filter:'opacity(0%)', cursor:'default'}}
         >
           &gt;</h1>
     </div>
