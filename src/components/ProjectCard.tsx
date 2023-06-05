@@ -34,8 +34,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, technologies, l
         <h1 className='project-card-title'>{title}</h1>
         {/* {liveRepo} */}
         <p className='project-card-links'>
-            {hasLive && <a href={live}>LIVE</a>}
-            {hasRepo && <a href={repo}>REPO</a>}
+            {live && <a href={live} target='_blank'>LIVE</a>}
+            {live && repo && ' | '}
+            {repo && <a href={repo} target='_blank'>REPO</a>}
             </p>
         <p className='project-card-tech'>{technologies}</p>
     </div>

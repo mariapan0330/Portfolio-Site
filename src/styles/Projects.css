@@ -49,11 +49,12 @@
     background-repeat: no-repeat;
     width:30vw;
     /* height:30vw; */
-    padding: 2vw 1vw;
+    padding: 2vw 2vw;
     border-radius: 1.5vw;
-    margin:0vw 2vw;
+    margin: 0vw 2vw;
     background-color: white;
 }
+
 .project-card:hover {
     /* background-color: white; */
     box-shadow: -10px 10px 0 rgb(202, 119, 18);

@@ -12,39 +12,39 @@ const Projects: React.FC = () => {
     
     const projects = [
         {
-            image: 'blog',
-            title: 'Typewriter Blog1',
-            live: 'abc',
-            repo: 'repo',
-            technologies: 'Flask, Python, React, JavaScript, NodeJS'
-        },
-        {
-            image: 'blog',
-            title: 'Typewriter Blog2',
-            live: 'abc',
-            repo: 'repo',
-            technologies: 'Flask, Python, React, JavaScript, NodeJS'
-        },
-        {
-            image: 'blog',
-            title: 'Typewriter Blog3',
+            image: 'customer contact',
+            title: 'Customer Contact Form',
             live: '',
-            repo: 'repo',
-            technologies: 'Flask, Python, React, JavaScript, NodeJS'
+            repo: 'https://github.com/mariapan0330/customer-contact-form',
+            technologies: 'React, JavaScript, NodeJS, JSX, CSS, NodeJS'
+        },
+        {
+            image: 'escape game',
+            title: 'Escape Game',
+            live: '',
+            repo: 'https://github.com/mariapan0330/Escape-Game',
+            technologies: 'Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL, Github, VSCode'
+        },
+        {
+            image: 'weather',
+            title: 'Weather Application',
+            live: 'https://stalwart-tiramisu-dee856.netlify.app/',
+            repo: 'https://github.com/mariapan0330/react-weather-app',
+            technologies: 'Flask, React, Python, JavaScript, JSX, CSS, NodeJS, Open Weather API'
         },
         {
             image: 'blog',
-            title: 'Typewriter Blog4',
-            live: 'abc',
-            repo: '',
-            technologies: 'Flask, Python, React, JavaScript, NodeJS'
+            title: 'Typewriter Blog',
+            live: '',
+            repo: 'https://github.com/mariapan0330/React-Social-Media',
+            technologies: 'Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL'
         },
         {
-            image: 'blog',
-            title: 'Typewriter Blog5',
-            live: 'abc',
-            repo: '',
-            technologies: 'Flask, Python, React, JavaScript, NodeJS'
+            image: 'phonebook',
+            title: 'Big Phonebook',
+            live: 'https://gifted-radial-rugby.glitch.me/',
+            repo: 'https://github.com/mariapan0330/Phonebook',
+            technologies: 'Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL'
         },
     ]
     return (
