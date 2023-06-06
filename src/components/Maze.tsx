@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Maze = () => {
+const Maze: React.FC = () => {
   return (
     <div>Maze</div>
   )
 }
+
+export default Maze;
