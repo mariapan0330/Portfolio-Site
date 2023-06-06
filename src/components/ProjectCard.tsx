@@ -41,7 +41,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, technologies, l
     </div>
     {enlargeImg && 
         <div className="img-enlarged-container" onClick={() => handleImgClose()}>
-            <img src={require(`../images/projects/${image}.png`)} className='img-enlarged' />
+            <img 
+            src={require(`../images/projects/${image}.png`)} 
+            className='img-enlarged'
+            title='Click anywhere to close'
+             />
         </div>
     }
     </>

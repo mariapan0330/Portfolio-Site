@@ -120,7 +120,7 @@ const About: React.FC = () => {
                           <div id="about-skills-title">
                                   Skills
                           </div>
-                          {/* Include Skills List component */}
+                          {/* Skills List component */}
                           <SkillsList />
                       </div>
                   </div>
