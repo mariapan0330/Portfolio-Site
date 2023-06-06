@@ -1,0 +1,61 @@
+.XP-card {
+    top:0;
+    font-weight: bold;
+    font-family: 'Silkscreen', monospace;
+    /* background-image: url('../images/XPs/background.png'); */
+    /* background-size:auto; */
+
+    color: rgb(49, 47, 63);
+    background-repeat: no-repeat;
+    width:30vw;
+    /* height:30vw; */
+    padding: 2vw 2vw;
+    border-radius: 1.5vw;
+    margin: 0vw 2vw;
+    background-color: white;
+    box-shadow: 10px 10px 0 var(--orange);
+}
+
+.XP-card-image {
+    width: 90%;
+    border-radius: 0.2vw;
+}
+
+.XP-card-image:hover {
+    /* width: 100%; */
+    box-shadow: 7px 7px 0px rgb(49, 47, 63);
+    border-radius: 0.1vw;
+    /* filter:brightness(110%); */
+    cursor:pointer;
+}
+
+.XP-card-title {
+    padding-top: 5%;
+    font-size: 2vw;
+    line-height: 100%;
+}
+
+.XP-card-links {
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: space-evenly;
+    /* width:50%; */
+}
+
+.XP-card-links > a {
+    width:100%;
+    line-height: 100%;
+    text-decoration: none;
+    color: rgb(49, 47, 63);
+    text-shadow: 2px 2px var(--yellow);
+}
+
+.XP-card-links > a:hover {
+    text-shadow: 2px 2px var(--orange);
+    /* background-color: rgba(255, 217, 0, 0.357); */
+    border-radius: 0.5vw;
+}
+
+.XP-card-tech {
+    font-size: 0.8vw;
+}

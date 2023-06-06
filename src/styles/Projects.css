@@ -6,7 +6,6 @@
 
 #projects {
     background-color: rgb(25, 13, 60);
-    color: var(--yellow);
     /* padding-top: 4vw; */
     /* padding-right:6vw; */
     padding: 4vw 6vw 0 6vw;
@@ -15,7 +14,8 @@
     max-height: fit-content;
 }
 
-.projects-hero-text {
+.arcade-theme-hero-text {
+    color: var(--yellow);
     cursor:default;
     line-height: 0;
     padding: 4vw 0 2vw;
@@ -113,6 +113,7 @@
 
 .projects-carousel-btn {
     flex:1;
+    color: var(--yellow);
     font-family: 'Silkscreen', monospace;
     font-size: 5vw;
     padding: 20vh 0;

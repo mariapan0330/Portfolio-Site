@@ -50,7 +50,7 @@ const Projects: React.FC = () => {
     return (
         <>
         <div className="projects-flex" id='projects'>
-            <h1 className='projects-hero-text'>PROJECTS</h1>
+            <h1 className='arcade-theme-hero-text'>PROJECTS</h1>
             <ProjectCarousel projects={projects} />
         </div>
         </>

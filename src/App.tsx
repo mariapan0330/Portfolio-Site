@@ -7,6 +7,7 @@ import RightLeaf from './components/RightLeaf'
 import About from './components/About'
 import Projects from './components/Projects'
 import ContactMe from './components/ContactMe'
+import { Experience } from './components/Experience';
 
 const App:React.FC = () => {
 
@@ -19,6 +20,7 @@ const App:React.FC = () => {
       <Navbar />
       <About />
       <Projects />
+      <Experience />
       <ContactMe />
     </div>
     </>

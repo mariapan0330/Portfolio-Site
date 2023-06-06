@@ -1,0 +1,12 @@
+#xp {
+    background-color: rgb(25, 13, 60);
+    padding: 4vw 6vw 0 6vw;
+    display: flex;
+    min-height: 100vh;
+    max-height: fit-content;
+    flex-direction: column;
+}
+
+.xp-hero-text {
+    text-align: left;
+}
