@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
             <li><HashLink className='navLinks' to="#home" ><h1>Home</h1></HashLink></li>
             <li><HashLink className='navLinks' to="#about" ><h1>About</h1></HashLink></li>
             <li><HashLink className='navLinks' to="#projects" ><h1>Projects</h1></HashLink></li>
+            <li><HashLink className='navLinks' to="#xp" ><h1>Experience</h1></HashLink></li>
             <li><HashLink className='navLinks' to="#contactme" ><h1>Contact Me</h1></HashLink></li>
         </ul>
         </div>

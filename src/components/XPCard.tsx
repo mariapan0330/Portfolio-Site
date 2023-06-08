@@ -3,13 +3,14 @@ import '../styles/XPCard.css'
 
 interface XPCardProps {
     image: string;
-    title: string;
-    live?: string;
-    repo?: string;
-    technologies: string;
+    position: string;
+    company: string;
+    date: string;
+    description: string;
 }
 
-const XPCard: React.FC<XPCardProps> = ({ image, title, technologies, live, repo }) => {
+const XPCard: React.FC<XPCardProps> = ({ image, position, company, date, description }) => {
+    const [isExpanded, setIsExpanded] = useState<boolean>(false)
     const [enlargeImg, setEnlargeImg] = useState<boolean>(false)
     const handleImgOpen = () => {
         setEnlargeImg(true)
@@ -24,31 +25,40 @@ const XPCard: React.FC<XPCardProps> = ({ image, title, technologies, live, repo 
 
   return (
     <>
-    <div className="XP-card">
+    <div className="xp-item-container">
+    <div className="xp-line-container">
         <img 
-            // src={require(`../images/experience/${image}.png`)} 
-            alt={title} 
-            className='XP-card-image'
-            onClick={() => {handleImgOpen()}}
-            />
-        <h1 className='XP-card-title'>{title}</h1>
-        {/* {liveRepo} */}
-        <p className='XP-card-links'>
-            {live && <a href={live} target='_blank'>LIVE</a>}
-            {live && repo && ' | '}
-            {repo && <a href={repo} target='_blank'>REPO</a>}
-            </p>
-        <p className='XP-card-tech'>{technologies}</p>
+            src={require('../images/experience/xp square.png')} 
+            className='xp-square' 
+            style={isExpanded ? {filter: 'drop-shadow(0px 0px 20px white)'} : {}}
+            onClick={()=>{setIsExpanded(e => !e)}}/>
+        <img src={require('../images/experience/xp line.png')} className='xp-line' />
     </div>
-    {enlargeImg && 
-        <div className="img-enlarged-container" onClick={() => handleImgClose()}>
-            <img 
-            // src={require(`../images/experience/${image}.png`)} 
-            className='img-enlarged'
-            title='Click anywhere to close'
-             />
+    <div className="xp-card-container">
+
+        <div className="xp-card">
+            {isExpanded && <img 
+                // src={require(`../images/experience/${image}.png`)} 
+                alt={position} 
+                className='xp-card-image'
+                onClick={() => {handleImgOpen()}}
+                />}
+            <div className='xp-card-title'>{position}</div>
+            <p className='xp-card-tech'>{company}</p>
+            <p className='xp-card-tech'>{date}</p>
+            {isExpanded && <p className='xp-card-tech'>{description}</p>}
         </div>
-    }
+        {enlargeImg && 
+            <div className="img-enlarged-container" onClick={() => handleImgClose()}>
+                <img 
+                // src={require(`../images/experience/${image}.png`)} 
+                className='img-enlarged'
+                title='Click anywhere to close'
+                />
+            </div>
+        }
+    </div>
+    </div>
     </>
   )
 }

@@ -2,6 +2,14 @@ import React, { useState } from 'react'
 import '../styles/Projects.css'
 import ProjectCarousel from './ProjectCarousel';
 
+type ProjectInfo = {
+    image: string;
+    title: string;
+    live: string;
+    repo: string;
+    technologies: string;
+}
+
 const Projects: React.FC = () => {
     // PLAN: Sort of jarring transition to 80s arcade game theme
     // "Deal in" project cards (might change because doesn't really fit theme)
@@ -10,7 +18,7 @@ const Projects: React.FC = () => {
         // middle: TITLE, LIVE | REPO links
         // bottom: Tech stack
     
-    const projects = [
+    const projects: ProjectInfo[] = [
         {
             image: 'customer contact',
             title: 'Customer Contact Form',

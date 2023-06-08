@@ -1,4 +1,4 @@
-.XP-card {
+.xp-card {
     top:0;
     font-weight: bold;
     font-family: 'Silkscreen', monospace;
@@ -16,12 +16,12 @@
     box-shadow: 10px 10px 0 var(--orange);
 }
 
-.XP-card-image {
+.xp-card-image {
     width: 90%;
     border-radius: 0.2vw;
 }
 
-.XP-card-image:hover {
+.xp-card-image:hover {
     /* width: 100%; */
     box-shadow: 7px 7px 0px rgb(49, 47, 63);
     border-radius: 0.1vw;
@@ -29,20 +29,19 @@
     cursor:pointer;
 }
 
-.XP-card-title {
-    padding-top: 5%;
+.xp-card-title {
     font-size: 2vw;
     line-height: 100%;
 }
 
-.XP-card-links {
+.xp-card-links {
     font-size: 1.5vw;
     display: flex;
     justify-content: space-evenly;
     /* width:50%; */
 }
 
-.XP-card-links > a {
+.xp-card-links > a {
     width:100%;
     line-height: 100%;
     text-decoration: none;
@@ -50,12 +49,46 @@
     text-shadow: 2px 2px var(--yellow);
 }
 
-.XP-card-links > a:hover {
+.xp-card-links > a:hover {
     text-shadow: 2px 2px var(--orange);
     /* background-color: rgba(255, 217, 0, 0.357); */
     border-radius: 0.5vw;
 }
 
-.XP-card-tech {
+.xp-card-tech {
     font-size: 0.8vw;
+}
+
+
+
+.xp-line-container {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.xp-line {
+    width:25%;
+    height:35vh;
+    position: relative;
+    top:30vh
+}
+
+.xp-square {
+    width:25%;
+    position: relative;
+    top:30vh;
+    z-index: 1;
+}
+
+.xp-square:hover {
+    filter: drop-shadow(0px 0px 10px white);
+    cursor: pointer;
+}
+
+.xp-card-container {
+    flex:1;
+    position: relative;
+    top:10vh;
 }
