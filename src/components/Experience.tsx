@@ -14,6 +14,17 @@ type XPInfo = {
   description: React.JSX.Element;
 }
 
+type PLXItem = {
+  start: string | number;
+  end: string | number;
+  duration?: string | number;
+  properties: {
+    startValue: number;
+    endValue: number;
+    property: string;
+  }[];
+}
+
 const Experience:React.FC = () => {
 
   const experiences: XPInfo[] = [
@@ -98,13 +109,42 @@ const Experience:React.FC = () => {
     },
   ]
 
+  const experienceTitlePLX: PLXItem[] = [
+    {
+        // start moving when I am at [start], reach end position when I'm at [end]
+      start: '215vh',
+      end: '300vh',
+      properties: [
+        //   starts 200px to the right of its normal placement and at 0% opacity
+        { startValue: 100, endValue: 0, property: "translateX" },
+        { startValue: 0, endValue: 1, property: 'opacity' },
+      ],
+    },
+  ]
+
+  // todo: make this work
+  const timelinePLX: PLXItem[] = [
+    // *** WHEN THE USER SCROLLS IN, FADE UP & IN ***
+    {
+        // start moving when I am at [start], reach end position when I'm at [end]
+      start: '140vh', end: '200vh', 
+      properties: [
+        //   starts 300px below and at 0% opacity
+        { startValue: 300, endValue: 0, property: "translateY" },
+        { startValue: 0, endValue: 1, property: 'opacity' },
+      ],
+    },
+  ]
+
   return (
     <>
     <Maze />
     <div className='' id='xp'>
+        <Plx parallaxData={experienceTitlePLX}>
         <div className="arcade-theme-hero-text xp-hero-text">
         Experience
         </div>
+        </Plx>
         {experiences.map((val, i) =>
             <XPCard 
             images={val.images}
