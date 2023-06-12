@@ -1,5 +1,5 @@
 #xp {
-    background-color: rgb(25, 13, 60);
+    background-color: var(--arcade-bg);
     padding: 4vw 6vw;
     display: flex;
     min-height: 100vh;

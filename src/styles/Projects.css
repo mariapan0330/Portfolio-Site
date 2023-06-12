@@ -5,7 +5,7 @@
 }
 
 #projects {
-    background-color: rgb(25, 13, 60);
+    background-color: var(--arcade-bg);
     /* padding-top: 4vw; */
     /* padding-right:6vw; */
     padding: 4vw 6vw 0 6vw;
