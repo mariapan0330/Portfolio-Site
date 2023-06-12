@@ -104,6 +104,7 @@ const About: React.FC = () => {
                           <div id="about-hero-text" onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>
                               About
                           </div>
+                          <h2 className='about-p resume-p'><a className="resume-link emphasis" href={require('../images/Maria Panagos Resume.pdf')} target='_blank'>View my resume</a></h2>
                           <h2 className='about-p'>
                           &emsp; Hi there! I'm Maria, friendly neighborhood software developer with a background in&nbsp;
                           <span className='emphasis' style={{cursor:'auto'}} onMouseEnter={(e)=>{handleHobbyEnter(e,'')}}>psychology</span>{'\u00A0'}

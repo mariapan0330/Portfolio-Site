@@ -14,11 +14,8 @@ const IAm: React.FC = () => {
         'a creator.',
         'a statistician.',
         // 'big brained.',
-        // 'Batman.',
     ]
-    const [iAm, setIAm] = useState<string>("I am ")
     const [word, setWord] = useState<string>(words[0])
-    const [isWhite, setIsWhite] = useState<boolean>(true)
     // white: '#aecebd', green: '#3b4f44'
     const [myColor, setMyColor] = useState<string>('#3b4f44') // default green
 
@@ -45,11 +42,11 @@ const IAm: React.FC = () => {
         <>
         <div id='description'>
             <div className='empty-col'></div>
-            <h1 className='middle-column'>{iAm}
-                <span
+            <h1 className='middle-column'>I am <span
                     className={`description-word fading`}
                     style={{color: myColor}}
-                    >{word}</span></h1>
+                    >{word}</span>
+            </h1>
             <div className='empty-col'></div>
         </div>
         </>
