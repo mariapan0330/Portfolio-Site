@@ -52,7 +52,12 @@ const Experience:React.FC = () => {
       position:'Software Developer',
       company:'Coding Temple',
       date:'July 2022 - Sept 2022',
-      summary: <>Took a 10-week deep-dive into software development.</>,
+      summary: <>Took a 10-week <a
+      href='https://www.credly.com/badges/c19b6df5-5dd4-415e-aaaf-fd1f16b1d5d8/linked_in?t=rixz72'
+      target='_blank'
+      className='xp-link'
+      >deep-dive</a> into software development.</>,
+      
       description:
       <>
       - Developed a blog web application that used Flask with SQLAlchemy to save user data in a PostgreSQL database and created Flask API endpoints which allowed authenticated users to access this data.
@@ -61,11 +66,7 @@ const Experience:React.FC = () => {
       - Handled the retrieved data with React and Node.js to create an intuitive UI that ensured a seamless experience for users creating a new profile, viewing other users’ profiles and creating, editing, and deleting their own posts.
       <br/>
       <br/>
-      - Crafted and hosted a weather application, connecting a public weather API and using Flask’s Jinja Templating to achieve an elegant UI with effective search functionality.
-      <br/>
-      <br/>
-      - Launched a Flask phonebook web application that allows authenticated users to create, retrieve, edit, and delete their entries. Hosted this project on Heroku and later migrated it to Glitch.
-
+      - Crafted and hosted a weather application, connecting a public weather API and using Flask’s Jinja Templating to achieve an elegant UI with effective search functionality. Hosted this project on Heroku and later migrated it to Netlify.
       </>
     },
     {

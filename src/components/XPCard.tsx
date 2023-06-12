@@ -62,8 +62,7 @@ const XPCard: React.FC<XPCardProps> = ({ images, position, company, summary, dat
             <div className='xp-card-title' onClick={()=>{setIsExpanded(e => !e)}}>{position}</div>
             <p className='xp-card-tech'>{company}</p>
             <p className='xp-card-tech'>{date}</p>
-            <p className='xp-card-tech'>{summary}</p>
-            {isExpanded && <p className='xp-card-desc'>{description}</p>}
+            {isExpanded? <p className='xp-card-desc'>{description}</p> : <p className='xp-card-tech'>{summary}</p>}
         </div>
         {enlargeImg && images &&
             <div className="img-enlarged-container" onClick={() => handleImgClose()}>

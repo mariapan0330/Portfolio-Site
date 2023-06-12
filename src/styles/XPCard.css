@@ -1,3 +1,9 @@
+.xp-item-container {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
 .xp-card {
     font-weight: bold;
     font-family: 'Silkscreen', monospace;
@@ -10,7 +16,7 @@
     /* height:30vw; */
     padding: 2vw 2vw;
     border-radius: 1.5vw;
-    margin: 25vh 2vw 0;
+    /* margin: 25vh 2vw 0; */
     background-color: white;
     box-shadow: 10px 10px 0 var(--orange);
 }
@@ -79,22 +85,22 @@
 
 .xp-line {
     width:25%;
-    height:50vh;
+    height:30vh;
     position: relative;
-    top:30vh
+    /* top:30vh */
 }
 
 .xp-extra-line {
     width:25%;
     height:100%;
     position: relative;
-    top:30vh
+    /* top:30vh */
 }
 
 .xp-square {
     width:25%;
     position: relative;
-    top:30vh;
+    /* top:30vh; */
     z-index: 1;
 }
 
@@ -106,5 +112,7 @@
 .xp-card-container {
     flex:1;
     position: relative;
-    top:0vh;
+    top:0;
+    align-items: start;
+    justify-content: left;
 }

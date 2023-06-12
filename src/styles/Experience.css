@@ -9,11 +9,9 @@
 
 .xp-hero-text {
     text-align: left;
+    margin: 0 0 20vh 0;
 }
 
-.xp-item-container {
-    display: flex;
-}
 
 .xp-end-line-flex {
     display: flex;
