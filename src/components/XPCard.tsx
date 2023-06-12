@@ -45,24 +45,28 @@ const XPCard: React.FC<XPCardProps> = ({ images, position, company, summary, dat
     </div>
     <div className="xp-card-container">
 
-        <div className="xp-card" 
-        // onClick={()=>{setIsExpanded(e => !e)}}
-        >
-            <div className="xp-card-images-container">
-            {isExpanded && images && 
+        <div className="xp-card">
+            <div 
+            className={images && isExpanded? "xp-card-images-container" : 'xp-card-closed'}
+            >
+            {images && 
             images.map(image => 
                 <img 
                     src={require(`../images/experience/${image}`)}
-                    alt={position} 
-                    className='xp-card-image'
+                    alt={position}
+                    className={isExpanded? 'xp-card-image' : 'xp-card-closed'}
+                    // className='xp-card-image'
                     onClick={() => {handleImgOpen(image)}}
                     />
                     )}
             </div>
-            <div className='xp-card-title' onClick={()=>{setIsExpanded(e => !e)}}>{position}</div>
-            <p className='xp-card-tech'>{company}</p>
-            <p className='xp-card-tech'>{date}</p>
-            {isExpanded? <p className='xp-card-desc'>{description}</p> : <p className='xp-card-tech'>{summary}</p>}
+            <div className='xp-card-position xp-link' onClick={()=>{setIsExpanded(e => !e)}}>{position}</div>
+            <p className='xp-card-company'>{company}</p>
+            <p className='xp-card-date'>{date}</p>
+            {isExpanded || <p className='xp-card-summary'>{summary}</p>}
+            <p className=
+            {isExpanded? 'xp-card-desc' : 'xp-card-closed'}
+            >{description}</p>
         </div>
         {enlargeImg && images &&
             <div className="img-enlarged-container" onClick={() => handleImgClose()}>

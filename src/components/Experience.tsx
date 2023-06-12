@@ -113,8 +113,7 @@ const Experience:React.FC = () => {
   const experienceTitlePLX: PLXItem[] = [
     {
         // start moving when I am at [start], reach end position when I'm at [end]
-      start: '215vh',
-      end: '300vh',
+      start: '215vh', end: '300vh',
       properties: [
         //   starts 200px to the right of its normal placement and at 0% opacity
         { startValue: 100, endValue: 0, property: "translateX" },
@@ -128,7 +127,7 @@ const Experience:React.FC = () => {
     // *** WHEN THE USER SCROLLS IN, FADE UP & IN ***
     {
         // start moving when I am at [start], reach end position when I'm at [end]
-      start: '140vh', end: '200vh', 
+      start: '215vh', end: '300vh', 
       properties: [
         //   starts 300px below and at 0% opacity
         { startValue: 300, endValue: 0, property: "translateY" },
@@ -146,6 +145,7 @@ const Experience:React.FC = () => {
         Experience
         </div>
         </Plx>
+        <Plx parallaxData={timelinePLX}>
         {experiences.map((val, i) =>
             <XPCard 
             images={val.images}
@@ -156,6 +156,7 @@ const Experience:React.FC = () => {
             last={val.last}
             description={val.description} />
         )}
+        </Plx>
     </div>
     </>
   )

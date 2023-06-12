@@ -2,6 +2,7 @@
     display: flex;
     align-items: start;
     justify-content: center;
+    --xp-card-transition: 700ms;
 }
 
 .xp-card {
@@ -23,14 +24,19 @@
 
 .xp-card-images-container {
     width: 30vw;
+    height:30vh;
+    margin-bottom:4vh;
+    transition-duration: var(--xp-card-transition);
 }
 
 .xp-card-image {
     max-width: 100%;
     max-height:30vh;
-    margin: 20px;
+    opacity: 100%;
+    margin: 2vh;
     border-radius: 0.2vw;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.459);
+    transition-duration: var(--xp-card-transition);
 }
 
 .xp-card-image:hover {
@@ -43,10 +49,19 @@
     cursor:pointer;
 }
 
-.xp-card-title {
+.xp-card-position {
     font-size: 2vw;
     line-height: 100%;
     cursor: pointer;
+}
+
+.xp-card-company {
+    font-size: 1.5vw;
+    line-height: 50%;
+}
+
+.xp-card-date, .xp-card-summary {
+    font-size: 1vw;
 }
 
 .xp-card-links {
@@ -71,8 +86,18 @@
 }
 
 .xp-card-desc {
-    font-size: 1vw;
+    font-size: .8vw;
     text-align: left;
+    /* height: 30vh; */
+    transition-duration: var(--xp-card-transition);
+}
+
+.xp-card-closed {
+    margin: 0;
+    opacity: 0%;
+    font-size: .8vw;
+    height: 0vh;
+    transition-duration: var(--xp-card-transition);
 }
 
 .xp-line-container {
