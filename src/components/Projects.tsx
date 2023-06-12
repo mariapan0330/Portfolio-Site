@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/Projects.css'
 import ProjectCarousel from './ProjectCarousel';
+import Plx from 'react-plx';
 
 type ProjectInfo = {
     image: string;
@@ -10,6 +11,17 @@ type ProjectInfo = {
     technologies: string;
 }
 
+type PLXItem = {
+    start: string | number;
+    end: string | number;
+    duration?: string | number;
+    properties: {
+      startValue: number;
+      endValue: number;
+      property: string;
+    }[];
+  }
+
 const Projects: React.FC = () => {
     // PLAN: Sort of jarring transition to 80s arcade game theme
     // "Deal in" project cards (might change because doesn't really fit theme)
@@ -17,6 +29,19 @@ const Projects: React.FC = () => {
         // top: image, plays gif on hover
         // middle: TITLE, LIVE | REPO links
         // bottom: Tech stack
+
+  const projectTitlePLX: PLXItem[] = [
+    {
+        // start moving when I am at [start], reach end position when I'm at [end]
+      start: '115vh',
+      end: '200vh',
+      properties: [
+        //   starts 200px to the LEFT of its normal placement
+        { startValue: -200, endValue: 0, property: "translateX" },
+        { startValue: 0, endValue: 1, property: 'opacity' },
+      ],
+    },
+  ]
     
     const projects: ProjectInfo[] = [
         {
@@ -58,7 +83,9 @@ const Projects: React.FC = () => {
     return (
         <>
         <div className="projects-flex" id='projects'>
-            <h1 className='arcade-theme-hero-text'>PROJECTS</h1>
+            <Plx parallaxData={projectTitlePLX}>
+                <h1 className='arcade-theme-hero-text projects-hero-text'>PROJECTS</h1>
+            </Plx>
             <ProjectCarousel projects={projects} />
         </div>
         </>

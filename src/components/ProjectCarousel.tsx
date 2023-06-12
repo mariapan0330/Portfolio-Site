@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ProjectCard from './ProjectCard';
+import Plx from 'react-plx'
 
 interface Project {
     image: string;
@@ -11,6 +12,17 @@ interface Project {
 
 interface ProjectCarouselProps {
     projects: Project[]
+}
+
+type PLXItem = {
+  start: string | number;
+  end: string | number;
+  duration?: string | number;
+  properties: {
+    startValue: number;
+    endValue: number;
+    property: string;
+  }[];
 }
 
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
@@ -36,8 +48,23 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
     console.log('back', startIdx, endIdx)
   }
 
+
+  const projectCarouselPLX: PLXItem[] = [
+    // *** WHEN THE USER SCROLLS IN, FADE UP & IN ***
+    {
+        // start moving when I am at [start], reach end position when I'm at [end]
+      start: '140vh', end: '200vh', 
+      properties: [
+        //   starts 300px below and at 0% opacity
+        { startValue: 300, endValue: 0, property: "translateY" },
+        { startValue: 0, endValue: 1, property: 'opacity' },
+      ],
+    },
+  ]
+
   
   return (
+    <Plx parallaxData={projectCarouselPLX}>
     <div className="projects-carousel">
       <h1 
         className='projects-carousel-btn' 
@@ -64,6 +91,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
         >
           &gt;</h1>
     </div>
+    </Plx>
   )
 }
 
