@@ -41,3 +41,14 @@
     top:30vh;
     z-index: 1;
 }
+
+.xp-link {
+    text-decoration: none;
+    color:rgb(67, 139, 120);
+}
+
+.xp-link:hover {
+    background-color:rgb(67, 139, 120);
+    color:white;
+    border-radius: 0.2vw;
+}

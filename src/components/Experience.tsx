@@ -5,11 +5,11 @@ import XPCard from './XPCard'
 import Plx from 'react-plx'
 
 type XPInfo = {
-  image?: string;
+  images?: string[];
   position: string;
   company: string;
   date: string;
-  summary: string;
+  summary: React.JSX.Element;
   last?: boolean;
   description: React.JSX.Element;
 }
@@ -21,7 +21,7 @@ const Experience:React.FC = () => {
       position:'Code Coach',
       company:'theCoderSchool Northshore',
       date:'Jan 2023 - present',
-      summary: 'Taught kids how to code in tutoring-style sessions.',
+      summary: <>Taught kids how to code in tutoring-style sessions.</>,
       description: 
       <>
       - Designed engaging and personalized lesson plans to teach students aged 7 to 15 to code in Scratch, Python, and JavaScript, and fostered curiosity and logical reasoning in both one-on-one and group settings.
@@ -37,11 +37,11 @@ const Experience:React.FC = () => {
       </>
     },
     {
-      // image:'software dev',
+      images:['escape game.png'],
       position:'Software Developer',
       company:'Coding Temple',
       date:'July 2022 - Sept 2022',
-      summary:'Took a 10-week deep-dive into software development.',
+      summary: <>Took a 10-week deep-dive into software development.</>,
       description:
       <>
       - Developed a blog web application that used Flask with SQLAlchemy to save user data in a PostgreSQL database and created Flask API endpoints which allowed authenticated users to access this data.
@@ -58,11 +58,15 @@ const Experience:React.FC = () => {
       </>
     },
     {
-      // image: 'Etsy shop',
+      images: ['etsy.png'],
       position: 'Small Business Owner',
       company: 'LittleBirdBigIdeas',
       date: 'July 2021 - Present',
-      summary: 'Started a shop selling my handmade crochet patterns.',
+      summary: <>Started an <a 
+          href='https://www.etsy.com/shop/LittleBirdBigIdeas' 
+          target='_blank' 
+          className='xp-link'>
+        Etsy shop</a> selling my crochet patterns.</>,
       description:
       <>
       - Established an Etsy shop with coherent branding and consistent, high-quality products achieved by implementing market research.
@@ -75,11 +79,11 @@ const Experience:React.FC = () => {
       </>
     },
     {
-      // image: 'Public Relations Officer',
+      images: ['PRO1.jpg', 'PRO2.jpg'],
       position: 'Public Relations Officer',
       company: 'Q Soc',
       date: 'December 2019 - May 2021',
-      summary: 'Handled graphic design and social media in a college-sponsored society.',
+      summary: <>Handled graphic design and social media in a college-sponsored society.</>,
       last: true,
       description:
       <>
@@ -103,7 +107,7 @@ const Experience:React.FC = () => {
         </div>
         {experiences.map((val, i) =>
             <XPCard 
-            image={val.image}
+            images={val.images}
             position={val.position} 
             company={val.company} 
             date={val.date}
@@ -111,17 +115,6 @@ const Experience:React.FC = () => {
             last={val.last}
             description={val.description} />
         )}
-        {
-        // <div className="xp-end-line-flex">
-        //   <div className="xp-end-line-container">
-        //       <img 
-        //           src={require('../images/experience/xp square.png')} 
-        //           className='xp-end-square' 
-        //           />
-        //       {/* <img src={require('../images/experience/xp line.png')} className='xp-line' /> */}
-        //   </div>
-        // </div>
-        }
     </div>
     </>
   )

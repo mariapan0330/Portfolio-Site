@@ -1,6 +1,5 @@
 .xp-card {
     font-weight: bold;
-    cursor: pointer;
     font-family: 'Silkscreen', monospace;
     /* background-image: url('../images/XPs/background.png'); */
     /* background-size:auto; */
@@ -16,14 +15,23 @@
     box-shadow: 10px 10px 0 var(--orange);
 }
 
+.xp-card-images-container {
+    width: 30vw;
+}
+
 .xp-card-image {
-    width: 90%;
+    max-width: 100%;
+    max-height:30vh;
+    margin: 20px;
     border-radius: 0.2vw;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.459);
 }
 
 .xp-card-image:hover {
     /* width: 100%; */
-    box-shadow: 7px 7px 0px rgb(49, 47, 63);
+    box-shadow: 
+        0 0 15px rgba(0, 0, 0, 0.459),
+        7px 7px 0px rgb(49, 47, 63);
     border-radius: 0.1vw;
     /* filter:brightness(110%); */
     cursor:pointer;
@@ -32,6 +40,7 @@
 .xp-card-title {
     font-size: 2vw;
     line-height: 100%;
+    cursor: pointer;
 }
 
 .xp-card-links {
