@@ -69,10 +69,10 @@ const XPCard: React.FC<XPCardProps> = ({ images, position, company, summary, dat
             >{description}</p>
         </div>
         {enlargeImg && images &&
-            <div className="img-enlarged-container" onClick={() => handleImgClose()}>
+            <div className="xp-card-img-enlarged-container" onClick={() => handleImgClose()}>
                 <img 
                 src={require(`../images/experience/${selectedImg}`)} 
-                className='img-enlarged'
+                className='xp-card-img-enlarged'
                 title='Click anywhere to close'
                 />
             </div>

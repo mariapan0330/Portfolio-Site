@@ -127,7 +127,7 @@ const Experience:React.FC = () => {
     // *** WHEN THE USER SCROLLS IN, FADE UP & IN ***
     {
         // start moving when I am at [start], reach end position when I'm at [end]
-      start: '215vh', end: '300vh', 
+      start: '215vh', end: '310vh', 
       properties: [
         //   starts 300px below and at 0% opacity
         { startValue: 300, endValue: 0, property: "translateY" },
@@ -140,23 +140,23 @@ const Experience:React.FC = () => {
     <>
     <Maze />
     <div className='' id='xp'>
-        <Plx parallaxData={experienceTitlePLX}>
+      <Plx parallaxData={experienceTitlePLX}>
         <div className="arcade-theme-hero-text xp-hero-text">
-        Experience
+        EXPERIENCE
         </div>
-        </Plx>
-        <Plx parallaxData={timelinePLX}>
-        {experiences.map((val, i) =>
-            <XPCard 
-            images={val.images}
-            position={val.position} 
-            company={val.company} 
-            date={val.date}
-            summary={val.summary}
-            last={val.last}
-            description={val.description} />
+      </Plx>
+      <Plx parallaxData={timelinePLX}>
+        {experiences.map((val) =>
+          <XPCard
+          images={val.images}
+          position={val.position}
+          company={val.company}
+          date={val.date}
+          summary={val.summary}
+          last={val.last}
+          description={val.description} />
         )}
-        </Plx>
+      </Plx>
     </div>
     </>
   )
