@@ -2,6 +2,69 @@
     z-index: 90;
     position: relative;
     background-color: var(--arcade-bg);
-    color:white
+    color:white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: fit-content;
 }
 
+.contact-form-flex {
+    display: flex;
+}
+
+.contact-form {
+    margin-top: 5vh;
+    background-color: white;
+    box-shadow: 10px 10px 0 var(--orange);
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8vw;
+    padding: 3vh 3vw;
+}
+
+.contact-form-title {
+    color: var(--red);
+    font-family: 'Press Start 2P', monospace;
+}
+
+.contact-item {
+    font-family: 'Silkscreen', monospace;
+    flex:1;
+    font-size: 1vw;
+    margin: 0 0 4vh;
+    padding: 1vw;
+    border: 2px solid var(--arcade-bg);
+    border-radius: 0.3vw;
+}
+
+.contact-form-error {
+    font-size: 1vw;
+    font-family: 'Silkscreen', monospace;
+    color: var(--orange)
+}
+
+.contact-submit-btn {
+    background-color: var(--yellow);
+    border: 2px solid var(--orange);
+    font-weight: bold;
+}
+
+.contact-submit-btn:hover {
+    background-color: var(--orange);
+    border: 2px solid var(--red);
+    cursor: pointer;
+}
+
+.empty-col {
+    flex: 3;
+}
+
+.error {
+    border: 2px solid var(--red)
+}
+
+.no-error {
+    border: 2px solid var(--arcade-bg);
+}

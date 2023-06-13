@@ -146,8 +146,9 @@ const Experience:React.FC = () => {
         </div>
       </Plx>
       <Plx parallaxData={timelinePLX}>
-        {experiences.map((val) =>
+        {experiences.map((val, i) =>
           <XPCard
+          key={`xpCard-${i}`}
           images={val.images}
           position={val.position}
           company={val.company}

@@ -50,8 +50,9 @@ const XPCard: React.FC<XPCardProps> = ({ images, position, company, summary, dat
             className={images && isExpanded? "xp-card-images-container" : 'xp-card-closed'}
             >
             {images && 
-            images.map(image => 
+            images.map((image,i) => 
                 <img 
+                    key={`xpImage-${i}`}
                     src={require(`../images/experience/${image}`)}
                     alt={position}
                     className={isExpanded? 'xp-card-image' : 'xp-card-closed'}
@@ -69,7 +70,10 @@ const XPCard: React.FC<XPCardProps> = ({ images, position, company, summary, dat
             >{description}</p>
         </div>
         {enlargeImg && images &&
-            <div className="xp-card-img-enlarged-container" onClick={() => handleImgClose()}>
+            <div 
+            className="xp-card-img-enlarged-container" 
+            onClick={() => handleImgClose()}
+            >
                 <img 
                 src={require(`../images/experience/${selectedImg}`)} 
                 className='xp-card-img-enlarged'
