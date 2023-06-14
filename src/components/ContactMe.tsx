@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import ContactInput from './ContactInput'
 import '../styles/ContactMe.css'
 
 // TODO: not a huge fan of this page, feels like it can be way optimized
 const ContactMe: React.FC = () => {
     const [name, setName] = useState<string>('')
-    const [nameError, setNameError] = useState<boolean>(false)
     const [email, setEmail] = useState<string>('')
-    const [emailError, setEmailError] = useState<boolean>(false)
     const [message, setMessage] = useState<string>('')
+
+    const [emailError, setEmailError] = useState<boolean>(false)
+    const [nameError, setNameError] = useState<boolean>(false)
     const [messageError, setMessageError] = useState<boolean>(false)
+    
     const [displayError, setDisplayError] = useState<boolean>(false)
 
     useEffect(() => {
@@ -52,19 +55,17 @@ const ContactMe: React.FC = () => {
 				<h1 className="arcade-theme-hero-text contact-hero-text">
           Contact Me
 				</h1>
-        <h2 className='resume-p'><a className="resume-link emphasis" href={require('../images/Maria Panagos Resume.pdf')} target='_blank'>View my resume</a></h2>
+        <h2 className='resume-p'>
+          <a 
+          className="resume-link emphasis" 
+          href={require('../images/Maria Panagos Resume.pdf')} 
+          target='_blank'>View my resume</a></h2>
         <div className='contact-form-flex'>
           <div className='empty-col' />
           <form className='contact-form'>
             <h1 className='contact-form-title'>Drop a message!</h1>
-            <input 
-              name='name' 
-              value={name} 
-              onChange={(e)=> setName(e.target.value)} 
-              placeholder='* Name' 
-              className=
-              {`contact-item ${nameError? 'error':''}`} 
-              />
+            {/* breaking inputs into ContactInput components */}
+            <ContactInput placeholder='Name' />
             <input 
               name='email' 
               value={email} 
