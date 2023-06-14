@@ -2,50 +2,30 @@ import React, { useState, useEffect } from 'react'
 import ContactInput from './ContactInput'
 import '../styles/ContactMe.css'
 
+interface FormValues {
+  username: string;
+  email: string;
+  message: string;
+}
+
 // TODO: not a huge fan of this page, feels like it can be way optimized
+// loosely following https://www.youtube.com/watch?v=tIdNeoHniEY
 const ContactMe: React.FC = () => {
-    const [name, setName] = useState<string>('')
-    const [email, setEmail] = useState<string>('')
-    const [message, setMessage] = useState<string>('')
 
-    const [emailError, setEmailError] = useState<boolean>(false)
-    const [nameError, setNameError] = useState<boolean>(false)
-    const [messageError, setMessageError] = useState<boolean>(false)
-    
-    const [displayError, setDisplayError] = useState<boolean>(false)
+    const [formValues, setFormValues] = useState<FormValues>({
+      username:'',
+      email:'',
+      message:'',
+    })
 
-    useEffect(() => {
-      setName(name)
-      setEmail(email)
-      setMessage(message)
-    }, [name, email, message, nameError, emailError, messageError])
+    const handleSubmit = (e:any) => {
+      e.preventDefault();
+      console.log("submitted:", formValues['username'], formValues['email'], formValues['message'],)
+    }
 
-    useEffect(() => {
-      setDisplayError(nameError || emailError || messageError)
-    }, [nameError, emailError, messageError])
-
-    // todo: find parameter type of 'e'
-    const handleContactSubmit = (e:any) => {
-      e.preventDefault()
-      
-      setNameError(name.length === 0)
-      setEmailError(email.length === 0)
-      setMessageError(message.length === 0)
-
-      if (name && email && message){
-        console.log("submitted:", name, email, message)
-        setName('')
-        setEmail('')
-        setMessage('')
-
-        setNameError(false)
-        setEmailError(false)
-        setMessageError(false)
-      } else {
-        console.log('missing a field')
-        setDisplayError(true)
-      }
-        
+    const onChange = (e:any) => {
+      // spreads out the form values, & for each value look up the targeted name and assign it to the targeted val
+      setFormValues({...formValues, [e.target.name]: e.target.value})
     }
 
 
@@ -62,33 +42,37 @@ const ContactMe: React.FC = () => {
           target='_blank'>View my resume</a></h2>
         <div className='contact-form-flex'>
           <div className='empty-col' />
-          <form className='contact-form'>
+          <form className='contact-form' onSubmit={e=>handleSubmit(e)}>
             <h1 className='contact-form-title'>Drop a message!</h1>
             {/* breaking inputs into ContactInput components */}
-            <ContactInput placeholder='Name' />
-            <input 
+            <ContactInput 
+              isArea={false}
+              name='username' 
+              type='text'
+              errorMsg='Please provide your name.'
+              placeholder='* Name' 
+              value={formValues['username']}
+              // value={username} 
+              onChange={onChange} />
+            <ContactInput 
+              isArea={false}
               name='email' 
-              value={email} 
-              onChange={(e)=> setEmail(e.target.value)} 
+              type='email'
+              errorMsg='Please provide your email address.' 
               placeholder='* Email' 
-              className=
-              {`contact-item ${emailError? 'error':''}`}
-              />
-            <input 
-              name='message' 
-              value={message} 
-              onChange={(e)=>{
-                setMessageError(message.length === 0)
-                setMessage(e.target.value)
-              }} 
+              value={formValues['email']}
+              // value={email} 
+              onChange={onChange} />
+            <ContactInput 
+              isArea={true}
+              name='message'
+              type='textarea'
+              errorMsg='Please enter your message.' 
               placeholder='* Message' 
-              className=
-              {`contact-item ${messageError? 'error':''}`} 
-              />
-            {displayError && 
-            <h1 className='contact-form-error'>Please fill out all the fields</h1>
-            }
-            <button className='contact-item contact-submit-btn' onClick={(e)=>{handleContactSubmit(e)}}>Submit</button>
+              value={formValues['message']}
+              // value={message} 
+              onChange={onChange} />
+            <button className='contact-item contact-submit-btn'>Submit</button>
           </form>
           <div className="empty-col" />
         </div>

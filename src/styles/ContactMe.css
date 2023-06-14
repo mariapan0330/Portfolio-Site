@@ -22,33 +22,31 @@
     flex-direction: column;
     border-radius: 0.8vw;
     padding: 3vh 3vw;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-form-title {
     color: var(--red);
     font-family: 'Press Start 2P', monospace;
+    margin-bottom:0;
 }
 
 .contact-item {
     font-family: 'Silkscreen', monospace;
     flex:1;
+    margin: 4vh 0 0;
     font-size: 1vw;
-    margin: 0 0 4vh;
     padding: 1vw;
     border: 2px solid var(--arcade-bg);
     border-radius: 0.3vw;
-}
-
-.contact-form-error {
-    font-size: 1vw;
-    font-family: 'Silkscreen', monospace;
-    color: var(--orange)
 }
 
 .contact-submit-btn {
     background-color: var(--yellow);
     border: 2px solid var(--orange);
     font-weight: bold;
+    width: 60%;
 }
 
 .contact-submit-btn:hover {
@@ -61,10 +59,18 @@
     flex: 3;
 }
 
-.error {
-    border: 2px solid var(--red)
+/* wow i didn't know about this before! */
+.contact-item:invalid ~ .contact-form-error {
+    display: block;
 }
 
-.no-error {
-    border: 2px solid var(--arcade-bg);
+.contact-form-error {
+    font-size: 1vw;
+    font-family: 'Silkscreen', monospace;
+    color: var(--orange);
+    display: none;
+}
+
+.contact-textarea{
+    resize: vertical;
 }
