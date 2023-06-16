@@ -14,7 +14,7 @@
 }
 
 .contact-form {
-    margin-top: 5vh;
+    margin: 5vh 0;
     background-color: white;
     box-shadow: 10px 10px 0 var(--orange);
     flex: 2;
@@ -28,6 +28,25 @@
 
 .contact-form-title {
     color: var(--red);
+    font-family: 'Press Start 2P', monospace;
+    margin-bottom:0;
+}
+
+.contact-form-subtitle, .contact-form-thank-you > p {
+    color: var(--orange);
+    font-size: 1.5rem;
+    line-height: 100%;
+    text-shadow: 2px 2px 0 var(--red);
+    text-shadow: none;
+    margin-bottom: 0;
+    font-family: 'Silkscreen', monospace;
+    font-weight: bold;
+}
+
+.contact-form-thank-you {
+    color: var(--red);
+    text-shadow: 5px 5px 0 var(--arcade-bg);
+    line-height: 140%;
     font-family: 'Press Start 2P', monospace;
     margin-bottom:0;
 }

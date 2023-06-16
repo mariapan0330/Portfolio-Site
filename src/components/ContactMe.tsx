@@ -17,10 +17,15 @@ const ContactMe: React.FC = () => {
       email:'',
       message:'',
     })
+    const [hasSubmitted, setHasSubmitted] = useState<boolean>(false)
 
     const handleSubmit = (e:any) => {
       e.preventDefault();
+      setHasSubmitted(true)
       console.log("submitted:", formValues['username'], formValues['email'], formValues['message'],)
+
+      // reset form fields
+      // setFormValues({ username: '', email: '', message: '' })
     }
 
     const onChange = (e:any) => {
@@ -39,41 +44,61 @@ const ContactMe: React.FC = () => {
           <a 
           className="resume-link emphasis" 
           href={require('../images/Maria Panagos Resume.pdf')} 
-          target='_blank'>View my resume</a></h2>
+          target='_blank'
+          title='Opens a new tab'
+          >View my resume</a>
+        </h2>
         <div className='contact-form-flex'>
           <div className='empty-col' />
-          <form className='contact-form' onSubmit={e=>handleSubmit(e)}>
-            <h1 className='contact-form-title'>Drop a message!</h1>
-            {/* breaking inputs into ContactInput components */}
-            <ContactInput 
-              isArea={false}
-              name='username' 
-              type='text'
-              errorMsg='Please provide your name.'
-              placeholder='* Name' 
-              value={formValues['username']}
-              // value={username} 
-              onChange={onChange} />
-            <ContactInput 
-              isArea={false}
-              name='email' 
-              type='email'
-              errorMsg='Please provide your email address.' 
-              placeholder='* Email' 
-              value={formValues['email']}
-              // value={email} 
-              onChange={onChange} />
-            <ContactInput 
-              isArea={true}
-              name='message'
-              type='textarea'
-              errorMsg='Please enter your message.' 
-              placeholder='* Message' 
-              value={formValues['message']}
-              // value={message} 
-              onChange={onChange} />
-            <button className='contact-item contact-submit-btn'>Submit</button>
+          { hasSubmitted ? 
+            <div className="contact-form">
+              <h1 className='contact-form-thank-you'>
+                Thank you, {`${formValues['username']}`}! 
+                <p>Your message has been submitted. <br/>
+                I usually respond within 1-2 business days.</p>
+                </h1>
+            </div>
+              :
+            <form className='contact-form' onSubmit={e=>handleSubmit(e)}>
+              <h1 className='contact-form-title'>Drop a message!</h1>
+              <p className='contact-form-subtitle'>
+                The following message will be emailed to me.
+                <br/>
+                You can also email me directly at maria.pan0330@gmail.com.
+                <br/>
+                I usually respond within 1-2 business days!
+              </p>
+              {/* breaking inputs into ContactInput components */}
+              <ContactInput 
+                isArea={false}
+                name='username' 
+                type='text'
+                errorMsg='Please provide your name.'
+                placeholder='* Name' 
+                value={formValues['username']}
+                // value={username} 
+                onChange={onChange} />
+              <ContactInput 
+                isArea={false}
+                name='email' 
+                type='email'
+                errorMsg='Please provide your email address.' 
+                placeholder='* Email' 
+                value={formValues['email']}
+                // value={email} 
+                onChange={onChange} />
+              <ContactInput 
+                isArea={true}
+                name='message'
+                type='textarea'
+                errorMsg='Please enter your message.' 
+                placeholder='* Message' 
+                value={formValues['message']}
+                // value={message} 
+                onChange={onChange} />
+              <button className='contact-item contact-submit-btn'>Submit</button>
           </form>
+          }
           <div className="empty-col" />
         </div>
 

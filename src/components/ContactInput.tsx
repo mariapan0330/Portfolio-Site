@@ -15,11 +15,12 @@ interface ContactInputProps {
 }
 
 const ContactInput:React.FC<ContactInputProps> = ({ isArea, name, type, errorMsg, value, onChange, placeholder }) => {
-    const [notFocused, setNotFocused] = useState<boolean>(false)
+    const [hasTried, setHasTried] = useState<boolean>(false)
+
     const InputComponent = isArea ? 'textarea' : 'input' // changes the html component to a textarea or input
 
-    const handleFocus = (e:any) => {
-        setNotFocused(true)
+    const handleLeaveField = (e:any) => {
+        setHasTried(true)
         console.log('you left')
     }
     
@@ -31,14 +32,15 @@ const ContactInput:React.FC<ContactInputProps> = ({ isArea, name, type, errorMsg
                 type={type}
                 value={value}
                 placeholder={placeholder}
-                className={`contact-item contact-textarea ${notFocused? 'not-focused':''}`}
+                className={`contact-item contact-textarea`}
                 required
                 onChange={e=>{onChange(e)}}
                 
-                // TODO: if you enter this field and leave it without entering valid information, toggle the 
-                onBlur={handleFocus}
+                // if you enter this field and leave it without entering valid information,
+                // allow the error msg to show (so it doesn't show up before they even have a chance to try)
+                onBlur={handleLeaveField}
                 />
-            <span className='contact-form-error'>{errorMsg}</span>
+            {hasTried && <span className='contact-form-error'>{errorMsg}</span>}
         </div>
     )
 }
