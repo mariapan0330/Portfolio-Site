@@ -122,7 +122,6 @@ const Experience:React.FC = () => {
     },
   ]
 
-  // todo: make this work
   const timelinePLX: PLXItem[] = [
     // *** WHEN THE USER SCROLLS IN, FADE UP & IN ***
     {

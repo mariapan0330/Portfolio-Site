@@ -8,6 +8,7 @@ import About from './components/About'
 import Projects from './components/Projects'
 import ContactMe from './components/ContactMe'
 import Experience from './components/Experience';
+import Footer from './components/Footer';
 
 const App:React.FC = () => {
 
@@ -22,6 +23,7 @@ const App:React.FC = () => {
       <Projects />
       <Experience />
       <ContactMe />
+      <Footer />
     </div>
     </>
   );

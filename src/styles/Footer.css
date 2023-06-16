@@ -1,0 +1,51 @@
+#footer {
+    display: flex;
+    flex-direction: column;
+    /* minimum height is 25vh */
+    min-height:25vh;
+    max-height: fit-content;
+    background-color: var(--arcade-bg);
+    color:white;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+    font-size: 2.5rem;
+    font-family: 'Silkscreen', monospace;
+}
+
+.footer-info {
+    background-color: rgb(15, 16, 25);
+    padding: 5vh 5vw;
+}
+
+
+.footer-repo-btn-container {
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: end;
+}
+
+.footer-repo-btn {
+    padding: 1vh 1vw;
+    border: 2px solid var(--yellow);
+    background-color: var(--orange);
+    border-radius: 0.5vw;
+}
+
+.footer-repo-btn > a {
+    text-decoration: none;
+    color:white;
+}
+
+.footer-repo-btn:hover {
+    border: 2px solid var(--orange);
+    background-color: var(--red);
+    cursor: pointer;
+}
+
+.end-of-site {
+    font-size: 1%;
+    text-align: left;
+    background-color: rgb(15, 16, 25);
+}
