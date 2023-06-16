@@ -1,16 +1,17 @@
-html, body {
-    height: 100vh;
+html,
+body {
+  height: 100vh;
 }
-  
+
 #root {
-height: 100vh;
---yellow: gold;
---orange: rgb(202, 119, 18);
---red: rgb(180, 23, 23);
---arcade-bg: rgb(25, 13, 60);
+  height: 100vh;
+  --yellow: gold;
+  --orange: rgb(202, 119, 18);
+  --red: rgb(180, 23, 23);
+  --arcade-bg: rgb(25, 13, 60);
 }
 
 .component {
-height: 100vh;
-width: 100%;
+  height: 100vh;
+  width: 100%;
 }

@@ -1,32 +1,32 @@
 .leaf-plx {
-    margin-top: 70px;
-    position: fixed;
-    z-index:100;
-    left:0;
-    top:0;
-    /* width: 100%; */
+  margin-top: 70px;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  /* width: 100%; */
 }
-
 
 .leaf-img {
-    z-index:100;
-    height:50vw;
-    filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435))
+  z-index: 100;
+  height: 50vw;
+  filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435));
 }
 
-#l-leaf-3, r-leaf-3 {
-    margin-top: 0px;
+#l-leaf-3,
+r-leaf-3 {
+  margin-top: 0px;
 }
 
-@media screen and (max-width:768px) {
-    #l-leaf-3 {
-        margin-top: 50px;
-    }   
-    #r-leaf-3 {
-        margin-top: 60px;
-    }
+@media screen and (max-width: 768px) {
+  #l-leaf-3 {
+    margin-top: 50px;
+  }
+  #r-leaf-3 {
+    margin-top: 60px;
+  }
 
-    /* .leaf-img {
+  /* .leaf-img {
         height:30vw
     } */
 }

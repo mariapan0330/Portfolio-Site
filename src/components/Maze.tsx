@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Maze: React.FC = () => {
-  return (
-    <div>Maze</div>
-  )
-}
+  return <div style={{ display: "none" }}>Maze</div>;
+};
 
 export default Maze;

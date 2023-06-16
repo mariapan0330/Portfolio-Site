@@ -1,20 +1,20 @@
 /* .emphasis{} is defined in About.css */
 
 .tetris-piece-before {
-    width:30vw;
-    position: absolute;
-    right:0;
-    top:-45vh;
-    z-index: 3;
-    filter:saturate(60%);
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  top: -45vh;
+  z-index: 3;
+  filter: saturate(60%);
 }
 
 .tetris-piece-after {
-    z-index: 3;
-    filter:saturate(60%);
-    width:30vw;
-    position: absolute;
-    right:0;
-    top: 70vh;
-    transition-duration: 1700ms;
+  z-index: 3;
+  filter: saturate(60%);
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  top: 70vh;
+  transition-duration: 1700ms;
 }

@@ -1,45 +1,44 @@
 #xp {
-    background-color: var(--arcade-bg);
-    padding: 4vw 6vw;
-    display: flex;
-    min-height: 100vh;
-    max-height: fit-content;
-    flex-direction: column;
+  background-color: var(--arcade-bg);
+  padding: 4vw 6vw;
+  display: flex;
+  min-height: 100vh;
+  max-height: fit-content;
+  flex-direction: column;
 }
 
 .xp-hero-text {
-    text-align: left;
-    margin: 0 0 20vh 0;
+  text-align: left;
+  margin: 0 0 20vh 0;
 }
 
-
 .xp-end-line-flex {
-    display: flex;
+  display: flex;
 }
 
 .xp-end-line-container {
-    flex-basis: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 
 .xp-end-square {
-    width:25%;
-    margin-bottom: 100%;
-    position: relative;
-    top:30vh;
-    z-index: 1;
+  width: 25%;
+  margin-bottom: 100%;
+  position: relative;
+  top: 30vh;
+  z-index: 1;
 }
 
 .xp-link {
-    text-decoration: none;
-    color:rgb(67, 139, 120);
+  text-decoration: none;
+  color: rgb(67, 139, 120);
 }
 
 .xp-link:hover {
-    background-color:rgb(67, 139, 120);
-    color:white;
-    border-radius: 0.2vw;
+  background-color: rgb(67, 139, 120);
+  color: white;
+  border-radius: 0.2vw;
 }

@@ -1,52 +1,52 @@
 #home-container {
-    z-index: 99;
-    position: relative;
-    top:200px;
+  z-index: 99;
+  position: relative;
+  top: 200px;
 }
 
-@media screen and (max-width: 1000px){
-    #home-container {
-        top: 70px;
-    }
+@media screen and (max-width: 1000px) {
+  #home-container {
+    top: 70px;
+  }
 }
 
-#hi-im, #main-name {
-    margin: 0;
+#hi-im,
+#main-name {
+  margin: 0;
 }
 
 #hi-im {
-    color: #161e16;
-    text-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
-    font-family: 'Dangrek', sans-serif; /* nice in lowercase */
-    position: absolute;
-    left: 29vw;
-    font-size: 3.5vw;
+  color: #161e16;
+  text-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
+  font-family: "Dangrek", sans-serif; /* nice in lowercase */
+  position: absolute;
+  left: 29vw;
+  font-size: 3.5vw;
 }
 
-@media screen and (max-width: 1000px){
-    #hi-im {
-        font-size: 6vw;
-    }
+@media screen and (max-width: 1000px) {
+  #hi-im {
+    font-size: 6vw;
+  }
 }
 
 #main-name {
-    font-size: 15vw;
-    font-family: 'Berkshire Swash', sans-serif; /* nice in lowercase */
-    font-weight: bolder;
+  font-size: 15vw;
+  font-family: "Berkshire Swash", sans-serif; /* nice in lowercase */
+  font-weight: bolder;
 
-    /* Clip the fixed image onto the text */
-    background-image: url('../images/rough-marker.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+  /* Clip the fixed image onto the text */
+  background-image: url("../images/rough-marker.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-
-@media screen and (max-width: 1000px){
-    #main-name {
-        font-size: 25vw;
-        /* background-color: red; */
-    }
+@media screen and (max-width: 1000px) {
+  #main-name {
+    font-size: 25vw;
+    /* background-color: red; */
+  }
 }
