@@ -5,7 +5,7 @@
     color:white;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 70vh;
     max-height: fit-content;
 }
 
@@ -27,16 +27,15 @@
 }
 
 .contact-form-title {
-    color: var(--red);
+    color: var(--orange);
     font-family: 'Press Start 2P', monospace;
     margin-bottom:0;
 }
 
 .contact-form-subtitle, .contact-form-thank-you > p {
-    color: var(--orange);
+    color: var(--arcade-bg);
     font-size: 1.5rem;
     line-height: 100%;
-    text-shadow: 2px 2px 0 var(--red);
     text-shadow: none;
     margin-bottom: 0;
     font-family: 'Silkscreen', monospace;
@@ -44,8 +43,8 @@
 }
 
 .contact-form-thank-you {
-    color: var(--red);
-    text-shadow: 5px 5px 0 var(--arcade-bg);
+    color: green;
+    text-shadow: 3px 3px 0 var(--arcade-bg);
     line-height: 140%;
     font-family: 'Press Start 2P', monospace;
     margin-bottom:0;

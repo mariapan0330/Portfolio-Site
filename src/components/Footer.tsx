@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/Footer.css'
 import Plx from 'react-plx';
+
 
 type PLXItem = {
   start: string | number;
@@ -14,7 +15,22 @@ type PLXItem = {
 }
 
 const Footer: React.FC = () => {
+  const contactLinks = [
+    { img: 'github.png', link: 'https://github.com/mariapan0330' },
+    { img: 'linkedin.png', link: 'https://www.linkedin.com/in/maria-panagos/' },
+  ]
 
+  const [copied, setCopied] = useState<boolean>(false) // toggled when the user copies the email address
+
+  useEffect(() => {
+    // activates when copied is toggled; if true, wait 2000ms (2s) then hide 'copied' notification again
+    if (copied === true){
+      const copyTime: NodeJS.Timeout = setTimeout(()=>{
+        setCopied(false)
+      }, 2000)
+      return () => {clearTimeout(copyTime)}
+    }
+  }, [copied])
   
   const footerPLX: PLXItem[] = [
     {
@@ -30,10 +46,53 @@ const Footer: React.FC = () => {
 
   return (
     <>
-    <div className="footer-start"></div>
+    {/* lonely container that indicates where to start the footer plx */}
+    <div className="footer-start"></div> 
+
+    {/* footer container */}
     <div id='footer'>
+    {/* all of it has footerPLX; footer-info is also a flex row */}
     <Plx parallaxData={footerPLX} className='footer-info'>
-        <div className='footer-title'>Want to see how I made this site?</div>
+
+      {/* column 1: contact column */}
+      <div className="footer-contact-col">
+
+        {/* first item: email*/}
+        <div className="footer-contact-item">
+          <a 
+            className='footer-contact-link' 
+            // email doesnt have an external link, but can be copied to clipboard when clicked 
+            onClick={() => {
+              navigator.clipboard.writeText('maria.pan0330@gmail.com')
+              // sets copied bool to true, which lights up the 'copied to clipboard' message.
+              setCopied(true)
+            }}
+            title='Copy to clipboard'>
+            <img className="footer-contact-img" src={require(`../images/contact links/email.png`)} />
+            &nbsp;maria.pan0330@gmail.com</a>
+          <div
+          className='footer-copied'
+          // sets opacity to 100% if the user has copied it, and back to 0 after 2000ms (see useEffect [copied])
+          style={copied? {opacity: '100%'} : {opacity: '0%'}}
+          >&nbsp;Copied to clipboard!</div>
+        </div>
+
+        {/* the other links are mapped with the image and external link that opens in new tab */}
+        {contactLinks.map((item, i) => 
+        <div key={`footer-link-${i}`} className="footer-contact-item">
+          <a className='footer-contact-link' href={item.link} target="_blank" title='Opens a new tab'>
+            <img className="footer-contact-img" src={require(`../images/contact links/${item.img}`)} />
+            &nbsp;{item.link}</a>
+        </div>
+        )}
+      </div>
+
+
+      {/* column 2: repo column */}
+      <div className="footer-repo-col">
+        <div className='footer-title'>
+          Want to see how I made this site?
+        </div>
         <div className="footer-repo-btn-container">
           <div className="footer-repo-btn">
             <a 
@@ -43,7 +102,10 @@ const Footer: React.FC = () => {
               >View repository</a>
           </div>
         </div>
+      </div>
     </Plx>
+
+    {/* end of site empty div to tell plx when to stop */}
     <div className="end-of-site"></div>
     </div>
     </>

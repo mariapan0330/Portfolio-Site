@@ -82,7 +82,7 @@ const ContactMe: React.FC = () => {
                 isArea={false}
                 name='email' 
                 type='email'
-                errorMsg='Please provide your email address.' 
+                errorMsg='Please provide a valid email address.' 
                 placeholder='* Email' 
                 value={formValues['email']}
                 // value={email} 
