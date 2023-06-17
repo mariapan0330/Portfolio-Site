@@ -22,7 +22,11 @@ type PLXItem = {
   }[];
 };
 
-const Projects: React.FC = () => {
+interface ProjectsProps {
+  handleOverlayOpen: Function; 
+}
+
+const Projects: React.FC<ProjectsProps> = ({handleOverlayOpen}) => {
   // PLAN: Sort of jarring transition to 80s arcade game theme
   // "Deal in" project cards (might change because doesn't really fit theme)
   // PROJECT CARD: expand on hover
@@ -92,7 +96,7 @@ const Projects: React.FC = () => {
             PROJECTS
           </h1>
         </Plx>
-        <ProjectCarousel projects={projects} />
+        <ProjectCarousel projects={projects} handleOverlayOpen={handleOverlayOpen} />
       </div>
     </>
   );

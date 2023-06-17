@@ -99,6 +99,7 @@
   font-size: 0.8vw;
   height: 0vh;
   transition-duration: var(--xp-card-transition);
+  display: none;
 }
 
 .xp-line-container {

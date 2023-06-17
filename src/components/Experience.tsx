@@ -25,7 +25,11 @@ type PLXItem = {
   }[];
 };
 
-const Experience: React.FC = () => {
+interface ExperienceProps {
+  handleOverlayOpen: Function;
+}
+
+const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
   const experiences: XPInfo[] = [
     {
       position: "Code Coach",
@@ -60,15 +64,15 @@ const Experience: React.FC = () => {
       date: "July 2022 - Sept 2022",
       summary: (
         <>
-          Took a 10-week{" "}
+          Took a 10-week&nbsp;
           <a
             href="https://www.credly.com/badges/c19b6df5-5dd4-415e-aaaf-fd1f16b1d5d8/linked_in?t=rixz72"
             target="_blank"
             className="xp-link"
+            title='Opens verified certificate in a new tab'
           >
-            deep-dive
-          </a>{" "}
-          into software development.
+            deep-dive <i className="fa-solid fa-arrow-up-right-from-square" />
+          </a>&nbsp;into software development.
         </>
       ),
 
@@ -98,15 +102,15 @@ const Experience: React.FC = () => {
       date: "July 2021 - Present",
       summary: (
         <>
-          Started an{" "}
+          Started an&nbsp;
           <a
             href="https://www.etsy.com/shop/LittleBirdBigIdeas"
             target="_blank"
             className="xp-link"
+            title='Opens Etsy shop in a new tab'
           >
-            Etsy shop
-          </a>{" "}
-          selling my crochet patterns.
+            Etsy shop <i className="fa-solid fa-arrow-up-right-from-square" />
+          </a>&nbsp;selling my crochet patterns.
         </>
       ),
       description: (
@@ -196,6 +200,7 @@ const Experience: React.FC = () => {
               summary={val.summary}
               last={val.last}
               description={val.description}
+              handleOverlayOpen={handleOverlayOpen}
             />
           ))}
         </Plx>

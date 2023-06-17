@@ -130,7 +130,7 @@ const About: React.FC = () => {
                   href={require("../images/Maria Panagos Resume.pdf")}
                   target="_blank"
                 >
-                  View my resume
+                  View my resume <i className="fa-solid fa-arrow-up-right-from-square" />
                 </a>
               </h2>
               <h2 className="about-p">

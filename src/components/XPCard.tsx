@@ -9,6 +9,7 @@ interface XPCardProps {
   summary: React.JSX.Element;
   last?: boolean;
   description: React.JSX.Element;
+  handleOverlayOpen: Function;
 }
 
 const XPCard: React.FC<XPCardProps> = ({
@@ -19,23 +20,9 @@ const XPCard: React.FC<XPCardProps> = ({
   date,
   description,
   last,
+  handleOverlayOpen
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const [enlargeImg, setEnlargeImg] = useState<boolean>(false);
-  const [selectedImg, setSelectedImg] = useState<string>("");
-
-  const handleImgOpen = (whichImg: string) => {
-    setEnlargeImg(true);
-    setSelectedImg(whichImg);
-    // hide overflow so you can't scroll the rest of the site if you enlarge the image
-    document.body.style.overflow = "hidden";
-  };
-
-  const handleImgClose = () => {
-    setEnlargeImg(false);
-    setSelectedImg("");
-    document.body.style.overflow = "";
-  };
 
   return (
     <>
@@ -84,7 +71,7 @@ const XPCard: React.FC<XPCardProps> = ({
                     className={isExpanded ? "xp-card-image" : "xp-card-closed"}
                     // className='xp-card-image'
                     onClick={() => {
-                      handleImgOpen(image);
+                      handleOverlayOpen(require(`../images/experience/${image}`))
                     }}
                   />
                 ))}
@@ -104,18 +91,6 @@ const XPCard: React.FC<XPCardProps> = ({
               {description}
             </p>
           </div>
-          {enlargeImg && images && (
-            <div
-              className="xp-card-img-enlarged-container"
-              onClick={() => handleImgClose()}
-            >
-              <img
-                src={require(`../images/experience/${selectedImg}`)}
-                className="xp-card-img-enlarged"
-                title="Click anywhere to close"
-              />
-            </div>
-          )}
         </div>
       </div>
     </>

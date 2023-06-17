@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                     className="footer-contact-img"
                     src={require(`../images/contact links/${item.img}`)}
                   />
-                  &nbsp;{item.link}
+                  &nbsp;{item.link}&nbsp;<i className="fa-solid fa-arrow-up-right-from-square" />
                 </a>
               </div>
             ))}

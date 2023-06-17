@@ -12,6 +12,7 @@ interface Project {
 
 interface ProjectCarouselProps {
   projects: Project[];
+  handleOverlayOpen: Function; 
 }
 
 type PLXItem = {
@@ -25,7 +26,7 @@ type PLXItem = {
   }[];
 };
 
-const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
+const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, handleOverlayOpen }) => {
   const [startIdx, setStartIdx] = useState<number>(0); // inclusive
   const [endIdx, setEndIdx] = useState<number>(2); // exclusive
   const [continueR, setContinueR] = useState<boolean>(endIdx < projects.length);
@@ -89,6 +90,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
               live={item.live}
               repo={item.repo}
               technologies={item.technologies}
+              handleOverlayOpen={handleOverlayOpen}
             />
           ))}
         </div>

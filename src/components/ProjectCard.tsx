@@ -6,6 +6,7 @@ interface ProjectCardProps {
   live?: string;
   repo?: string;
   technologies: string;
+  handleOverlayOpen: Function;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -14,18 +15,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
   live,
   repo,
+  handleOverlayOpen,
 }) => {
-  const [enlargeImg, setEnlargeImg] = useState<boolean>(false);
-  const handleImgOpen = () => {
-    setEnlargeImg(true);
-    // hide overflow so you can't scroll the rest of the site if you enlarge the image
-    document.body.style.overflow = "hidden";
-  };
-
-  const handleImgClose = () => {
-    setEnlargeImg(false);
-    document.body.style.overflow = "";
-  };
 
   return (
     <>
@@ -35,7 +26,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           alt={title}
           className="project-card-image"
           onClick={() => {
-            handleImgOpen();
+            handleOverlayOpen(
+              require(`../images/projects/${image}.png`),
+              title
+            );
           }}
         />
         <h1 className="project-card-title">{title}</h1>
@@ -43,30 +37,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <p className="project-card-links">
           {live && (
             <a href={live} target="_blank">
-              LIVE
+              LIVE <i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           )}
           {live && repo && " | "}
           {repo && (
             <a href={repo} target="_blank">
-              REPO
+              REPO <i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           )}
         </p>
         <p className="project-card-tech">{technologies}</p>
       </div>
-      {enlargeImg && (
-        <div
-          className="img-enlarged-container"
-          onClick={() => handleImgClose()}
-        >
-          <img
-            src={require(`../images/projects/${image}.png`)}
-            className="img-enlarged"
-            title="Click anywhere to close"
-          />
-        </div>
-      )}
     </>
   );
 };

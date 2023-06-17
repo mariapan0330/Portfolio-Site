@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 import IAm from "./IAm";
 
-const Home: React.FC = () => {
+const Home: React.FC= () => {
   return (
     <>
       <div id="home">

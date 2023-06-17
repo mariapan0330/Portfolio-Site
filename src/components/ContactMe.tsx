@@ -87,7 +87,7 @@ const ContactMe: React.FC = () => {
               target="_blank"
               title="Opens a new tab"
             >
-              View my resume
+              View my resume <i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           </h2>
         </Plx>
