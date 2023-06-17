@@ -91,11 +91,6 @@
   flex-grow: 1;
   font-size: 1.6vw;
   text-align: start;
-  /* font-family: 'Cherry Swash', serif; */
-  /* font-family: 'Montserrat', sans-serif; */
-  font-family: "Space Grotesk", sans-serif;
-  font-family: "Quicksand", sans-serif;
-  font-family: "Dangrek", sans-serif;
   line-height: 130%;
   font-weight: normal;
   color: rgb(54, 69, 84);
@@ -157,7 +152,7 @@
   margin-top: 3vw;
   padding: 0 1vw; /* in this font (B. Swash), letters get cut off to the left */
   font-size: 8vw;
-  font-family: "Berkshire Swash", sans-serif; /* nice in lowercase */
+  font-family: var(--title-font); /* nice in lowercase */
 
   /* Clip the fixed image onto the text */
   background-image: url("../images/rough-marker-blue.png");
@@ -181,7 +176,7 @@
   margin-top: 1vw;
   padding: 0 1vw; /* in this font (B. Swash), letters get cut off to the left */
   font-size: 5vw;
-  font-family: "Berkshire Swash", sans-serif; /* nice in lowercase */
+  font-family: var(--title-font);
 
   /* Clip the fixed image onto the text */
   background-image: url("../images/rough-marker-blue.png");
@@ -205,7 +200,6 @@
   padding: 0 2vw;
   text-decoration: none;
   cursor: pointer;
-  font-family: "Dangrek", sans-serif; /* nice in lowercase */
   line-height: 0%;
   text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.47);
   font-size: 2vw;

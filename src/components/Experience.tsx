@@ -187,7 +187,7 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
       <Maze />
       <div className="" id="xp">
         <Plx parallaxData={experienceTitlePLX}>
-          <div className="arcade-theme-hero-text xp-hero-text">EXPERIENCE</div>
+          <div className="subsections-hero-text xp-hero-text">Experience</div>
         </Plx>
         <Plx parallaxData={timelinePLX}>
           {experiences.map((val, i) => (

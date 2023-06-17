@@ -77,9 +77,13 @@ const ContactMe: React.FC = () => {
     <>
       <div id="contactme">
         <Plx parallaxData={contactmeTitlePLX}>
-          <h1 className="arcade-theme-hero-text contact-hero-text">
+          <h1 className="subsections-hero-text contact-hero-text">
             Contact Me
           </h1>
+          <div className="contact-subtitle">
+            If you're looking for a versatile, passionate team member, let's
+            connect! Together we can bring your ideas to life.
+          </div>
           <h2 className="resume-p">
             <a
               className="resume-link emphasis"
@@ -87,7 +91,8 @@ const ContactMe: React.FC = () => {
               target="_blank"
               title="Opens a new tab"
             >
-              View my resume <i className="fa-solid fa-arrow-up-right-from-square" />
+              View my resume&nbsp;
+              <i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           </h2>
         </Plx>
@@ -107,12 +112,6 @@ const ContactMe: React.FC = () => {
             ) : (
               <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
                 <h1 className="contact-form-title">Drop a message!</h1>
-                <p className="contact-form-subtitle">
-                  The following message will be emailed to me.
-                  <br />
-                  You can also email me directly at maria.pan0330@gmail.com.
-                  <br />I usually respond within 1-2 business days!
-                </p>
                 {/* breaking inputs into ContactInput components */}
                 <ContactInput
                   isArea={false}
@@ -152,9 +151,6 @@ const ContactMe: React.FC = () => {
           </Plx>
           <div className="empty-col" />
         </div>
-
-        {/* If you're looking for a versatile, passionate team member,
-			let's connect! Together we can bring your ideas to life.*/}
       </div>
     </>
   );

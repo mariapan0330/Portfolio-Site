@@ -5,7 +5,6 @@
 }
 
 #projects {
-  background-color: var(--arcade-bg);
   /* padding-top: 4vw; */
   /* padding-right:6vw; */
   padding: 4vw 6vw 0 6vw;
@@ -14,7 +13,7 @@
   max-height: fit-content;
 }
 
-.arcade-theme-hero-text {
+.subsections-hero-text {
   color: var(--yellow);
   cursor: default;
   line-height: 0;
@@ -24,10 +23,8 @@
   /* flex-direction: column; */
   font-size: 6vw;
   font-weight: normal;
-  /* font-family: 'Silkscreen', monospace; MC */
-  /* font-family: 'Nabla', monospace; 3d */
-  font-family: "Press Start 2P", monospace; /* Nice */
-  text-shadow: 10px 10px var(--orange), 20px 20px var(--red);
+  font-family: var(--title-font); /* Nice */
+  /* text-shadow: 10px 10px var(--orange), 20px 20px var(--red); */
 }
 
 .projects-hero-text {
@@ -43,7 +40,8 @@
 .project-card {
   top: 0;
   font-weight: bold;
-  font-family: "Silkscreen", monospace;
+
+  /* font-family: "Silkscreen", monospace; */
   /* background-image: url('../images/projects/background.png'); */
   /* background-size:auto; */
 
@@ -114,7 +112,6 @@
 .projects-carousel-btn {
   flex: 1;
   color: var(--yellow);
-  font-family: "Silkscreen", monospace;
   font-size: 5vw;
   padding: 20vh 0;
   border-radius: 0.5vw;

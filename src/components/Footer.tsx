@@ -37,10 +37,10 @@ const Footer: React.FC = () => {
     {
       // start moving when I am at [start], reach end position when I'm at [end]
       start: ".footer-start",
-      end: ".end-of-site",
+      // end: ".end-of-site",
+      duration:'25vh',
       properties: [
-        //   starts 300px below its normal placement and at 0% opacity
-        { startValue: 300, endValue: 0, property: "translateY" },
+        //   starts at 0% opacity
         { startValue: 0, endValue: 1, property: "opacity" },
       ],
     },
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   title="Opens a new tab"
                 >
-                  View repository
+                  View repository <i className="fa-solid fa-arrow-up-right-from-square" />
                 </a>
               </div>
             </div>

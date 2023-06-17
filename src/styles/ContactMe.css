@@ -1,7 +1,6 @@
 #contactme {
   z-index: 90;
   position: relative;
-  background-color: var(--arcade-bg);
   color: white;
   display: flex;
   flex-direction: column;
@@ -9,22 +8,37 @@
   max-height: fit-content;
 }
 
+.contact-subtitle {
+  color: white;
+  padding: 0 10vw 6vw;
+  font-size: 1.5vw;
+  line-height: 100%;
+  text-shadow: none;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
 .contact-form-flex {
   display: flex;
 }
 
 .contact-form {
-  margin: 5vh 0;
-  width: 25vw;
-  background-color: white;
-  box-shadow: 10px 10px 0 var(--orange);
-  flex: 2;
   display: flex;
+  /* flex: 5; */
   flex-direction: column;
-  border-radius: 0.8vw;
-  padding: 3vh 3vw;
+
   justify-content: center;
   align-items: center;
+
+  width: 25vw;
+
+  margin: 5vh 0;
+  padding: 4vh 0
+  ;
+  
+  background-color: white;
+  box-shadow: 10px 10px 0 var(--orange);
+  border-radius: 0.8vw;
 }
 
 @media screen and (max-width: 1000px) {
@@ -37,36 +51,35 @@
 
 .contact-form-title {
   color: var(--orange);
-  font-family: "Press Start 2P", monospace;
-  margin-bottom: 0;
+  font-family:  var(--title-font);
+  margin: 0;
 }
 
 .contact-form-subtitle,
 .contact-form-thank-you > p {
-  color: var(--arcade-bg);
+  color: black;
   font-size: 1.5vw;
   line-height: 100%;
   text-shadow: none;
   margin-bottom: 0;
-  font-family: "Silkscreen", monospace;
   font-weight: bold;
 }
 
 .contact-form-thank-you {
   color: green;
-  text-shadow: 3px 3px 0 var(--arcade-bg);
+  text-shadow: 3px 3px 0 black;
   line-height: 140%;
-  font-family: "Press Start 2P", monospace;
   margin-bottom: 0;
 }
 
 .contact-item {
-  font-family: "Silkscreen", monospace;
+  font-family: var(--p-font);
+  /* width: 100%; */
   flex: 1;
   margin: 4vh 0 0;
   font-size: 1vw;
   padding: 1vw;
-  border: 2px solid var(--arcade-bg);
+  border: 2px solid grey;
   border-radius: 0.3vw;
 }
 
@@ -94,7 +107,6 @@
 
 .contact-form-error {
   font-size: 1vw;
-  font-family: "Silkscreen", monospace;
   color: var(--orange);
   display: none;
 }

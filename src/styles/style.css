@@ -9,6 +9,9 @@ body {
   --orange: rgb(202, 119, 18);
   --red: rgb(180, 23, 23);
   --arcade-bg: rgb(25, 13, 60);
+  --title-font: "Berkshire Swash", sans-serif;
+  --p-font: "Dangrek", sans-serif;
+  font-family: var(--p-font);
 }
 
 .component {

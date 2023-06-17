@@ -7,11 +7,9 @@
 
   margin: 0;
 
-  background-color: var(--arcade-bg);
   color: white;
 
   font-size: 2.5rem;
-  font-family: "Silkscreen", monospace;
 }
 
 /* flex box of both columns (col 1: contact info, col 2: repo link) */

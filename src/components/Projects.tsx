@@ -27,8 +27,6 @@ interface ProjectsProps {
 }
 
 const Projects: React.FC<ProjectsProps> = ({handleOverlayOpen}) => {
-  // PLAN: Sort of jarring transition to 80s arcade game theme
-  // "Deal in" project cards (might change because doesn't really fit theme)
   // PROJECT CARD: expand on hover
   // top: image, plays gif on hover
   // middle: TITLE, LIVE | REPO links
@@ -92,8 +90,8 @@ const Projects: React.FC<ProjectsProps> = ({handleOverlayOpen}) => {
     <>
       <div className="projects-flex" id="projects">
         <Plx parallaxData={projectTitlePLX}>
-          <h1 className="arcade-theme-hero-text projects-hero-text">
-            PROJECTS
+          <h1 className="subsections-hero-text projects-hero-text">
+            Projects
           </h1>
         </Plx>
         <ProjectCarousel projects={projects} handleOverlayOpen={handleOverlayOpen} />

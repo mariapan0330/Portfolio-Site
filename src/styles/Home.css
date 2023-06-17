@@ -18,7 +18,6 @@
 #hi-im {
   color: #161e16;
   text-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
-  font-family: "Dangrek", sans-serif; /* nice in lowercase */
   position: absolute;
   left: 29vw;
   font-size: 3.5vw;
@@ -32,7 +31,7 @@
 
 #main-name {
   font-size: 15vw;
-  font-family: "Berkshire Swash", sans-serif; /* nice in lowercase */
+  font-family: var(--title-font);
   font-weight: bolder;
 
   /* Clip the fixed image onto the text */

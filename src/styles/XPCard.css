@@ -7,9 +7,6 @@
 
 .xp-card {
   font-weight: bold;
-  font-family: "Silkscreen", monospace;
-  /* background-image: url('../images/XPs/background.png'); */
-  /* background-size:auto; */
 
   color: rgb(49, 47, 63);
   background-repeat: no-repeat;
