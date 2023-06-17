@@ -16,7 +16,7 @@
   border-radius: 1.5vw;
   /* margin: 25vh 2vw 0; */
   background-color: white;
-  box-shadow: 10px 10px 0 var(--orange);
+  box-shadow: 10px 10px 0 var(--brown);
 }
 
 .xp-card-images-container {
@@ -73,11 +73,11 @@
   line-height: 100%;
   text-decoration: none;
   color: rgb(49, 47, 63);
-  text-shadow: 2px 2px var(--yellow);
+  text-shadow: 2px 2px var(--title-blue);
 }
 
 .xp-card-links > a:hover {
-  text-shadow: 2px 2px var(--orange);
+  text-shadow: 2px 2px var(--brown);
   /* background-color: rgba(255, 217, 0, 0.357); */
   border-radius: 0.5vw;
 }

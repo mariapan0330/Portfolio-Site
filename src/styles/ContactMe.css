@@ -1,7 +1,6 @@
 #contactme {
   z-index: 90;
   position: relative;
-  color: white;
   display: flex;
   flex-direction: column;
   min-height: 70vh;
@@ -9,8 +8,8 @@
 }
 
 .contact-subtitle {
-  color: white;
-  padding: 0 10vw 6vw;
+  color: var(--brown);
+  padding: 0 20vw 6vh;
   font-size: 1.5vw;
   line-height: 100%;
   text-shadow: none;
@@ -37,7 +36,7 @@
   ;
   
   background-color: white;
-  box-shadow: 10px 10px 0 var(--orange);
+  box-shadow: 10px 10px 0 var(--brown);
   border-radius: 0.8vw;
 }
 
@@ -50,7 +49,7 @@
 }
 
 .contact-form-title {
-  color: var(--orange);
+  color: var(--brown);
   font-family:  var(--title-font);
   margin: 0;
 }
@@ -84,14 +83,17 @@
 }
 
 .contact-submit-btn {
-  background-color: var(--yellow);
-  border: 2px solid var(--orange);
+  background-color: var(--title-blue);
+  font-family: var(--title-font);
+  color: white;
+  border: 2px solid var(--brown);
   font-weight: bold;
+  font-size: 2vw;
   width: 60%;
 }
 
 .contact-submit-btn:hover {
-  background-color: var(--orange);
+  background-color: var(--brown);
   border: 2px solid var(--red);
   cursor: pointer;
 }
@@ -107,7 +109,7 @@
 
 .contact-form-error {
   font-size: 1vw;
-  color: var(--orange);
+  color: var(--brown);
   display: none;
 }
 

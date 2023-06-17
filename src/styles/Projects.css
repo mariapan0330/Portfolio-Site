@@ -7,24 +7,10 @@
 #projects {
   /* padding-top: 4vw; */
   /* padding-right:6vw; */
-  padding: 4vw 6vw 0 6vw;
+  padding: 0 6vw;
   display: flex;
   min-height: 100vh;
   max-height: fit-content;
-}
-
-.subsections-hero-text {
-  color: var(--yellow);
-  cursor: default;
-  line-height: 0;
-  padding: 4vw 0 2vw;
-  margin-block-start: 0;
-  /* text-align: right; */
-  /* flex-direction: column; */
-  font-size: 6vw;
-  font-weight: normal;
-  font-family: var(--title-font); /* Nice */
-  /* text-shadow: 10px 10px var(--orange), 20px 20px var(--red); */
 }
 
 .projects-hero-text {
@@ -53,7 +39,7 @@
   border-radius: 1.5vw;
   margin: 0vw 2vw;
   background-color: white;
-  box-shadow: 10px 10px 0 var(--orange);
+  box-shadow: 10px 10px 0 var(--brown);
 }
 
 .project-card-image {
@@ -87,11 +73,11 @@
   line-height: 100%;
   text-decoration: none;
   color: rgb(49, 47, 63);
-  text-shadow: 2px 2px var(--yellow);
+  text-shadow: 2px 2px var(--title-blue);
 }
 
 .project-card-links > a:hover {
-  text-shadow: 2px 2px var(--orange);
+  text-shadow: 2px 2px var(--brown);
   /* background-color: rgba(255, 217, 0, 0.357); */
   border-radius: 0.5vw;
 }
@@ -111,7 +97,7 @@
 
 .projects-carousel-btn {
   flex: 1;
-  color: var(--yellow);
+  color: var(--title-blue);
   font-size: 5vw;
   padding: 20vh 0;
   border-radius: 0.5vw;
@@ -121,6 +107,6 @@
 }
 
 .projects-carousel-btn:hover {
-  text-shadow: 4px 4px var(--orange);
-  background-color: rgb(39, 23, 85);
+  text-shadow: 4px 4px var(--brown);
+  background-color: rgba(34, 39, 111, 0.254);
 }
