@@ -99,11 +99,11 @@
 
 .emphasis {
   /* text-decoration: underline; */
-  color: rgb(81, 120, 119);
+  color: var(--teal);
 }
 
 .emphasis:hover {
-  background-color: rgb(81, 120, 119);
+  background-color: var(--teal);
   color: white;
   border-radius: 0.4vw;
   cursor: default;

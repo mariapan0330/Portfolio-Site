@@ -32,7 +32,7 @@ const XPCard: React.FC<XPCardProps> = ({
             src={require("../images/experience/xp square.png")}
             className="xp-square"
             style={
-              isExpanded ? { filter: "drop-shadow(0px 0px 20px white)" } : {}
+              isExpanded ? { filter: "drop-shadow(0px 0px 20px rgb(194, 111, 125))" } : {}
             }
             onClick={() => {
               setIsExpanded((e) => !e);

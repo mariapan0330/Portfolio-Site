@@ -13,8 +13,9 @@
   max-height: fit-content;
 }
 
-.projects-hero-text {
+#projects-hero-text {
   text-align: right;
+  padding: 5vh 0 0 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -39,7 +40,7 @@
   border-radius: 1.5vw;
   margin: 0vw 2vw;
   background-color: white;
-  box-shadow: 10px 10px 0 var(--brown);
+  box-shadow: 10px 10px 0 var(--title-blue);
 }
 
 .project-card-image {
@@ -49,7 +50,7 @@
 
 .project-card-image:hover {
   /* width: 100%; */
-  box-shadow: 7px 7px 0px rgb(49, 47, 63);
+  box-shadow: 0 0 0 8px var(--teal-translucent);
   border-radius: 0.1vw;
   /* filter:brightness(110%); */
   cursor: pointer;
@@ -57,33 +58,44 @@
 
 .project-card-title {
   padding-top: 5%;
-  font-size: 2vw;
+  font-size: 2.3vw;
+  color: var(--dark-teal);
   line-height: 100%;
+  margin:1vh;
 }
 
 .project-card-links {
-  font-size: 1.5vw;
   display: flex;
   justify-content: space-evenly;
-  /* width:50%; */
+  margin: 1vh 0;
+
+  font-size: 1.8vw;
 }
 
 .project-card-links > a {
-  width: 100%;
-  line-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   text-decoration: none;
-  color: rgb(49, 47, 63);
-  text-shadow: 2px 2px var(--title-blue);
+  color: var(--p-blue);
+  text-shadow: 2px 2px var(--brown);
+
+  padding: 1vh 1vw;
+  line-height: 100%;
+  /* width:30%; */
 }
 
 .project-card-links > a:hover {
-  text-shadow: 2px 2px var(--brown);
-  /* background-color: rgba(255, 217, 0, 0.357); */
+  text-shadow: 2px 2px var(--teal);
+  background-color: var(--teal-translucent);
   border-radius: 0.5vw;
 }
 
 .project-card-tech {
-  font-size: 0.8vw;
+  font-size: 1.5vw;
+  line-height: 140%;
+  margin:0;
 }
 
 .projects-carousel {
@@ -108,5 +120,5 @@
 
 .projects-carousel-btn:hover {
   text-shadow: 4px 4px var(--brown);
-  background-color: rgba(34, 39, 111, 0.254);
+  background-color: var(--teal-translucent);
 }

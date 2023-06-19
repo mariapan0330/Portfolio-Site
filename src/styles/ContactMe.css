@@ -7,6 +7,10 @@
   max-height: fit-content;
 }
 
+#contact-hero-text {
+  padding: 6vh 0 0 0;
+}
+
 .contact-subtitle {
   color: var(--brown);
   padding: 0 20vw 6vh;

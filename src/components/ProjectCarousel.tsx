@@ -12,7 +12,7 @@ interface Project {
 
 interface ProjectCarouselProps {
   projects: Project[];
-  handleOverlayOpen: Function; 
+  handleOverlayOpen: Function;
 }
 
 type PLXItem = {
@@ -26,7 +26,10 @@ type PLXItem = {
   }[];
 };
 
-const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, handleOverlayOpen }) => {
+const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
+  projects,
+  handleOverlayOpen,
+}) => {
   const [startIdx, setStartIdx] = useState<number>(0); // inclusive
   const [endIdx, setEndIdx] = useState<number>(2); // exclusive
   const [continueR, setContinueR] = useState<boolean>(endIdx < projects.length);

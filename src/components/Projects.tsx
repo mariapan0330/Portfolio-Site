@@ -90,7 +90,7 @@ const Projects: React.FC<ProjectsProps> = ({handleOverlayOpen}) => {
     <>
       <div className="projects-flex" id="projects">
         <Plx parallaxData={projectTitlePLX}>
-          <h1 className="subsections-hero-text projects-hero-text">
+          <h1 id='projects-hero-text' className="subsections-hero-text">
             Projects
           </h1>
         </Plx>

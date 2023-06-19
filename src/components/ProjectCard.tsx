@@ -37,13 +37,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <p className="project-card-links">
           {live && (
             <a href={live} target="_blank">
-              LIVE <i className="fa-solid fa-arrow-up-right-from-square" />
+              LIVE&nbsp;<i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           )}
           {live && repo && " | "}
           {repo && (
             <a href={repo} target="_blank">
-              REPO <i className="fa-solid fa-arrow-up-right-from-square" />
+              REPO&nbsp;<i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           )}
         </p>

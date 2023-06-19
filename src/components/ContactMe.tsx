@@ -77,7 +77,7 @@ const ContactMe: React.FC = () => {
     <>
       <div id="contactme">
         <Plx parallaxData={contactmeTitlePLX}>
-          <h1 className="subsections-hero-text contact-hero-text">
+          <h1 id="contact-hero-text" className="subsections-hero-text">
             Contact Me
           </h1>
           <div className="contact-subtitle">

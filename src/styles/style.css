@@ -6,7 +6,12 @@ body {
 #root {
   height: 100vh;
   --title-blue: rgb(42, 62, 75);
+  --p-blue: rgb(49, 47, 63);
   --brown: #9e7c5a;
+  --green: #3b4f44;
+  --dark-teal: rgb(54, 69, 84);
+  --teal: rgb(81, 120, 119);
+  --teal-translucent: rgba(34, 39, 111, 0.254);
   --red: rgb(180, 23, 23);
   --arcade-bg: rgb(25, 13, 60);
   --title-font: "Berkshire Swash", sans-serif;
@@ -40,4 +45,5 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  /* text-shadow: 0 0 10px black; */
 }

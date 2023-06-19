@@ -64,14 +64,14 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
       date: "July 2022 - Sept 2022",
       summary: (
         <>
-          Took a 10-week&nbsp;
+          Took a&nbsp;
           <a
             href="https://www.credly.com/badges/c19b6df5-5dd4-415e-aaaf-fd1f16b1d5d8/linked_in?t=rixz72"
             target="_blank"
             className="xp-link"
             title='Opens verified certificate in a new tab'
           >
-            deep-dive <i className="fa-solid fa-arrow-up-right-from-square" />
+            10-week deep-dive <i className="fa-solid fa-arrow-up-right-from-square" />
           </a>&nbsp;into software development.
         </>
       ),
