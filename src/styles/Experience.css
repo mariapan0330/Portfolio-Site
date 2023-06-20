@@ -1,16 +1,27 @@
 #xp {
   /* background-color: var(--arcade-bg); */
-  padding: 4vw 6vw;
+  padding: 4vw 6vw 0;
   display: flex;
   min-height: 100vh;
   max-height: fit-content;
   flex-direction: column;
-  --timeline-pos: 20vw;
+  /* --timeline-pos: 20vw; */
+  justify-content: center;
+  align-items: center;
+}
+
+.xp-bg {
+  position: relative;
+  background: url("../images/cardboard-blue.png");
+  background-size: contain;
+}
+
+#leaf-border-experience {
+  top: -5vh;
 }
 
 .xp-hero-text {
   text-align: left;
-  margin: 0 0 20vh 0;
 }
 
 /* One vine that tiles vertically, add nodes individually with xp cards. */

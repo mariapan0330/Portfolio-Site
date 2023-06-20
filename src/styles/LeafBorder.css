@@ -1,0 +1,16 @@
+/* ========== LEAF BORDER SETTINGS for all the horizontal vine borders ========== */
+.leaf-border {
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435));
+  top: -5vh;
+}
+
+@media screen and (max-width: 1000px) {
+  #leaf-border {
+    top: 98vh;
+  }
+}

@@ -13,11 +13,12 @@
   display: flex;
   flex-direction: column;
   padding: 0 0.2rem;
+  border-radius: 0.5vw;
 }
 
 .skills-list-item:hover {
   background-color: rgba(34, 39, 111, 0.254);
-  border-radius: 0.5vw;
+  transition-duration: 300ms;
 }
 
 .skills-list-item p {

@@ -1,3 +1,7 @@
+#leaf-border-projects {
+  top: 207vh;
+}
+
 .projects-flex {
   display: flex;
   min-height: 100vh;
@@ -51,6 +55,7 @@
 .project-card-image:hover {
   /* width: 100%; */
   box-shadow: 0 0 0 8px var(--teal-translucent);
+  transition-duration: 300ms;
   border-radius: 0.1vw;
   /* filter:brightness(110%); */
   cursor: pointer;
@@ -82,6 +87,7 @@
   text-shadow: 2px 2px var(--brown);
 
   padding: 1vh 1vw;
+  border-radius: 0.5vw;
   line-height: 100%;
   /* width:30%; */
 }
@@ -89,7 +95,7 @@
 .project-card-links > a:hover {
   text-shadow: 2px 2px var(--teal);
   background-color: var(--teal-translucent);
-  border-radius: 0.5vw;
+  transition-duration: 300ms;
 }
 
 .project-card-tech {
@@ -121,4 +127,5 @@
 .projects-carousel-btn:hover {
   text-shadow: 4px 4px var(--brown);
   background-color: var(--teal-translucent);
+  transition-duration: 300ms;
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/Projects.css";
 import ProjectCarousel from "./ProjectCarousel";
 import Plx from "react-plx";
+import LeafBorder from "./LeafBorder";
 
 type ProjectInfo = {
   image: string;
@@ -23,10 +24,10 @@ type PLXItem = {
 };
 
 interface ProjectsProps {
-  handleOverlayOpen: Function; 
+  handleOverlayOpen: Function;
 }
 
-const Projects: React.FC<ProjectsProps> = ({handleOverlayOpen}) => {
+const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
   // PROJECT CARD: expand on hover
   // top: image, plays gif on hover
   // middle: TITLE, LIVE | REPO links
@@ -88,13 +89,17 @@ const Projects: React.FC<ProjectsProps> = ({handleOverlayOpen}) => {
   ];
   return (
     <>
+      <LeafBorder />
       <div className="projects-flex" id="projects">
         <Plx parallaxData={projectTitlePLX}>
-          <h1 id='projects-hero-text' className="subsections-hero-text">
+          <h1 id="projects-hero-text" className="subsections-hero-text">
             Projects
           </h1>
         </Plx>
-        <ProjectCarousel projects={projects} handleOverlayOpen={handleOverlayOpen} />
+        <ProjectCarousel
+          projects={projects}
+          handleOverlayOpen={handleOverlayOpen}
+        />
       </div>
     </>
   );

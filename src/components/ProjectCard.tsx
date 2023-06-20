@@ -21,6 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <>
       <div className="project-card">
+        {/* ITEM 1: Image; can open into image overlay */}
         <img
           src={require(`../images/projects/${image}.png`)}
           alt={title}

@@ -3,6 +3,7 @@ import "../styles/Experience.css";
 import Maze from "./Maze";
 import XPCard from "./XPCard";
 import Plx from "react-plx";
+import LeafBorder from "./LeafBorder";
 
 type XPInfo = {
   images?: string[];
@@ -188,37 +189,40 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
   return (
     <>
       <Maze />
-      <div className="" id="xp">
-        {/* Hero Text */}
-        <Plx parallaxData={experienceTitlePLX}>
-          <div className="subsections-hero-text xp-hero-text">Experience</div>
-        </Plx>
 
-        {/* Timeline */}
-        <Plx parallaxData={timelinePLX}>
-          <div className="timeline-container">
-            
-            {/* just the image of the vine; repeats vertically */}
-            <div className="vine-image"></div>
+      <div className="xp-bg">
+        <LeafBorder />
+        <div className="" id="xp">
+          {/* Hero Text */}
+          <Plx parallaxData={experienceTitlePLX}>
+            <div className="subsections-hero-text xp-hero-text">Experience</div>
+          </Plx>
 
-            {/* map of all xp cards and their flower nodes */}
-            <div className="xp-cards">
-              {experiences.map((val, i) => (
-                <XPCard
-                  key={`xpCard-${i}`}
-                  images={val.images}
-                  position={val.position}
-                  company={val.company}
-                  date={val.date}
-                  summary={val.summary}
-                  last={val.last}
-                  description={val.description}
-                  handleOverlayOpen={handleOverlayOpen}
-                />
-              ))}
+          {/* Timeline */}
+          <Plx parallaxData={timelinePLX}>
+            <div className="timeline-container">
+              {/* just the image of the vine; repeats vertically */}
+              <div className="vine-image"></div>
+
+              {/* map of all xp cards and their flower nodes */}
+              <div className="xp-cards">
+                {experiences.map((val, i) => (
+                  <XPCard
+                    key={`xpCard-${i}`}
+                    images={val.images}
+                    position={val.position}
+                    company={val.company}
+                    date={val.date}
+                    summary={val.summary}
+                    last={val.last}
+                    description={val.description}
+                    handleOverlayOpen={handleOverlayOpen}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        </Plx>
+          </Plx>
+        </div>
       </div>
     </>
   );

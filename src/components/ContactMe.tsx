@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ContactInput from "./ContactInput";
+import LeafBorder from "./LeafBorder";
 import "../styles/ContactMe.css";
 import Plx from "react-plx";
 
@@ -76,6 +77,7 @@ const ContactMe: React.FC = () => {
   return (
     <>
       <div id="contactme">
+        <LeafBorder />
         <Plx parallaxData={contactmeTitlePLX}>
           <h1 id="contact-hero-text" className="subsections-hero-text">
             Contact Me

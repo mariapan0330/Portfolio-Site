@@ -115,35 +115,6 @@
   background-size: cover;
 }
 
-#leaf-border {
-  width: 100%;
-  overflow-x: hidden;
-  position: absolute;
-  left: 0;
-  top: 95vh;
-  z-index: 1;
-  filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435));
-}
-
-#leaf-border-end {
-  width: 99vw;
-  position: absolute;
-  left: 0;
-  top: 195vh;
-  z-index: 1;
-  filter: drop-shadow(3px 3px 3px rgba(105, 105, 105, 0.435));
-}
-
-@media screen and (max-width: 1000px) {
-  #leaf-border {
-    top: 98vh;
-  }
-
-  #leaf-border-end {
-    top: 198vh;
-  }
-}
-
 #about-hero-text {
   cursor: default;
   flex-basis: 30%;

@@ -3,6 +3,7 @@ import "../styles/About.css";
 import "../styles/HobbiesList.css";
 import SkillsList from "./SkillsList";
 import HobbiesList from "./HobbiesList";
+import LeafBorder from "./LeafBorder";
 import Plx from "react-plx";
 
 type PLXItem = {
@@ -27,7 +28,6 @@ const About: React.FC = () => {
   const [animateTetris, setAnimateTetris] = useState<boolean>(false);
   const [currHobby, setCurrHobby] = useState<string>("");
   const [currTetris, setCurrTetris] = useState<string>("i");
-  const [o, setO] = useState<boolean>(false);
   const tetrisPieces: string[] = ["t", "s", "z", "l", "i", "o"];
 
   useEffect(() => {
@@ -36,8 +36,8 @@ const About: React.FC = () => {
       setAnimateTetris(true);
       let num: number = Math.floor(Math.random() * 6);
       setCurrTetris(tetrisPieces[num]);
-      setO(currTetris === "o");
 
+      // wait 2000ms for the piece to finish falling then set it to false
       const tetrisTimeout: NodeJS.Timeout = setTimeout(() => {
         setAnimateTetris(false);
         setShowTetris(false);
@@ -50,6 +50,7 @@ const About: React.FC = () => {
 
   // self portrait carousel
   useEffect(() => {
+    // every 4000ms, toggle the self-portrait to the drawing
     const wordsInterval: NodeJS.Timeout = setInterval(() => {
       setIsDrawing((prevState) => !prevState);
     }, 4000);
@@ -92,17 +93,14 @@ const About: React.FC = () => {
     e: React.MouseEvent<HTMLSpanElement, MouseEvent>,
     hobby: string
   ) => {
+    // when the mouse hovers over the current hobby link, set the current hobby to it
     setCurrHobby(hobby);
   };
 
   return (
     <>
-      <img
-        src={require("../images/leaf-border.png")}
-        alt="horizontal leaf border"
-        id="leaf-border"
-      />
       <div className="about-bg">
+      <LeafBorder />
         {showTetris ? (
           <img
             src={require(`../images/tetris/tetris-${currTetris}.png`)}
@@ -208,7 +206,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* <img src={require("../images/leaf-border.png")} alt="horizontal leaf border" id='leaf-border-end' /> */}
     </>
   );
 };
