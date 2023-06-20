@@ -9,7 +9,7 @@ type ProjectInfo = {
   title: string;
   live: string;
   repo: string;
-  technologies: string;
+  technologies: React.JSX.Element;
 };
 
 type PLXItem = {
@@ -46,51 +46,86 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
     },
   ];
 
+  const renderTechnologies = (techStack: string[]) => {
+    // renders the technologies passed into it as a list of images with their titles right under them
+    return (
+      <>
+        {techStack.map((tech, i) => (
+          <>
+            <div className="projects-tech-stack">
+              <img
+                key={`project-tech-${i}`}
+                src={require(`../images/tech stack/${tech.toLowerCase()}.png`)}
+                className="projects-tech-img"
+                alt={tech}
+              />
+              <p className="projects-tech-description">{tech}</p>
+            </div>
+          </>
+        ))}
+      </>
+    );
+  };
+
   const projects: ProjectInfo[] = [
+    // passing in the bits that create the project cards
     {
       image: "customer contact",
       title: "Customer Contact Form",
       live: "",
       repo: "https://github.com/mariapan0330/customer-contact-form",
-      technologies: "React, JavaScript, NodeJS, JSX, CSS, NodeJS",
+      technologies: renderTechnologies(["React", "JavaScript"]),
     },
     {
       image: "escape game",
       title: "Escape Game",
       live: "",
       repo: "https://github.com/mariapan0330/Escape-Game",
-      technologies:
-        "Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL, Github, VSCode",
+      technologies: renderTechnologies(['React'])
+      // (
+      //   <>
+      //     Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL,
+      //     Github, VSCode
+      //   </>
+      // ),
     },
     {
       image: "weather",
       title: "Weather Application",
       live: "https://stalwart-tiramisu-dee856.netlify.app/",
       repo: "https://github.com/mariapan0330/react-weather-app",
-      technologies:
-        "Flask, React, Python, JavaScript, JSX, CSS, NodeJS, Open Weather API",
+      technologies: renderTechnologies(['React']) 
+      // technologies: (
+      //   <>
+      //     Flask, React, Python, JavaScript, JSX, CSS, NodeJS, Open Weather API
+      //   </>
+      // ),
     },
     {
       image: "blog",
       title: "Typewriter Blog",
       live: "",
       repo: "https://github.com/mariapan0330/React-Social-Media",
-      technologies:
-        "Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL",
+      technologies: renderTechnologies(['React']) 
+      // technologies: (
+      //   <>Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL</>
+      // ),
     },
     {
       image: "phonebook",
       title: "Big Phonebook",
       live: "https://gifted-radial-rugby.glitch.me/",
       repo: "https://github.com/mariapan0330/Phonebook",
-      technologies:
-        "Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL",
+      technologies: <>{renderTechnologies(['React'])}</>
+      // technologies: (
+      //   <>Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL</>
+      // ),
     },
   ];
   return (
     <>
-      <LeafBorder />
       <div className="projects-flex" id="projects">
+        <LeafBorder />
         <Plx parallaxData={projectTitlePLX}>
           <h1 id="projects-hero-text" className="subsections-hero-text">
             Projects

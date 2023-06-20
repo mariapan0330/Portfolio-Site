@@ -2,19 +2,13 @@
   top: 207vh;
 }
 
-.projects-flex {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
 #projects {
-  /* padding-top: 4vw; */
-  /* padding-right:6vw; */
-  padding: 0 6vw;
   display: flex;
+  flex-direction: column;
+  padding: 0 6vw;
   min-height: 100vh;
   max-height: fit-content;
+  position: relative;
 }
 
 #projects-hero-text {
@@ -31,18 +25,12 @@
 .project-card {
   top: 0;
   font-weight: normal;
-
-  /* font-family: "Silkscreen", monospace; */
-  /* background-image: url('../images/projects/background.png'); */
-  /* background-size:auto; */
-
   color: rgb(49, 47, 63);
   background-repeat: no-repeat;
   width: 30vw;
-  /* height:30vw; */
-  padding: 2vw 2vw;
+  padding: 2vw;
   border-radius: 1.5vw;
-  margin: 0vw 2vw;
+  margin: 0vw 2vw 12vh;
   background-color: white;
   box-shadow: 10px 10px 0 var(--title-blue);
 }
@@ -98,19 +86,51 @@
   transition-duration: 300ms;
 }
 
+/* the whole tech stack per card */
 .project-card-tech {
-  font-size: 1.5vw;
+  font-size: 1vw;
   line-height: 140%;
   margin:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* each tech item (image, description) */
+.projects-tech-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 3vw;
+  height: 2vw;
+
+  border-radius: 0.5vw;
+  padding: 1vw 0.5vw;
+  filter: drop-shadow(0px 0px 5px rgba(37, 40, 69, 0.218));
+}
+
+.projects-tech-img {
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.projects-tech-description {
+  margin: 0;
 }
 
 .projects-carousel {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .projects-carousel-cards {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projects-carousel-btn {

@@ -7,7 +7,7 @@ interface Project {
   title: string;
   live?: string;
   repo?: string;
-  technologies: string;
+  technologies: React.JSX.Element;
 }
 
 interface ProjectCarouselProps {

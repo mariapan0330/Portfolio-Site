@@ -5,7 +5,7 @@ interface ProjectCardProps {
   title: string;
   live?: string;
   repo?: string;
-  technologies: string;
+  technologies: React.JSX.Element;
   handleOverlayOpen: Function;
 }
 
@@ -48,6 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </a>
           )}
         </p>
+        {/* <p className="project-card-tech">{technologies}</p> */}
         <p className="project-card-tech">{technologies}</p>
       </div>
     </>
