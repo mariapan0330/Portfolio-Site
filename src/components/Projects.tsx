@@ -46,6 +46,16 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
     },
   ];
 
+  const checkImgExists = (tech: string) => {
+    // returns true if the image exists and false if it doesn't
+    try {
+      let testLoad = require(`../images/tech stack/${tech.toLowerCase()}.png`);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  };
+
   const renderTechnologies = (techStack: string[]) => {
     // renders the technologies passed into it as a list of images with their titles right under them
     return (
@@ -53,12 +63,17 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
         {techStack.map((tech, i) => (
           <>
             <div className="projects-tech-stack">
-              <img
-                key={`project-tech-${i}`}
-                src={require(`../images/tech stack/${tech.toLowerCase()}.png`)}
-                className="projects-tech-img"
-                alt={tech}
-              />
+              {checkImgExists(tech) ? (
+                // if an image exists, render the image too. Otherwise just the word.
+                <img
+                  key={`project-tech-${i}`}
+                  src={require(`../images/tech stack/${tech.toLowerCase()}.png`)}
+                  className="projects-tech-img"
+                  alt={tech}
+                />
+              ) : (
+                <></>
+              )}
               <p className="projects-tech-description">{tech}</p>
             </div>
           </>
@@ -67,59 +82,67 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
     );
   };
 
+  // noticed that the front end tech I use is mostly the same throughout.
+  const frontendTech = ["React", "NodeJS", "HTML", "CSS", "JavaScript"];
+
   const projects: ProjectInfo[] = [
-    // passing in the bits that create the project cards
+    // passing in the information to the project cards
+    {
+      image: "personal website",
+      title: "This site!",
+      live: "",
+      repo: "https://github.com/mariapan0330/Personal-Website",
+      technologies: renderTechnologies(
+        frontendTech.slice(0, -1).concat(["TypeScript", "Netlify"])
+      ),
+    },
     {
       image: "customer contact",
       title: "Customer Contact Form",
       live: "",
       repo: "https://github.com/mariapan0330/customer-contact-form",
-      technologies: renderTechnologies(["React", "JavaScript"]),
+      technologies: renderTechnologies(frontendTech),
     },
     {
       image: "escape game",
       title: "Escape Game",
       live: "",
       repo: "https://github.com/mariapan0330/Escape-Game",
-      technologies: renderTechnologies(['React'])
-      // (
-      //   <>
-      //     Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL,
-      //     Github, VSCode
-      //   </>
-      // ),
+      technologies: renderTechnologies(
+        frontendTech.concat(["Flask", "Python", "SQLAlchemy"])
+      ),
     },
     {
       image: "weather",
       title: "Weather Application",
       live: "https://stalwart-tiramisu-dee856.netlify.app/",
       repo: "https://github.com/mariapan0330/react-weather-app",
-      technologies: renderTechnologies(['React']) 
-      // technologies: (
-      //   <>
-      //     Flask, React, Python, JavaScript, JSX, CSS, NodeJS, Open Weather API
-      //   </>
-      // ),
+      technologies: renderTechnologies(
+        frontendTech.concat(["Netlify", "JSON", "Open Weather API"])
+      ),
     },
     {
       image: "blog",
       title: "Typewriter Blog",
       live: "",
       repo: "https://github.com/mariapan0330/React-Social-Media",
-      technologies: renderTechnologies(['React']) 
-      // technologies: (
-      //   <>Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL</>
-      // ),
+      technologies: renderTechnologies(frontendTech.concat(["JSON"])),
     },
     {
       image: "phonebook",
       title: "Big Phonebook",
       live: "https://gifted-radial-rugby.glitch.me/",
       repo: "https://github.com/mariapan0330/Phonebook",
-      technologies: <>{renderTechnologies(['React'])}</>
-      // technologies: (
-      //   <>Flask, React, Python, JavaScript, JSX, CSS, NodeJS, PostgreSQL</>
-      // ),
+      technologies: renderTechnologies([
+        "Bootstrap",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Flask",
+        "Python",
+        "SQLAlchemy",
+        // "Heroku (hosting service)",
+      ]),
     },
   ];
   return (

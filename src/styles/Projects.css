@@ -30,7 +30,7 @@
   width: 30vw;
   padding: 2vw;
   border-radius: 1.5vw;
-  margin: 0vw 2vw 12vh;
+  margin: 0vw 2vw;
   background-color: white;
   box-shadow: 10px 10px 0 var(--title-blue);
 }
@@ -103,18 +103,31 @@
   justify-content: center;
   align-items: center;
 
-  width: 3vw;
+  /* width: 3vw; */
   height: 2vw;
 
   border-radius: 0.5vw;
-  padding: 1vw 0.5vw;
-  filter: drop-shadow(0px 0px 5px rgba(37, 40, 69, 0.218));
+  transition-duration: 300ms;
+  padding: 1vw 0.3vw;
+}
+
+.projects-tech-stack:hover {
+  background-color: var(--teal-translucent);
+  cursor: default;
+  transition-duration: 300ms;
 }
 
 .projects-tech-img {
   max-height: 100%;
   max-width: 100%;
+  transition-duration: 300ms;
   margin: 0;
+}
+
+/* if the tech stack is hovered, add extra drop shadow to tech img */
+.projects-tech-stack:hover > .projects-tech-img {
+  filter: drop-shadow(0 0 10px white);
+  transition-duration: 300ms;
 }
 
 .projects-tech-description {
@@ -125,6 +138,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 0 12vh;
 }
 
 .projects-carousel-cards {
@@ -135,12 +149,14 @@
 
 .projects-carousel-btn {
   flex: 1;
-  color: var(--title-blue);
-  font-size: 5vw;
   padding: 20vh 0;
+  margin: 0;
   border-radius: 0.5vw;
+  
+  font-size: 5vw;
+  color: var(--title-blue);
+  
   user-select: none;
-  filter: opacity(100%);
   cursor: pointer;
 }
 

@@ -14,7 +14,8 @@
 
 /* flex box of both columns (col 1: contact info, col 2: repo link) */
 .footer-info {
-  background-color: rgb(15, 16, 25);
+  /* background-color: rgb(15, 16, 25); */
+  background-color: var(--p-blue);
   padding: 5vh 5vw;
   display: flex;
   justify-content: space-evenly;

@@ -6,6 +6,7 @@ const SkillsList: React.FC = () => {
     "HTML",
     "CSS",
     "Javascript",
+    "TypeScript",
     "Java",
     "Python",
     "Bootstrap",

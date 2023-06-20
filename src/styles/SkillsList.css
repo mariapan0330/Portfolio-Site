@@ -21,6 +21,12 @@
   transition-duration: 300ms;
 }
 
+/* if skills list item is hovered, add an extra drop shadow to the skill img */
+.skills-list-item:hover > .skills-list-imgs {
+  filter: drop-shadow(0 0 5px white);
+  transition-duration: 300ms;
+}
+
 .skills-list-item p {
   margin: 0;
 }
