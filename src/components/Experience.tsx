@@ -69,10 +69,12 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
             href="https://www.credly.com/badges/c19b6df5-5dd4-415e-aaaf-fd1f16b1d5d8/linked_in?t=rixz72"
             target="_blank"
             className="xp-link"
-            title='Opens verified certificate in a new tab'
+            title="Opens verified certificate in a new tab"
           >
-            10-week deep-dive <i className="fa-solid fa-arrow-up-right-from-square" />
-          </a>&nbsp;into software development.
+            10-week deep-dive{" "}
+            <i className="fa-solid fa-arrow-up-right-from-square" />
+          </a>
+          &nbsp;into software development.
         </>
       ),
 
@@ -107,10 +109,11 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
             href="https://www.etsy.com/shop/LittleBirdBigIdeas"
             target="_blank"
             className="xp-link"
-            title='Opens Etsy shop in a new tab'
+            title="Opens Etsy shop in a new tab"
           >
             Etsy shop <i className="fa-solid fa-arrow-up-right-from-square" />
-          </a>&nbsp;selling my crochet patterns.
+          </a>
+          &nbsp;selling my crochet patterns.
         </>
       ),
       description: (
@@ -186,23 +189,35 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
     <>
       <Maze />
       <div className="" id="xp">
+        {/* Hero Text */}
         <Plx parallaxData={experienceTitlePLX}>
           <div className="subsections-hero-text xp-hero-text">Experience</div>
         </Plx>
+
+        {/* Timeline */}
         <Plx parallaxData={timelinePLX}>
-          {experiences.map((val, i) => (
-            <XPCard
-              key={`xpCard-${i}`}
-              images={val.images}
-              position={val.position}
-              company={val.company}
-              date={val.date}
-              summary={val.summary}
-              last={val.last}
-              description={val.description}
-              handleOverlayOpen={handleOverlayOpen}
-            />
-          ))}
+          <div className="timeline-container">
+            
+            {/* just the image of the vine; repeats vertically */}
+            <div className="vine-image"></div>
+
+            {/* map of all xp cards and their flower nodes */}
+            <div className="xp-cards">
+              {experiences.map((val, i) => (
+                <XPCard
+                  key={`xpCard-${i}`}
+                  images={val.images}
+                  position={val.position}
+                  company={val.company}
+                  date={val.date}
+                  summary={val.summary}
+                  last={val.last}
+                  description={val.description}
+                  handleOverlayOpen={handleOverlayOpen}
+                />
+              ))}
+            </div>
+          </div>
         </Plx>
       </div>
     </>

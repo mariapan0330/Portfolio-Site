@@ -20,41 +20,35 @@ const XPCard: React.FC<XPCardProps> = ({
   date,
   description,
   last,
-  handleOverlayOpen
+  handleOverlayOpen,
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   return (
     <>
-      <div className="xp-item-container">
-        <div className="xp-line-container">
+      <div className="xp-card-container">
+        {/* column 1: just the flower node */}
+        <div className="xp-card-col-1">
           <img
-            src={require("../images/experience/xp square.png")}
-            className="xp-square"
+            src={require("../images/experience/xp flower.png")}
+            className="xp-flower"
             style={
-              isExpanded ? { filter: "drop-shadow(0px 0px 20px rgb(194, 111, 125))" } : {}
+              // when expanded, keep a pink drop shadow on flower so you know it's open
+              isExpanded
+                ? { filter: "drop-shadow(0px 0px 20px rgb(194, 111, 125))" }
+                : {}
             }
             onClick={() => {
               setIsExpanded((e) => !e);
             }}
           />
-          {last ? (
-            <></>
-          ) : (
-            <img
-              src={require("../images/experience/xp line.png")}
-              className="xp-line"
-            />
-          )}
-          {isExpanded && !last && (
-            <img
-              src={require("../images/experience/xp line.png")}
-              className="xp-extra-line"
-            />
-          )}
         </div>
-        <div className="xp-card-container">
+
+        {/* column 2: the xp card */}
+        <div className="xp-card-col-2">
           <div className="xp-card">
+            {/* ITEM 1: Images, which are only shown when card is expanded. 
+            Each image can be clicked on to open a preview of it in overlay. */}
             <div
               className={
                 images && isExpanded
@@ -62,6 +56,7 @@ const XPCard: React.FC<XPCardProps> = ({
                   : "xp-card-closed"
               }
             >
+              {/* map of images in case there's more than 1. */}
               {images &&
                 images.map((image, i) => (
                   <img
@@ -71,23 +66,38 @@ const XPCard: React.FC<XPCardProps> = ({
                     className={isExpanded ? "xp-card-image" : "xp-card-closed"}
                     // className='xp-card-image'
                     onClick={() => {
-                      handleOverlayOpen(require(`../images/experience/${image}`))
+                      handleOverlayOpen(
+                        require(`../images/experience/${image}`)
+                      );
                     }}
                   />
                 ))}
             </div>
+
+            {/* ITEM 2: job position, which shows all the time.
+            When clicked, toggles whether or not the card is expanded. */}
             <div
               className="xp-card-position xp-link"
               onClick={() => {
-                setIsExpanded((e) => !e);
+                setIsExpanded((prev) => !prev);
               }}
             >
               {position}
             </div>
+
+            {/* ITEM 3: job compoany, shows all the time. */}
             <p className="xp-card-company">{company}</p>
+
+            {/* ITEM 4: job dates, shows all the time. */}
             <p className="xp-card-date">{date}</p>
+
+            {/* ITEM 5: short summary of job responsibilities, shows when NOT expanded (closes when expanded). */}
             {isExpanded || <p className="xp-card-summary">{summary}</p>}
-            <p className={isExpanded ? "xp-card-desc" : "xp-card-closed"}>
+
+            {/* ITEM 6: whole responsibilities description; only included when expanded. */}
+            <p
+              className={isExpanded ? "xp-card-description" : "xp-card-closed"}
+            >
               {description}
             </p>
           </div>

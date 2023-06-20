@@ -12,33 +12,31 @@
   margin: 0 0 20vh 0;
 }
 
-.xp-end-line-flex {
-  display: flex;
+/* One vine that tiles vertically, add nodes individually with xp cards. */
+.timeline-container {
+  /* for visualizing: */
+  /* background-color: rgba(139, 0, 139, 0.253); */
+  position: relative;
 }
 
-.xp-end-line-container {
-  flex-basis: 30%;
+.vine-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left:10vw;
+
+  width: 10vw;
+  background-size: 9vw; /* same as width */
+  
+  /* for visualising: */
+  /* background-color: rgba(255, 0, 0, 0.244); */
+  background-image: url('../images/experience/vine_tile.png');
+  background-repeat: repeat-y;
+}
+
+.xp-cards {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: start;
-}
-
-.xp-end-square {
-  width: 25%;
-  margin-bottom: 100%;
-  position: relative;
-  top: 30vh;
-  z-index: 1;
-}
-
-.xp-link {
-  text-decoration: none;
-  color: rgb(67, 139, 120);
-}
-
-.xp-link:hover {
-  background-color: rgb(67, 139, 120);
-  color: white;
-  border-radius: 0.2vw;
+  align-items: flex-start;
+  margin-left: 10vw; /* same as vine image left */
 }

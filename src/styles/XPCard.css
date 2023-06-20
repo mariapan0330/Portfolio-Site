@@ -1,13 +1,13 @@
-/* wrong */
-.xp-item-container {
+/* =============== contains the FLOWER NODE and XP CARD =============== */
+.xp-card-container {
+  --xp-card-transition: 300ms;
   display: flex;
-  align-items: start;
-  justify-content: center;
-  --xp-card-transition: 700ms;
-  height: fit-content;
 }
 
+/* =============== XP CARD BIG WHITE RECTANGLE =============== */
 .xp-card {
+  /* card: looks like a white rounded square and includes position, company, dates, and summary */
+  /* which toggle with the images and expanded description when opened */
   font-weight: bold;
 
   color: rgb(49, 47, 63);
@@ -15,18 +15,31 @@
   width: 30vw;
   /* height:30vw; */
   padding: 2vw 2vw;
-  border-radius: 1.5vw;
+  border-radius: 1vw;
   /* margin: 25vh 2vw 0; */
   background-color: white;
   box-shadow: 10px 10px 0 var(--brown);
   margin-bottom: 10vh;
+  font-weight: normal;
 }
 
+/* =============== ANY LINKS ON XP CARD =============== */
+.xp-link {
+  text-decoration: none;
+  color: rgb(67, 139, 120);
+}
+
+.xp-link:hover {
+  background-color: rgb(67, 139, 120);
+  color: white;
+  border-radius: 0.2vw;
+}
+
+/* =============== IMAGES (on expand) =============== */
 .xp-card-images-container {
   width: 30vw;
   height: 30vh;
   margin-bottom: 4vh;
-  transition-duration: var(--xp-card-transition);
 }
 
 .xp-card-image {
@@ -40,119 +53,57 @@
 }
 
 .xp-card-image:hover {
-  /* width: 100%; */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.459), 7px 7px 0px rgb(49, 47, 63);
   border-radius: 0.1vw;
-  /* filter:brightness(110%); */
   cursor: pointer;
 }
 
+/* =============== XP ITEM STUFF (job position, company, date, summary, description) =============== */
 .xp-card-position {
   font-size: 2vw;
   line-height: 100%;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .xp-card-company {
   font-size: 1.5vw;
   margin: 2vh;
   line-height: 50%;
+  font-weight: bold;
 }
 
 .xp-card-date,
 .xp-card-summary {
   font-size: 1.2vw;
-  margin: 0;
+  margin: 1vh 0 0 0;
+  line-height: 130%;
 }
 
-.xp-card-links {
-  font-size: 1.5vw;
-  display: flex;
-  justify-content: space-evenly;
-  /* width:50%; */
-}
-
-.xp-card-links > a {
-  width: 100%;
-  line-height: 100%;
-  text-decoration: none;
-  color: rgb(49, 47, 63);
-  text-shadow: 2px 2px var(--title-blue);
-}
-
-.xp-card-links > a:hover {
-  text-shadow: 2px 2px var(--brown);
-  /* background-color: rgba(255, 217, 0, 0.357); */
-  border-radius: 0.5vw;
-}
-
-/* wrong */
-.xp-card-desc {
+.xp-card-description {
   margin: 1vh 0 0 0;
   font-size: 1.2vw;
   text-align: left;
-  /* height: 30vh; */
-  transition-duration: var(--xp-card-transition);
 }
 
-/* wrong */
+/* =============== WHEN CLOSED =============== */
 .xp-card-closed {
   margin: 0;
   opacity: 0%;
   font-size: 0.8vw;
-  height: 0vh;
-  transition-duration: var(--xp-card-transition);
   display: none;
 }
 
-/* wrong */
-.xp-line-container {
-  flex-basis: 30%;
-  display: flex;
-  
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-}
-
-/* wrong */
-.xp-line {
-  /* width: 10vw; */
-  height: 100rem;
-  position: inherit;
-  /* position: absolute; */
-  /* top:30vh */
-}
-
-/* wrong */
-.xp-extra-line {
-  height: 40vh;
-  top:40vh;
-  position: absolute;
-}
-
-/* wrong */
-.xp-square {
-  /* width: 25%; */
-  height:15vh;
-  filter: drop-shadow(
-    0px 0px 20px rgb(255, 255, 255)
-    );
+/* =============== FLOWER NODE =============== */
+.xp-flower {
+  height: 15vh;
+  filter: drop-shadow(0px 0px 20px rgb(255, 255, 255));
   position: relative;
-  /* top:30vh; */
+  padding: 0 2vw 0 0;
   z-index: 1;
 }
 
-/* wrong */
-.xp-square:hover {
+.xp-flower:hover {
   filter: drop-shadow(0px 0px 20px rgb(194, 111, 125));
   cursor: pointer;
-}
-
-.xp-card-container {
-  flex: 1;
-  /* position: relative; */
-  /* top:0; */
-  /* align-items: start; */
-  /* justify-content: left; */
 }
