@@ -5,6 +5,7 @@
   min-height: 100vh;
   max-height: fit-content;
   flex-direction: column;
+  --timeline-pos: 20vw;
 }
 
 .xp-hero-text {
@@ -23,7 +24,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left:10vw;
+  left: var(--timeline-pos);
 
   width: 10vw;
   background-size: 9vw; /* same as width */
@@ -38,5 +39,5 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 10vw; /* same as vine image left */
+  margin-left: var(--timeline-pos); /* same as vine image left */
 }
