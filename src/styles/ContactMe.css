@@ -1,5 +1,9 @@
 /* =============== CONTACT ME PAGE =============== */
 #contactme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: relative;
   
   min-height: 70vh;
@@ -8,14 +12,24 @@
   z-index: 90;
 }
 
+.contact-col-1{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+
+  margin: 0 10vw;
+  flex: 1;
+}
+
 /* =============== CONTACT HERO TEXT AND SUBTITLE ("If you're looking...") =============== */
 #contact-hero-text {
-  padding: 6vh 0 0 0;
+  /* padding: 6vh 0 0 0; */
 }
 
 .contact-subtitle {
   margin-bottom: 0;
-  padding: 0 20vw 5vh;
+  padding: 5vh 0;
   
   font-size: 1.5vw;
   color: var(--brown);

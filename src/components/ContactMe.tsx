@@ -80,32 +80,32 @@ const ContactMe: React.FC = () => {
         {/* First row: Leaf Border */}
         <LeafBorder />
         <Plx parallaxData={contactmeTitlePLX}>
-          
-          {/* Second row: title */}
-          <h1 id="contact-hero-text" className="subsections-hero-text">
-            Contact Me
-          </h1>
+          <div className="contact-col-1">
+            {/* Second row: title */}
+            <h1 id="contact-hero-text" className="subsections-hero-text">
+              Contact Me
+            </h1>
 
-          {/* Third row: subtitle */}
-          <div className="contact-subtitle">
-            If you're looking for a versatile, passionate team member, let's
-            connect! Together we can bring your ideas to life.
+            {/* Third row: subtitle */}
+            <div className="contact-subtitle">
+              If you're looking for a versatile, passionate team member, let's
+              connect! Together we can bring your ideas to life.
+            </div>
+
+            {/* Fourth row: Resume Button */}
+            <h2 className="resume-p">
+              <a
+                className="resume-link emphasis"
+                href={require("../images/Maria Panagos Resume.pdf")}
+                target="_blank"
+                title="Opens a new tab"
+              >
+                View my resume&nbsp;
+                <i className="fa-solid fa-arrow-up-right-from-square" />
+              </a>
+            </h2>
           </div>
-
-          {/* Fourth row: Resume Button */}
-          <h2 className="resume-p">
-            <a
-              className="resume-link emphasis"
-              href={require("../images/Maria Panagos Resume.pdf")}
-              target="_blank"
-              title="Opens a new tab"
-            >
-              View my resume&nbsp;
-              <i className="fa-solid fa-arrow-up-right-from-square" />
-            </a>
-          </h2>
         </Plx>
-
         {/* Fifth row: contact form */}
         <div className="contact-form-flex">
           <Plx parallaxData={contactFormPLX}>
@@ -123,7 +123,6 @@ const ContactMe: React.FC = () => {
             ) : (
               // if you haven't submitted a message yet (this render anyway), show the form
               <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
-
                 {/* Form Row 1: title */}
                 <h1 className="contact-form-title">Drop a message!</h1>
 
