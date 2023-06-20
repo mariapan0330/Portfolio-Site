@@ -55,6 +55,7 @@ const Footer: React.FC = () => {
       <div id="footer">
         {/* all of it has footerPLX; footer-info is also a flex row */}
         <Plx parallaxData={footerPLX} className="footer-info">
+
           {/* column 1: contact column */}
           <div className="footer-contact-col">
             {/* first item: email*/}
@@ -84,6 +85,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
+            {/* second and third items: GitHub and LinkedIn*/}
             {/* the other links are mapped with the image and external link that opens in new tab */}
             {contactLinks.map((item, i) => (
               <div key={`footer-link-${i}`} className="footer-contact-item">

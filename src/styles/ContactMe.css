@@ -1,43 +1,48 @@
+/* =============== CONTACT ME PAGE =============== */
 #contactme {
-  z-index: 90;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  
   min-height: 70vh;
   max-height: fit-content;
+
+  z-index: 90;
 }
 
+/* =============== CONTACT HERO TEXT AND SUBTITLE ("If you're looking...") =============== */
 #contact-hero-text {
   padding: 6vh 0 0 0;
 }
 
 .contact-subtitle {
-  color: var(--brown);
-  padding: 0 20vw 6vh;
-  font-size: 1.5vw;
-  line-height: 100%;
-  text-shadow: none;
   margin-bottom: 0;
+  padding: 0 20vw 5vh;
+  
+  font-size: 1.5vw;
+  color: var(--brown);
+  text-shadow: none;
   font-weight: bold;
+  line-height: 100%;
 }
 
+
+/* =============== CONTACT FORM =============== */
 .contact-form-flex {
   display: flex;
-}
-
-.contact-form {
-  display: flex;
-  /* flex: 5; */
-  flex-direction: column;
-
   justify-content: center;
   align-items: center;
+}
 
-  width: 25vw;
+/* ------------- Big white overall rectangle ------------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  /* it's 30vw, and each input form is 20vw */
 
   margin: 5vh 0;
-  padding: 4vh 0
-  ;
+  padding: 4vh 0;
   
   background-color: white;
   box-shadow: 10px 10px 0 var(--brown);
@@ -46,77 +51,86 @@
 
 @media screen and (max-width: 1000px) {
   .contact-form {
-    font-size: 2vw;
     width: 50vw;
+
+    font-size: 2vw;
     /* background-color: red; */
   }
 }
 
+/* ------------- Form Title ------------- */
 .contact-form-title {
+  margin: 0;
+
   color: var(--brown);
   font-family:  var(--title-font);
-  margin: 0;
 }
 
-.contact-form-subtitle,
+/* ------------- Form "thank you" msg after submitting ------------- */
+.contact-form-thank-you {
+  margin: 0;
+
+  color: var(--dark-teal);
+  font-size: 2vw;
+  line-height: 140%;
+}
+
 .contact-form-thank-you > p {
-  color: black;
+  /* separates "Thank You, Name" and "Your msg has been submitted" */
+  padding: 2vh 0 0;
+  margin: 0;
+
+  color: var(--p-blue);
+  font-weight: normal;
   font-size: 1.5vw;
   line-height: 100%;
   text-shadow: none;
-  margin-bottom: 0;
-  font-weight: bold;
 }
 
-.contact-form-thank-you {
-  color: green;
-  text-shadow: 3px 3px 0 black;
-  line-height: 140%;
-  margin-bottom: 0;
-}
-
+/* ------------- Each contact form input item (name, email, message) ------------- */
 .contact-item {
-  font-family: var(--p-font);
-  /* width: 100%; */
-  flex: 1;
+  width: 20vw;
+
   margin: 4vh 0 0;
-  font-size: 1vw;
   padding: 1vw;
   border: 2px solid grey;
   border-radius: 0.3vw;
+
+  font-family: var(--p-font);
+  font-size: 1vw;
 }
 
-.contact-submit-btn {
-  background-color: var(--title-blue);
-  font-family: var(--title-font);
-  color: white;
-  border: 2px solid var(--brown);
-  font-weight: bold;
-  font-size: 2vw;
-  width: 60%;
+.contact-textarea {
+  resize: vertical;
 }
 
-.contact-submit-btn:hover {
-  background-color: var(--brown);
-  border: 2px solid var(--red);
-  cursor: pointer;
-}
-
-.empty-col {
-  flex: 3;
-}
-
+/* ------------- Contact form error message ------------- */
 /* wow i didn't know about this before! */
 .contact-item:invalid ~ .contact-form-error {
   display: block;
 }
 
 .contact-form-error {
-  font-size: 1vw;
-  color: var(--brown);
   display: none;
+  color: var(--brown);
+  font-size: 1vw;
 }
 
-.contact-textarea {
-  resize: vertical;
+/* ------------- Contact form submit button! ------------- */
+.contact-submit-btn {
+  width: 60%;
+  border: 2px solid var(--dark-teal);
+
+  color: white;
+  font-family: var(--title-font);
+  font-size: 2vw;
+  font-weight: normal;
+
+  background-color: var(--teal);
+}
+
+.contact-submit-btn:hover {
+  border: 2px solid var(--p-blue);
+  background-color: var(--dark-teal);
+  cursor: pointer;
 }

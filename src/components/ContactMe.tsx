@@ -65,7 +65,7 @@ const ContactMe: React.FC = () => {
     {
       // start moving when I am at [start], reach end position when I'm at [end]
       start: "#contactme",
-      duration: "80vh",
+      duration: "100vh",
       properties: [
         //   starts below normal placement and at 0% opacity
         { startValue: 300, endValue: 0, property: "translateY" },
@@ -77,15 +77,22 @@ const ContactMe: React.FC = () => {
   return (
     <>
       <div id="contactme">
+        {/* First row: Leaf Border */}
         <LeafBorder />
         <Plx parallaxData={contactmeTitlePLX}>
+          
+          {/* Second row: title */}
           <h1 id="contact-hero-text" className="subsections-hero-text">
             Contact Me
           </h1>
+
+          {/* Third row: subtitle */}
           <div className="contact-subtitle">
             If you're looking for a versatile, passionate team member, let's
             connect! Together we can bring your ideas to life.
           </div>
+
+          {/* Fourth row: Resume Button */}
           <h2 className="resume-p">
             <a
               className="resume-link emphasis"
@@ -98,10 +105,12 @@ const ContactMe: React.FC = () => {
             </a>
           </h2>
         </Plx>
+
+        {/* Fifth row: contact form */}
         <div className="contact-form-flex">
-          <div className="empty-col" />
           <Plx parallaxData={contactFormPLX}>
             {hasSubmitted ? (
+              // if you've submitted a message, show the thank you message
               <div className="contact-form">
                 <h1 className="contact-form-thank-you">
                   Thank you, {`${formValues["username"]}`}!
@@ -112,8 +121,13 @@ const ContactMe: React.FC = () => {
                 </h1>
               </div>
             ) : (
+              // if you haven't submitted a message yet (this render anyway), show the form
               <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
+
+                {/* Form Row 1: title */}
                 <h1 className="contact-form-title">Drop a message!</h1>
+
+                {/* Form Row 2: Name input */}
                 {/* breaking inputs into ContactInput components */}
                 <ContactInput
                   isArea={false}
@@ -122,9 +136,10 @@ const ContactMe: React.FC = () => {
                   errorMsg="Please provide your name."
                   placeholder="* Name"
                   value={formValues["username"]}
-                  // value={username}
                   onChange={onChange}
                 />
+
+                {/* Form Row 3: Email input */}
                 <ContactInput
                   isArea={false}
                   name="email"
@@ -132,9 +147,10 @@ const ContactMe: React.FC = () => {
                   errorMsg="Please provide a valid email address."
                   placeholder="* Email"
                   value={formValues["email"]}
-                  // value={email}
                   onChange={onChange}
                 />
+
+                {/* Form Row 4: Message input (textarea) */}
                 <ContactInput
                   isArea={true}
                   name="message"
@@ -142,16 +158,16 @@ const ContactMe: React.FC = () => {
                   errorMsg="Please enter your message."
                   placeholder="* Message"
                   value={formValues["message"]}
-                  // value={message}
                   onChange={onChange}
                 />
+
+                {/* Form Row 5: Submit Button */}
                 <button className="contact-item contact-submit-btn">
                   Submit
                 </button>
               </form>
             )}
           </Plx>
-          <div className="empty-col" />
         </div>
       </div>
     </>
