@@ -77,7 +77,7 @@ const ContactMe: React.FC = () => {
   return (
     <>
       <div id="contactme">
-        {/* First row: Leaf Border */}
+        {/* ========== First row: Leaf Border ========== */}
         <LeafBorder />
         <Plx parallaxData={contactmeTitlePLX}>
           <div className="contact-col-1">

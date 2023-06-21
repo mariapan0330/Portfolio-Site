@@ -100,7 +100,9 @@ const About: React.FC = () => {
   return (
     <>
       <div className="about-bg">
-      <LeafBorder />
+        {/* first: Leaf Border */}
+        <LeafBorder />
+        {/* if tetris is active, do the tetris animation */}
         {showTetris ? (
           <img
             src={require(`../images/tetris/tetris-${currTetris}.png`)}
@@ -111,9 +113,17 @@ const About: React.FC = () => {
         ) : (
           <></>
         )}
-        <div className="about-flex" id="about">
+        {/* about flex: contains col 1 (about paragraph and skills list) and col 2 (images) */}
+        <div id="about">
+          
+          {/* ================================================ */}
+          {/* =                                              = */}
+          {/* =            Column 1: About column            = */}
+          {/* =                                              = */}
+          {/* ================================================ */}
           <div className="about-col-1">
             <Plx parallaxData={aboutPLX} className="">
+              {/* C1R1: About title */}
               <div
                 id="about-hero-text"
                 onMouseEnter={(e) => {
@@ -122,15 +132,20 @@ const About: React.FC = () => {
               >
                 About
               </div>
+
+              {/* C1R2: View my resume */}
               <h2 className="about-p resume-p">
                 <a
                   className="resume-link emphasis"
                   href={require("../images/Maria Panagos Resume.pdf")}
                   target="_blank"
                 >
-                  View my resume <i className="fa-solid fa-arrow-up-right-from-square" />
+                  View my resume{" "}
+                  <i className="fa-solid fa-arrow-up-right-from-square" />
                 </a>
               </h2>
+
+              {/* C1R3: About Paragraph */}
               <h2 className="about-p">
                 &emsp; Hi there! I'm Maria, friendly neighborhood software
                 developer with a background in&nbsp;
@@ -154,7 +169,7 @@ const About: React.FC = () => {
                 >
                   logic and creativity
                 </span>
-                .{/* <br /> */}
+                .
                 <br />
                 &emsp; When I'm not making and fixing bugs, I enjoy all sorts of
                 old-lady activities like&nbsp;
@@ -165,13 +180,22 @@ const About: React.FC = () => {
                 />
               </h2>
             </Plx>
+
+            {/* C1R4: Skills title and SkillsList */}
             <div className="about-skills">
               <div id="about-skills-title">Skills</div>
               {/* Skills List component */}
               <SkillsList />
             </div>
           </div>
+
+          {/* ================================================ */}
+          {/* =                                              = */}
+          {/* =            Column 2: Images column           = */}
+          {/* =                                              = */}
+          {/* ================================================ */}
           <div className="about-col-2">
+            {/* if a current hobby exists, show its image */}
             {currHobby ? (
               <>
                 <img
@@ -180,6 +204,7 @@ const About: React.FC = () => {
                 />
               </>
             ) : (
+              // if no current hobby exists, show the background leaf with alternating self portrait/photo
               <>
                 <img
                   src={require("../images/one-big-leaf.png")}
@@ -191,12 +216,14 @@ const About: React.FC = () => {
                   src={require("../images/selfportrait.png")}
                   id="self-portrait"
                   className="about-image"
+                  // if it is on the drawing, make drawing opacity 100% otherwise just 0 so it is always loaded in
                   style={isDrawing ? { opacity: "100%" } : { opacity: "0" }}
                   alt="self-portrait"
                 />
                 <img
                   src={require("../images/selfphoto.png")}
                   id="self-photo"
+                  // if it is not on the drawing (so, it is on the photo), make drawing opacity 100% otherwise just 0 so it is always loaded in
                   style={isDrawing ? { opacity: "0" } : { opacity: "100%" }}
                   className="about-image"
                   alt="self-portrait"
