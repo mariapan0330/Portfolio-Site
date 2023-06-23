@@ -65,7 +65,7 @@
   font-size: 1.8vw;
 }
 
-.project-card-links > a {
+.project-card-links > a, .project-card-or {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,8 +76,14 @@
 
   padding: 1vh 1vw;
   border-radius: 0.5vw;
-  line-height: 100%;
-  /* width:30%; */
+}
+
+.project-card-links > a {
+  line-height: 200%;
+}
+
+.project-card-or {
+  line-height: 0;
 }
 
 .project-card-links > a:hover {

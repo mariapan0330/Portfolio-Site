@@ -35,7 +35,7 @@ const XPCard: React.FC<XPCardProps> = ({
             style={
               // when expanded, keep a pink drop shadow on flower so you know it's open
               isExpanded
-                ? { filter: "drop-shadow(0px 0px 20px rgb(194, 111, 125))" }
+                ? { filter: "drop-shadow(0px 0px 20px var(--teal))" }
                 : {}
             }
             onClick={() => {

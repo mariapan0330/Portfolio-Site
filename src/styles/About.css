@@ -44,7 +44,9 @@
 /* ================================================ */
 .about-col-1 {
   display: flex;
-  flex: 1;
+  /* flex: 1; */
+  flex-basis: 20%;
+
   flex-direction: column;
 
   margin-left: 5vw;
@@ -103,7 +105,7 @@
 .resume-link:hover {
   color: rgb(232, 231, 231);
   background-color: rgb(54, 69, 84);
-  cursor: pointer;
+  cursor:pointer;
 }
 
 /* ========== ABOUT PARAGRAPH ========== */
@@ -127,7 +129,6 @@
   background-color: var(--teal);
   color: white;
   border-radius: 0.4vw;
-  cursor: default;
 }
 
 /* ========== SKILLS (just the title; SkillsList has own CSS) ========== */
@@ -161,14 +162,13 @@
 /* =            Column 2: Images column            = */
 /* ================================================ */
 .about-col-2 {
-  /* flex-basis: 40%; */
-  flex: 1;
+  /* flex: 1; */
   position: relative;
 }
 
 .hobby-img {
   position: absolute;
-  bottom: 10%;
+  bottom: 25%;
   right: 5%;
   width: 80%;
 
@@ -179,19 +179,18 @@
   filter: brightness(120%) saturate(120%);
 }
 
+/* this includes the big leaf, self portrait, and self photo */
+.about-image {
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  filter: brightness(1.1) drop-shadow(0px 0px 10px rgba(31, 31, 31, 0.658));
+}
+
 #one-big-leaf {
   right: 5%;
   width: 80%;
-
   filter: brightness(0.8) drop-shadow(0px 0px 10px rgba(31, 31, 31, 0.408));
-}
-
-.about-image {
-  position: absolute;
-  /* bottom: 20%; */
-  bottom: 0;
-  right: 10%;
-  filter: brightness(1.1) drop-shadow(0px 0px 10px rgba(31, 31, 31, 0.658));
 }
 
 #self-portrait {
@@ -212,6 +211,9 @@
   transition-duration: 500ms;
 }
 
+.white-line{
+  border-bottom: 30px solid white;
+}
 
 /* ========== MEDIA QUERIES ========== */
 /* if small screen, make the flex direction column and both sections take up the whole width */

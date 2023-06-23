@@ -115,7 +115,6 @@ const About: React.FC = () => {
         )}
         {/* about flex: contains col 1 (about paragraph and skills list) and col 2 (images) */}
         <div id="about">
-          
           {/* ================================================ */}
           {/* =                                              = */}
           {/* =            Column 1: About column            = */}
@@ -139,6 +138,7 @@ const About: React.FC = () => {
                   className="resume-link emphasis"
                   href={require("../images/Maria Panagos Resume.pdf")}
                   target="_blank"
+                  title="Opens resume PDF in a new tab"
                 >
                   View my resume{" "}
                   <i className="fa-solid fa-arrow-up-right-from-square" />
@@ -206,30 +206,33 @@ const About: React.FC = () => {
             ) : (
               // if no current hobby exists, show the background leaf with alternating self portrait/photo
               <>
-                <img
-                  src={require("../images/one-big-leaf.png")}
-                  id="one-big-leaf"
-                  className="about-image"
-                  alt="leaf"
-                />
-                <img
-                  src={require("../images/selfportrait.png")}
-                  id="self-portrait"
-                  className="about-image"
-                  // if it is on the drawing, make drawing opacity 100% otherwise just 0 so it is always loaded in
-                  style={isDrawing ? { opacity: "100%" } : { opacity: "0" }}
-                  alt="self-portrait"
-                />
-                <img
-                  src={require("../images/selfphoto.png")}
-                  id="self-photo"
-                  // if it is not on the drawing (so, it is on the photo), make drawing opacity 100% otherwise just 0 so it is always loaded in
-                  style={isDrawing ? { opacity: "0" } : { opacity: "100%" }}
-                  className="about-image"
-                  alt="self-portrait"
-                />
+                <div className="about-image-carousel">
+                  <img
+                    src={require("../images/one-big-leaf.png")}
+                    id="one-big-leaf"
+                    className="about-image"
+                    alt="leaf"
+                  />
+                  <img
+                    src={require("../images/selfportrait.png")}
+                    id="self-portrait"
+                    className="about-image"
+                    // if it is on the drawing, make drawing opacity 100% otherwise just 0 so it is always loaded in
+                    style={isDrawing ? { opacity: "100%" } : { opacity: "0" }}
+                    alt="self-portrait"
+                  />
+                  <img
+                    src={require("../images/selfphoto.png")}
+                    id="self-photo"
+                    // if it is not on the drawing (so, it is on the photo), make drawing opacity 100% otherwise just 0 so it is always loaded in
+                    style={isDrawing ? { opacity: "0" } : { opacity: "100%" }}
+                    className="about-image"
+                    alt="self-portrait"
+                  />
+                </div>
               </>
             )}
+            <div className="white-line"></div>
           </div>
         </div>
       </div>
