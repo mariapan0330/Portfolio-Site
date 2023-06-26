@@ -1,30 +1,33 @@
 .skills-list {
   display: flex;
   flex-wrap: wrap;
+
+  margin-bottom: 5%;
+
   color: rgb(37, 45, 53);
   font-size: 1.3vw;
-  margin-bottom: 5%;
 }
 
 .skills-list-item {
   /* width:10%; */
-  justify-content: center;
-  align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 0 0.2rem;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 0.3rem;
   border-radius: 0.5vw;
 }
 
 .skills-list-item:hover {
   background-color: rgba(34, 39, 111, 0.254);
-  transition-duration: 300ms;
+  transition-duration: 200ms;
 }
 
 /* if skills list item is hovered, add an extra drop shadow to the skill img */
 .skills-list-item:hover > .skills-list-imgs {
   filter: drop-shadow(0 0 5px white);
-  transition-duration: 300ms;
+  transition-duration: 200ms;
 }
 
 .skills-list-item p {
@@ -32,13 +35,14 @@
 }
 
 .skills-list-imgs {
-  width: 4vw;
-  height: 4vw;
-  border-radius: 0.5vw;
-  padding: 0.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 4vw;
+  height: 4vw;
+  border-radius: 0.5vw;
+  
   filter: drop-shadow(0px 0px 5px rgba(37, 40, 69, 0.218));
 }
 

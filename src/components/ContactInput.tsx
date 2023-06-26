@@ -37,7 +37,7 @@ const ContactInput: React.FC<ContactInputProps> = ({
       {/* InputComponent is not in a separate file; it just changes from an <input> to a <textarea> on demand */}
       <InputComponent
         name={name}
-        rows={7}
+        rows={5}
         type={type}
         value={value}
         placeholder={placeholder}

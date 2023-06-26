@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
       // start moving when I am at [start], reach end position when I'm at [end]
       start: ".footer-start",
       // end: ".end-of-site",
-      duration:'25vh',
+      duration:'10vh',
       properties: [
         //   starts at 0% opacity
         { startValue: 0, endValue: 1, property: "opacity" },

@@ -122,28 +122,29 @@ const About: React.FC = () => {
           {/* ================================================ */}
           <div className="about-col-1">
             <Plx parallaxData={aboutPLX} className="">
-              {/* C1R1: About title */}
-              <div
-                id="about-hero-text"
-                onMouseEnter={(e) => {
-                  handleHobbyEnter(e, "");
-                }}
-              >
-                About
-              </div>
-
-              {/* C1R2: View my resume */}
-              <h2 className="about-p resume-p">
-                <a
-                  className="resume-link emphasis"
-                  href={require("../images/Maria Panagos Resume.pdf")}
-                  target="_blank"
-                  title="Opens resume PDF in a new tab"
+              {/* C1R1: About title and view resume*/}
+              <div className="hero-and-resume">
+                <div
+                  id="about-hero-text"
+                  onMouseEnter={(e) => {
+                    handleHobbyEnter(e, "");
+                  }}
                 >
-                  View my resume{" "}
-                  <i className="fa-solid fa-arrow-up-right-from-square" />
-                </a>
-              </h2>
+                  About
+                </div>
+
+                <h2 className="resume-p">
+                  <a
+                    className="resume-link"
+                    href={require("../images/Maria Panagos Resume.pdf")}
+                    target="_blank"
+                    title="Opens resume PDF in a new tab"
+                  >
+                    View my resume{" "}
+                    <i className="fa-solid fa-arrow-up-right-from-square" />
+                  </a>
+                </h2>
+              </div>
 
               {/* C1R3: About Paragraph */}
               <h2 className="about-p">
@@ -229,10 +230,13 @@ const About: React.FC = () => {
                     className="about-image"
                     alt="self-portrait"
                   />
+                  {/* <img
+                    src={require("../images/flower corner.png")}
+                    className="about-image flower-corner"
+                  /> */}
                 </div>
               </>
             )}
-            <div className="white-line"></div>
           </div>
         </div>
       </div>

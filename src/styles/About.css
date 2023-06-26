@@ -52,11 +52,16 @@
   margin-left: 5vw;
 }
 
+.hero-and-resume {
+  display: flex;
+  align-items: center;
+
+  margin-top: 3vw;
+}
+
 /* ========== ABOUT TITLE ========== */
 #about-hero-text {
-  margin-top: 3vw;
   padding: 0 1vw; /* in this font (B. Swash), letters get cut off to the left */
-  flex-basis: 30%;
   
   text-align: start;
   font-size: 8vw;
@@ -83,7 +88,8 @@
 
 /* ========== RESUME LINK ========== */
 .resume-p {
-  margin: 0;
+  margin: 0 5vw;
+  text-align: start;
 }
 
 .resume-link {
@@ -91,30 +97,29 @@
   line-height: 0%;
 
   text-decoration: none;
-  border-radius: 0.5vw;
-  background-color: #4b6a72;
+  border-radius: 0.5vw !important;
+  background-color: var(--teal);
   
   color:white !important;
   font-size: 2vw;
   font-weight: normal;
-  text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.47);
 
   cursor: pointer;
 }
 
 .resume-link:hover {
   color: rgb(232, 231, 231);
-  background-color: rgb(54, 69, 84);
+  background-color: var(--dark-teal);
   cursor:pointer;
 }
 
 /* ========== ABOUT PARAGRAPH ========== */
 .about-p {
-  flex-grow: 1;
   text-align: start;
   line-height: 130%;
+  margin: 0 0;
 
-  color: rgb(54, 69, 84);
+  color: var(--p-blue);
   font-size: 1.6vw;
   font-weight: normal;
 }
@@ -129,6 +134,7 @@
   background-color: var(--teal);
   color: white;
   border-radius: 0.4vw;
+  cursor:default;
 }
 
 /* ========== SKILLS (just the title; SkillsList has own CSS) ========== */
@@ -157,7 +163,6 @@
 
 
 
-
 /* ================================================ */
 /* =            Column 2: Images column            = */
 /* ================================================ */
@@ -168,7 +173,7 @@
 
 .hobby-img {
   position: absolute;
-  bottom: 25%;
+  bottom: 20%;
   right: 5%;
   width: 80%;
 
@@ -182,7 +187,7 @@
 /* this includes the big leaf, self portrait, and self photo */
 .about-image {
   position: absolute;
-  bottom: 15%;
+  bottom: 0%;
   right: 10%;
   filter: brightness(1.1) drop-shadow(0px 0px 10px rgba(31, 31, 31, 0.658));
 }
@@ -197,7 +202,7 @@
   right: 15%;
   width: 50%;
 
-  filter: hue-rotate(-10deg) saturate(65%) brightness(1.3)
+  filter: hue-rotate(-10deg) saturate(90%) brightness(1.3)
     drop-shadow(0px 0px 10px rgba(48, 48, 48, 0.435));
   transition-duration: 500ms;
 }
@@ -206,13 +211,18 @@
   right: 10%;
   width: 73%;
 
-  filter: saturate(70%) brightness(1.05)
+  filter: saturate(80%) brightness(1.05)
     drop-shadow(0px 0px 10px rgba(105, 105, 105, 0.435));
   transition-duration: 500ms;
 }
 
-.white-line{
-  border-bottom: 30px solid white;
+.flower-corner{
+  /* height: 40vh; */
+  width: 40vw;
+  filter: drop-shadow(0 0 5px rgba(105, 105, 105, 0.435));
+  /* background-color: red; */
+  right: 0;
+  bottom: 0;
 }
 
 /* ========== MEDIA QUERIES ========== */

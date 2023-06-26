@@ -1,4 +1,6 @@
-/* =============== CONTACT ME PAGE =============== */
+/* =============================================== */
+/*                 CONTACT ME PAGE               = */
+/* =============================================== */
 #contactme {
   display: flex;
   justify-content: center;
@@ -6,40 +8,54 @@
 
   position: relative;
   
-  min-height: 70vh;
+  /* min-height: 100vh; */
   max-height: fit-content;
 
   z-index: 90;
 }
 
+/* ========== Contains Words Column and the Form Column ========== */
+.contact-columns {
+  display: flex;
+  justify-content: center;
+  margin: 10vh 10vw 5vh;
+}
+/* ===================================== */
+/* =          Column 1: Words          = */
+/* ===================================== */
 .contact-col-1{
   display: flex;
   justify-content: start;
   align-items: start;
   flex-direction: column;
-
-  margin: 0 10vw;
   flex: 1;
+
+  margin-right: 5vw;
 }
 
-/* =============== CONTACT HERO TEXT AND SUBTITLE ("If you're looking...") =============== */
+/* ---------- CONTACT HERO TEXT AND SUBTITLE ("If you're looking...") ---------- */
 #contact-hero-text {
-  /* padding: 6vh 0 0 0; */
+  padding: 0;
+  margin: 0;
 }
 
 .contact-subtitle {
   margin-bottom: 0;
-  padding: 5vh 0;
+  padding: 0 0 5vh;
   
-  font-size: 1.5vw;
+  text-align: left;
+
+  font-size: 2vw;
   color: var(--brown);
   text-shadow: none;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 100%;
 }
 
 
-/* =============== CONTACT FORM =============== */
+/* ============================================== */
+/* =               Column 2: Form               = */
+/* ============================================== */
 .contact-form-flex {
   display: flex;
   justify-content: center;
@@ -55,7 +71,6 @@
   width: 30vw;
   /* it's 30vw, and each input form is 20vw */
 
-  margin: 5vh 0;
   padding: 4vh 0;
   
   background-color: white;
@@ -91,12 +106,12 @@
 
 .contact-form-thank-you > p {
   /* separates "Thank You, Name" and "Your msg has been submitted" */
-  padding: 2vh 0 0;
+  padding: 2vh 2vw 0;
   margin: 0;
 
   color: var(--p-blue);
   font-weight: normal;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   line-height: 100%;
   text-shadow: none;
 }
@@ -105,39 +120,54 @@
 .contact-item {
   width: 20vw;
 
-  margin: 4vh 0 0;
-  padding: 1vw;
+  margin: 2.5vh 0 0;
+  padding: 1vh 1vw;
   border: 2px solid grey;
   border-radius: 0.3vw;
 
+  color: var(--p-blue);
   font-family: var(--p-font);
+  font-weight: normal;
   font-size: 1vw;
+  line-height: 130%;
 }
 
+/* ------------- Contact form textarea (and wordcount) ------------- */
 .contact-textarea {
   resize: vertical;
 }
 
+.char-count {
+  text-align: right;
+  font-size: 1vw;
+  color: var(--p-blue);
+}
+
+.invalid-char-count {
+  color: var(--red);
+}
+
 /* ------------- Contact form error message ------------- */
-/* wow i didn't know about this before! */
 .contact-item:invalid ~ .contact-form-error {
   display: block;
+  margin: 0;
 }
 
 .contact-form-error {
   display: none;
-  color: var(--brown);
+  color: var(--red);
   font-size: 1vw;
 }
 
 /* ------------- Contact form submit button! ------------- */
 .contact-submit-btn {
-  width: 60%;
+  width: 50%;
   border: 2px solid var(--dark-teal);
+  margin: 0;
 
   color: white;
   font-family: var(--title-font);
-  font-size: 2vw;
+  font-size: 1.5vw;
   font-weight: normal;
 
   background-color: var(--teal);
