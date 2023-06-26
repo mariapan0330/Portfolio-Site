@@ -44,8 +44,8 @@
 /* ================================================ */
 .about-col-1 {
   display: flex;
-  /* flex: 1; */
-  flex-basis: 20%;
+  flex: 2;
+  /* flex-basis: 50%; */
 
   flex-direction: column;
 
@@ -167,7 +167,8 @@
 /* =            Column 2: Images column            = */
 /* ================================================ */
 .about-col-2 {
-  /* flex: 1; */
+  flex: 1;
+  flex-basis: 20%;
   position: relative;
 }
 

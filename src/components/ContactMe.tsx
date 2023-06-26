@@ -107,9 +107,9 @@ const ContactMe: React.FC = () => {
               </div>
 
               {/* Col 1 Row 3: Resume Button */}
-              <h2 className="resume-p">
+              <h2 className="resume-p" style={{margin:'0'}}>
                 <a
-                  className="resume-link emphasis"
+                  className="resume-link"
                   href={require("../images/Maria Panagos Resume.pdf")}
                   target="_blank"
                   title="Opens a new tab"

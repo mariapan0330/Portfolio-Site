@@ -18,15 +18,16 @@
 .contact-columns {
   display: flex;
   justify-content: center;
-  margin: 10vh 10vw 5vh;
+  align-items: center;
+  margin: 6vw 10vw;
 }
 /* ===================================== */
 /* =          Column 1: Words          = */
 /* ===================================== */
 .contact-col-1{
   display: flex;
-  justify-content: start;
   align-items: start;
+
   flex-direction: column;
   flex: 1;
 
@@ -41,12 +42,12 @@
 
 .contact-subtitle {
   margin-bottom: 0;
-  padding: 0 0 5vh;
+  padding: 2vh 0 4vh;
   
   text-align: left;
 
   font-size: 2vw;
-  color: var(--brown);
+  color: var(--p-blue);
   text-shadow: none;
   font-weight: normal;
   line-height: 100%;
@@ -91,7 +92,7 @@
 .contact-form-title {
   margin: 0;
 
-  color: var(--brown);
+  color: var(--green);
   font-family:  var(--title-font);
 }
 
