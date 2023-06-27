@@ -8,6 +8,7 @@ const ResumeBtn: React.FC = () => {
         className="resume-link"
         href={require("../images/Maria Panagos Resume.pdf")}
         target="_blank"
+        rel="noreferrer"
         title="Opens resume PDF in a new tab"
       >
         View my resume <i className="fa-solid fa-arrow-up-right-from-square" />

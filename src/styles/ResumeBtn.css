@@ -26,3 +26,15 @@
   background-color: var(--dark-teal);
   cursor: pointer;
 }
+
+
+@media screen and (max-width: 768px) {
+  .resume-box {
+    border-radius: 1vw;
+    padding: 2vw 3vw;
+  }
+
+  .resume-link {
+    font-size: 5vw;
+  }
+}

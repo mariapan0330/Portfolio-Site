@@ -52,3 +52,10 @@
   align-items: flex-start;
   margin-left: var(--timeline-pos); /* same as vine image left */
 }
+
+/* on smaller screens, do not display the vines, and make the cards bigger */
+@media screen and (max-width: 768px){
+  .vine-image {
+    display: none;
+  }
+}
