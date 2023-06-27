@@ -5,6 +5,7 @@ import SkillsList from "./SkillsList";
 import HobbiesList from "./HobbiesList";
 import LeafBorder from "./LeafBorder";
 import Plx from "react-plx";
+import ResumeBtn from "./ResumeBtn";
 
 type PLXItem = {
   start: string | number;
@@ -133,17 +134,7 @@ const About: React.FC = () => {
                   About
                 </div>
 
-                <h2 className="resume-p">
-                  <a
-                    className="resume-link"
-                    href={require("../images/Maria Panagos Resume.pdf")}
-                    target="_blank"
-                    title="Opens resume PDF in a new tab"
-                  >
-                    View my resume{" "}
-                    <i className="fa-solid fa-arrow-up-right-from-square" />
-                  </a>
-                </h2>
+                <ResumeBtn />
               </div>
 
               {/* C1R3: About Paragraph */}

@@ -1,0 +1,29 @@
+/* ========== RESUME BTN ========== */
+.resume-p {
+  /* margin: 0 3vw; */
+  padding: 1vw 2vw;
+
+  border-radius: 0.5vw;
+
+  line-height: 100%;
+  background-color: var(--teal);
+  text-align: center;
+}
+
+.resume-link {
+  line-height: 0%;
+
+  text-decoration: none;
+
+  color: white !important;
+  font-size: 2vw;
+  font-weight: normal;
+
+  cursor: pointer;
+}
+
+.resume-p:hover {
+  color: rgb(232, 231, 231);
+  background-color: var(--dark-teal);
+  cursor: pointer;
+}

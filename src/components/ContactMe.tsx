@@ -3,6 +3,7 @@ import ContactInput from "./ContactInput";
 import LeafBorder from "./LeafBorder";
 import "../styles/ContactMe.css";
 import Plx from "react-plx";
+import ResumeBtn from "./ResumeBtn";
 
 interface FormValues {
   username: string;
@@ -107,17 +108,7 @@ const ContactMe: React.FC = () => {
               </div>
 
               {/* Col 1 Row 3: Resume Button */}
-              <h2 className="resume-p" style={{margin:'0'}}>
-                <a
-                  className="resume-link"
-                  href={require("../images/Maria Panagos Resume.pdf")}
-                  target="_blank"
-                  title="Opens a new tab"
-                >
-                  View my resume&nbsp;
-                  <i className="fa-solid fa-arrow-up-right-from-square" />
-                </a>
-              </h2>
+              <ResumeBtn />
             </div>
           </Plx>
           {/* ----- Col 2: Form (or thank you message) ----- */}
