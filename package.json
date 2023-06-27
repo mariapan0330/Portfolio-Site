@@ -15,8 +15,8 @@
     "react-plx": "^2.1.0",
     "react-router-dom": "^6.10.0",
     "react-router-hash-link": "^2.4.3",
-    "react-scripts": "^4.9.5",
-    "typescript": "^5.0.4",
+    "react-scripts": "^5.0.1",
+    "typescript": "4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
