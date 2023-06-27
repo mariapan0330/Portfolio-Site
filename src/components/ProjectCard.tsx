@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 interface ProjectCardProps {
   image: string;
@@ -37,19 +37,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* {liveRepo} */}
         <p className="project-card-links">
           {live && (
-            <a href={live} target="_blank" title='Opens live site in a new tab'>
+            <a href={live} target="_blank" rel='noreferrer' title='Opens live site in a new tab'>
               LIVE&nbsp;<i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           )}
           {live && repo && <p className="project-card-or">|</p>}
           {repo && (
-            <a href={repo} target="_blank" title='Opens repository in a new tab'>
+            <a href={repo} target="_blank" rel='noreferrer' title='Opens repository in a new tab'>
               REPO&nbsp;<i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           )}
         </p>
         {/* <p className="project-card-tech">{technologies}</p> */}
-        <p className="project-card-tech">{technologies}</p>
+        <div className="project-card-tech">{technologies}</div>
       </div>
     </>
   );

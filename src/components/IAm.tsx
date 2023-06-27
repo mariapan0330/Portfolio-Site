@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "../styles/IAm.css";
 
 const IAm: React.FC = () => {
-  const words: string[] = [
+  const wordsList = [
     "a Software Developer!",
     // 'a friend.',
     "an entrepreneur.",
@@ -15,6 +15,9 @@ const IAm: React.FC = () => {
     "a statistician.",
     // 'big brained.',
   ];
+
+  const words = useMemo(() => wordsList, []);
+
   const [word, setWord] = useState<string>(words[0]);
   // white: '#aecebd', green: '#3b4f44'
   const [myColor, setMyColor] = useState<string>("#3b4f44"); // default green
@@ -35,7 +38,7 @@ const IAm: React.FC = () => {
     return () => {
       clearInterval(wordsInterval);
     };
-  }, []);
+  }, [words]);
 
   return (
     <>

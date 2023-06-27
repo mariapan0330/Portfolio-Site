@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 type HandleHobbyEnterT = (
   e: React.MouseEvent<HTMLSpanElement, MouseEvent>,

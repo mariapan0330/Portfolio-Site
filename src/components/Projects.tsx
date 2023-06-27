@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Projects.css";
 import ProjectCarousel from "./ProjectCarousel";
 import Plx from "react-plx";
@@ -49,7 +49,7 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
   const checkImgExists = (tech: string) => {
     // returns true if the image exists and false if it doesn't
     try {
-      let testLoad = require(`../images/tech stack/${tech.toLowerCase()}.png`);
+      require(`../images/tech stack/${tech.toLowerCase()}.png`);
       return true;
     } catch (err) {
       return false;
@@ -61,22 +61,18 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
     return (
       <>
         {techStack.map((tech, i) => (
-          <>
-            <div className="projects-tech-stack">
-              {checkImgExists(tech) ? (
+            <div key={`project-tech-${i}`} className="projects-tech-stack">
+              {checkImgExists(tech) && (
                 // if an image exists, render the image too. Otherwise just the word.
                 <img
-                  key={`project-tech-${i}`}
                   src={require(`../images/tech stack/${tech.toLowerCase()}.png`)}
+                  // key={`project-tech-img-${i}`}
                   className="projects-tech-img"
                   alt={tech}
                 />
-              ) : (
-                <></>
               )}
               <p className="projects-tech-description">{tech}</p>
             </div>
-          </>
         ))}
       </>
     );

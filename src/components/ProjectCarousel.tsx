@@ -38,7 +38,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   useEffect(() => {
     setContinueL(startIdx > 0);
     setContinueR(endIdx < projects.length);
-  }, [startIdx, endIdx]);
+  }, [startIdx, endIdx, projects.length]);
 
   const handleForward = () => {
     setStartIdx((prev) => prev + 1);

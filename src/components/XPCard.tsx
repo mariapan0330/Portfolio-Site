@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/XPCard.css";
 
 interface XPCardProps {
@@ -31,6 +31,7 @@ const XPCard: React.FC<XPCardProps> = ({
         <div className="xp-card-col-1">
           <img
             src={require("../images/experience/xp flower.png")}
+            alt='Flower nodes'
             className="xp-flower"
             style={
               // when expanded, keep a pink drop shadow on flower so you know it's open
