@@ -1,8 +1,11 @@
 #home {
-  min-height: 100vh;
-}
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 
-#home-container {
+  min-height: 100vh;
+  margin: 0 25vw;
   z-index: 99;
   position: relative;
   padding-top: 20vh;
@@ -20,10 +23,9 @@
 }
 
 #hi-im {
+  text-align: left;
   color: #161e16;
   text-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
-  position: absolute;
-  left: 29vw;
   font-size: 3.5vw;
 }
 
@@ -34,6 +36,7 @@
 }
 
 #main-name {
+  padding: 0 1vw;
   font-size: 15vw;
   font-family: var(--title-font);
   font-weight: bolder;

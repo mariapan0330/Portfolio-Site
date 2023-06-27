@@ -43,7 +43,6 @@ const IAm: React.FC = () => {
   return (
     <>
       <div id="description">
-        <div className="empty-col"></div>
         <h1 className="middle-column">
           I am{" "}
           <span
@@ -53,7 +52,6 @@ const IAm: React.FC = () => {
             {word}
           </span>
         </h1>
-        <div className="empty-col"></div>
       </div>
     </>
   );

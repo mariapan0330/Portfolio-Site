@@ -133,8 +133,6 @@ const About: React.FC = () => {
                 >
                   About
                 </div>
-
-                <ResumeBtn />
               </div>
 
               {/* C1R3: About Paragraph */}

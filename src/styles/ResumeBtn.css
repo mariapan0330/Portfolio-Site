@@ -1,8 +1,7 @@
 /* ========== RESUME BTN ========== */
-.resume-p {
+.resume-box {
   /* margin: 0 3vw; */
   padding: 1vw 2vw;
-
   border-radius: 0.5vw;
 
   line-height: 100%;
@@ -22,7 +21,7 @@
   cursor: pointer;
 }
 
-.resume-p:hover {
+.resume-box:hover {
   color: rgb(232, 231, 231);
   background-color: var(--dark-teal);
   cursor: pointer;

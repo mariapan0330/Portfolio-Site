@@ -1,9 +1,9 @@
 import React from "react";
-import '../styles/ResumeBtn.css'
+import "../styles/ResumeBtn.css";
 
 const ResumeBtn: React.FC = () => {
   return (
-    <div className="resume-p">
+    <div className="resume-box">
       <a
         className="resume-link"
         href={require("../images/Maria Panagos Resume.pdf")}

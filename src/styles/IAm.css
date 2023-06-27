@@ -1,10 +1,5 @@
 #description {
   display: flex;
-  justify-content: center;
-}
-
-.empty-col {
-  flex: 3.5;
 }
 
 .middle-column {
