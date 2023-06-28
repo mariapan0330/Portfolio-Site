@@ -166,20 +166,8 @@ const ContactMe: React.FC = () => {
                     placeholder="* Message"
                     value={formValues["message"]}
                     onChange={onChange}
+                    charCount={charCount}
                   />
-                  <div className="char-count">
-                    <span
-                      // if there's more than 400 characters, make the character counter red
-                      className={`${charCount < 0 && "invalid-char-count"}`}
-                    >
-                      {charCount}{" "}
-                      {charCount < 0 ? 
-                        <span>(Oops! Character limit exceeded.)</span>
-                        :
-                        <span>Characters left</span>
-                      }
-                    </span>
-                  </div>
                   {/* Form Row 5: Submit Button */}
                   <button className="contact-item contact-submit-btn">
                     Submit

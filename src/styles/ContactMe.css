@@ -68,7 +68,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   width: 30vw;
   /* it's 30vw, and each input form is 20vw */
 
@@ -139,16 +139,14 @@
 }
 
 .char-count {
-  font-size: 1.2vw;
-  color: var(--p-blue);
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+
+  padding: 0 2vw;
+
+  color: var(--p-blue);
+  font-size: 1.2vw;
   text-align: right;
-}
-
-.char-count>span {
-
 }
 
 .invalid-char-count {
