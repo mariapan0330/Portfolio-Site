@@ -32,10 +32,19 @@
     align-items: center;
     flex-direction: column;
   }
-
+  
   .nav li {
     font-size: 2.5vw;
     width: 100%
+  }
+
+  .nav-menu-btn {
+    font-size: 4vw;
+  }
+
+  .nav-menu-btn:hover {
+    background-color: var(--dark-green);
+    cursor: pointer;
   }
 }
 
@@ -49,7 +58,7 @@
 
 .nav li:hover {
   /* background-color: #213f23; */
-  background-color: #2a3a2b;
+  background-color: var(--dark-green);
 }
 
 .nav a {
