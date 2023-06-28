@@ -129,7 +129,7 @@
   color: var(--p-blue);
   font-family: var(--p-font);
   font-weight: normal;
-  font-size: 1vw;
+  font-size: 1.5vw;
   line-height: 130%;
 }
 
@@ -139,9 +139,16 @@
 }
 
 .char-count {
-  text-align: right;
-  font-size: 1vw;
+  font-size: 1.2vw;
   color: var(--p-blue);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.char-count>span {
+
 }
 
 .invalid-char-count {

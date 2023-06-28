@@ -173,9 +173,11 @@ const ContactMe: React.FC = () => {
                       className={`${charCount < 0 && "invalid-char-count"}`}
                     >
                       {charCount}{" "}
-                      {charCount < 0 && (
+                      {charCount < 0 ? 
                         <span>(Oops! Character limit exceeded.)</span>
-                      )}
+                        :
+                        <span>Characters left</span>
+                      }
                     </span>
                   </div>
                   {/* Form Row 5: Submit Button */}
