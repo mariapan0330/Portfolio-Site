@@ -93,6 +93,7 @@
   margin: 0;
 
   color: var(--green);
+  font-size: 2vw;
   font-family:  var(--title-font);
 }
 
@@ -129,7 +130,7 @@
   color: var(--p-blue);
   font-family: var(--p-font);
   font-weight: normal;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   line-height: 130%;
 }
 
@@ -142,8 +143,9 @@
   display: flex;
   justify-content: flex-end;
 
-  padding: 0 2vw;
+  padding: 0 2vw 0.5vw;
 
+  line-height: 100%;
   color: var(--p-blue);
   font-size: 1.2vw;
   text-align: right;

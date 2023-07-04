@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/ImageOverlay.css'
+import "../styles/ImageOverlay.css";
 
 interface ImageOverlayProps {
   img: string;
@@ -15,7 +15,13 @@ const ImageOverlay: React.FC<ImageOverlayProps> = ({
 }) => {
   return (
     <>
-      <div className="img-overlay-container">
+      <div
+        className="img-overlay-container"
+        title="Click anywhere to close"
+        onClick={() => {
+          handleOverlayClose();
+        }}
+      >
         <img
           className="img-overlay-img"
           src={img}

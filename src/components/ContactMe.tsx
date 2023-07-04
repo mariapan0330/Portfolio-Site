@@ -169,9 +169,11 @@ const ContactMe: React.FC = () => {
                     charCount={charCount}
                   />
                   {/* Form Row 5: Submit Button */}
-                  <button className="contact-item contact-submit-btn">
-                    Submit
-                  </button>
+                  <div className="submit-btn-container">
+                    <button className="contact-item contact-submit-btn">
+                      Submit
+                    </button>
+                  </div>
                 </form>
               )}
             </Plx>
