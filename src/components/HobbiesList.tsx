@@ -1,12 +1,7 @@
 import React from "react";
+import HandleHobbyEnterT from "src/types/hobby-enter";
 
-type HandleHobbyEnterT = (
-  e: React.MouseEvent<HTMLSpanElement, MouseEvent>,
-  hobby: string
-) => void;
-type SetShowTetris = (x: boolean) => void;
-
-interface HobbiesListProps {
+type HobbiesListProps = {
   handleHobbyEnter: HandleHobbyEnterT;
   setShowTetris: SetShowTetris;
 }

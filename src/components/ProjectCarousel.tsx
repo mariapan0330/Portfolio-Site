@@ -1,30 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import Plx from "react-plx";
-
-interface Project {
-  image: string;
-  title: string;
-  live?: string;
-  repo?: string;
-  technologies: React.JSX.Element;
-}
+import Project from "src/types/project";
+import PLXItem from "src/types/plx-item";
 
 interface ProjectCarouselProps {
   projects: Project[];
   handleOverlayOpen: Function;
 }
-
-type PLXItem = {
-  start: string | number;
-  end: string | number;
-  duration?: string | number;
-  properties: {
-    startValue: number;
-    endValue: number;
-    property: string;
-  }[];
-};
 
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   projects,

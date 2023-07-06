@@ -5,12 +5,7 @@ import "../styles/ContactMe.css";
 import Plx from "react-plx";
 import ResumeBtn from "./ResumeBtn";
 import PLXItem from "src/types/plx-item";
-
-interface FormValues {
-  username: string;
-  email: string;
-  message: string;
-}
+import FormValues from "src/types/form-values";
 
 // loosely following https://www.youtube.com/watch?v=tIdNeoHniEY
 const ContactMe: React.FC = () => {

@@ -5,7 +5,6 @@ import SkillsList from "./SkillsList";
 import HobbiesList from "./HobbiesList";
 import LeafBorder from "./LeafBorder";
 import Plx from "react-plx";
-import ResumeBtn from "./ResumeBtn";
 import PLXItem from "src/types/plx-item";
 import HandleHobbyEnterT from "src/types/hobby-enter";
 

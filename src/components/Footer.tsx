@@ -1,17 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Footer.css";
 import Plx from "react-plx";
-
-type PLXItem = {
-  start: string | number;
-  end?: string | number;
-  duration?: string | number;
-  properties: {
-    startValue: number;
-    endValue: number;
-    property: string;
-  }[];
-};
+import PLXItem from "src/types/plx-item";
 
 const Footer: React.FC = () => {
   const contactLinks = [

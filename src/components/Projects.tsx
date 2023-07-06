@@ -3,25 +3,8 @@ import "../styles/Projects.css";
 import ProjectCarousel from "./ProjectCarousel";
 import Plx from "react-plx";
 import LeafBorder from "./LeafBorder";
-
-type ProjectInfo = {
-  image: string;
-  title: string;
-  live: string;
-  repo: string;
-  technologies: React.JSX.Element;
-};
-
-type PLXItem = {
-  start: string | number;
-  end: string | number;
-  duration?: string | number;
-  properties: {
-    startValue: number;
-    endValue: number;
-    property: string;
-  }[];
-};
+import PLXItem from "src/types/plx-item";
+import ProjectInfo from "src/types/project-info";
 
 interface ProjectsProps {
   handleOverlayOpen: Function;

@@ -1,18 +1,7 @@
 import React from "react";
 import "../styles/Leaves.css";
 import Plx from "react-plx";
-
-type PLXItem = {
-  start: string | number;
-  end: string | number;
-  duration?: string | number;
-  properties: {
-    startValue: number;
-    endValue: number;
-    unit?: string;
-    property: string;
-  }[];
-};
+import PLXItem from "src/types/plx-item";
 
 const RightLeaf: React.FC = () => {
   const animate = (speed: number, start: number): PLXItem[] => {

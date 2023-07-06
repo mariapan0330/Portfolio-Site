@@ -4,29 +4,10 @@ import Maze from "./Maze";
 import XPCard from "./XPCard";
 import Plx from "react-plx";
 import LeafBorder from "./LeafBorder";
+import PLXItem from "src/types/plx-item";
+import XPInfo from "src/types/xp-info";
 
-type XPInfo = {
-  images?: string[];
-  position: string;
-  company: string;
-  date: string;
-  summary: React.JSX.Element;
-  last?: boolean;
-  description: React.JSX.Element;
-};
-
-type PLXItem = {
-  start: string | number;
-  end: string | number;
-  duration?: string | number;
-  properties: {
-    startValue: number;
-    endValue: number;
-    property: string;
-  }[];
-};
-
-interface ExperienceProps {
+type ExperienceProps = {
   handleOverlayOpen: Function;
 }
 
