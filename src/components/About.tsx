@@ -95,6 +95,7 @@ const About: React.FC = () => {
             className={`${
               animateTetris ? "tetris-piece-after" : "tetris-piece-before"
             }`}
+            alt='tetris piece'
           />
         ) : (
           <></>
@@ -176,6 +177,7 @@ const About: React.FC = () => {
                 <img
                   src={require(`../images/hobbies/${currHobby}.jpg`)}
                   className="hobby-img"
+                  alt={currHobby}
                 />
               </>
             ) : (

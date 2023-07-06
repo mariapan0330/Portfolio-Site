@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
       // start moving when I am at [start], reach end position when I'm at [end]
       start: ".footer-start",
       // end: ".end-of-site",
-      duration:'10vh',
+      duration: "10vh",
       properties: [
         //   starts at 0% opacity
         { startValue: 0, endValue: 1, property: "opacity" },
@@ -45,7 +45,6 @@ const Footer: React.FC = () => {
       <div id="footer">
         {/* all of it has footerPLX; footer-info is also a flex row */}
         <Plx parallaxData={footerPLX} className="footer-info">
-
           {/* column 1: contact column */}
           <div className="footer-contact-col">
             {/* first item: email*/}
@@ -62,6 +61,7 @@ const Footer: React.FC = () => {
               >
                 <img
                   className="footer-contact-img"
+                  alt="email"
                   src={require(`../images/contact links/email.png`)}
                 />
                 &nbsp;maria.pan0330@gmail.com
@@ -83,13 +83,16 @@ const Footer: React.FC = () => {
                   className="footer-contact-link"
                   href={item.link}
                   target="_blank"
+                  rel="noreferrer"
                   title="Opens a new tab"
                 >
                   <img
                     className="footer-contact-img"
+                    alt={item.img}
                     src={require(`../images/contact links/${item.img}`)}
                   />
-                  &nbsp;{item.link}&nbsp;<i className="fa-solid fa-arrow-up-right-from-square" />
+                  &nbsp;{item.link}&nbsp;
+                  <i className="fa-solid fa-arrow-up-right-from-square" />
                 </a>
               </div>
             ))}
@@ -105,9 +108,11 @@ const Footer: React.FC = () => {
                 <a
                   href="https://github.com/mariapan0330/Personal-Website"
                   target="_blank"
+                  rel="noreferrer"
                   title="Opens a new tab"
                 >
-                  View repository <i className="fa-solid fa-arrow-up-right-from-square" />
+                  View repository{" "}
+                  <i className="fa-solid fa-arrow-up-right-from-square" />
                 </a>
               </div>
             </div>

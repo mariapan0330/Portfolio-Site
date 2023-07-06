@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Experience.css";
 import Maze from "./Maze";
 import XPCard from "./XPCard";
@@ -9,7 +9,7 @@ import XPInfo from "src/types/xp-info";
 
 type ExperienceProps = {
   handleOverlayOpen: Function;
-}
+};
 
 const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
   const experiences: XPInfo[] = [
@@ -50,6 +50,7 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
           <a
             href="https://www.credly.com/badges/c19b6df5-5dd4-415e-aaaf-fd1f16b1d5d8/linked_in?t=rixz72"
             target="_blank"
+            rel="noreferrer"
             className="xp-link"
             title="Opens verified certificate in a new tab"
           >
@@ -90,6 +91,7 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
           <a
             href="https://www.etsy.com/shop/LittleBirdBigIdeas"
             target="_blank"
+            rel="noreferrer"
             className="xp-link"
             title="Opens Etsy shop in a new tab"
           >
@@ -143,18 +145,16 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
       position: "Bachelor of Arts in Psychology",
       company: "University of Dublin, Trinity College",
       date: "August 2018 - May 2022",
-      summary: (
-        <>
-          Graduated with second class honors, first division.
-        </>
-      ),
+      summary: <>Graduated with second class honors, first division.</>,
       last: true,
       description: (
         <>
-          - Gained experience in data analysis using Python's NumPy, Pandas, and Matplotlib, as well as IBM's SPSS, analyzing large data sets as a part of various research projects.          
+          - Gained experience in data analysis using Python's NumPy, Pandas, and
+          Matplotlib, as well as IBM's SPSS, analyzing large data sets as a part
+          of various research projects.
           <br />
-          <br />
-          - Developed soft skills including effective written and verbal communication, critical thinking, and networking.
+          <br />- Developed soft skills including effective written and verbal
+          communication, critical thinking, and networking.
         </>
       ),
     },
