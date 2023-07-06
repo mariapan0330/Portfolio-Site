@@ -10,3 +10,4 @@ test("renders learn react link", () => {
 
 // do an npm start in this folder to start React frontend,
 // and cd backend and npm start there to start the backend
+// npm start && cd backend && npm start
