@@ -141,19 +141,23 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
       ),
     },
     {
-      images: ["PRO1.jpg", "PRO2.jpg"],
-      position: "Bachelor of Arts in Psychology",
+      // images: [""],
+      position: "Bachelor of Arts",
       company: "University of Dublin, Trinity College",
       date: "August 2018 - May 2022",
-      summary: <>Graduated with second class honors, first division.</>,
+      summary: <>Double major in Psychology and Sociology.</>,
       last: true,
       description: (
         <>
+          - Graduated with second class honors, first division.
+          <br />
+          <br />
           - Gained experience in data analysis using Python's NumPy, Pandas, and
           Matplotlib, as well as IBM's SPSS, analyzing large data sets as a part
           of various research projects.
           <br />
-          <br />- Developed soft skills including effective written and verbal
+          <br />
+          - Developed soft skills including effective written and verbal
           communication, critical thinking, and networking.
         </>
       ),
