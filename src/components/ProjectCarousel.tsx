@@ -57,7 +57,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
     {
       // start moving when I am at [start], reach end position when I'm at [end]
       start: "140vh",
-      end: "200vh",
+      end: "180vh",
       properties: [
         //   starts 300px below and at 0% opacity
         { startValue: 300, endValue: 0, property: "translateY" },

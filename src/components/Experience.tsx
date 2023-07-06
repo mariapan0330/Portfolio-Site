@@ -197,7 +197,7 @@ const Experience: React.FC<ExperienceProps> = ({ handleOverlayOpen }) => {
     {
       // start moving when I am at [start], reach end position when I'm at [end]
       start: "215vh",
-      end: "310vh",
+      end: "280vh",
       properties: [
         //   starts 300px below and at 0% opacity
         { startValue: 300, endValue: 0, property: "translateY" },
