@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/Home.css";
 import IAm from "./IAm";
 import ResumeBtn from "./ResumeBtn";
