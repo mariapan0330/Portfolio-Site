@@ -6,22 +6,8 @@ import HobbiesList from "./HobbiesList";
 import LeafBorder from "./LeafBorder";
 import Plx from "react-plx";
 import ResumeBtn from "./ResumeBtn";
-
-type PLXItem = {
-  start: string | number;
-  end: string | number;
-  duration?: string | number;
-  properties: {
-    startValue: number;
-    endValue: number;
-    property: string;
-  }[];
-};
-
-type HandleHobbyEnterT = (
-  e: React.MouseEvent<HTMLSpanElement, MouseEvent>,
-  hobby: string
-) => void;
+import PLXItem from "src/types/plx-item";
+import HandleHobbyEnterT from "src/types/hobby-enter";
 
 const About: React.FC = () => {
   const [isDrawing, setIsDrawing] = useState<boolean>(true);

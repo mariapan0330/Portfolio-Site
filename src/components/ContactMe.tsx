@@ -4,23 +4,13 @@ import LeafBorder from "./LeafBorder";
 import "../styles/ContactMe.css";
 import Plx from "react-plx";
 import ResumeBtn from "./ResumeBtn";
+import PLXItem from "src/types/plx-item";
 
 interface FormValues {
   username: string;
   email: string;
   message: string;
 }
-
-type PLXItem = {
-  start: string | number;
-  end?: string | number;
-  duration?: string | number;
-  properties: {
-    startValue: number;
-    endValue: number;
-    property: string;
-  }[];
-};
 
 // loosely following https://www.youtube.com/watch?v=tIdNeoHniEY
 const ContactMe: React.FC = () => {
