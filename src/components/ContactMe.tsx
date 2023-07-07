@@ -14,10 +14,41 @@ const ContactMe: React.FC = () => {
     email: "",
     message: "",
   });
+  const [validEmail, setValidEmail] = useState<boolean>(true);
   const [hasSubmitted, setHasSubmitted] = useState<boolean>(false);
   const [charCount, setCharCount] = useState<number>(
     400 - formValues.message.length
   );
+
+  const sendEmail = () => {
+    const postData = {
+      userName: formValues["username"],
+      userEmail: formValues["email"],
+      userMessage: formValues["message"],
+    };
+
+    // UPDATE WHEN I HOST THE SITE
+    const baseURL = "http://localhost:5000";
+
+    fetch(`${baseURL}/api/user/message`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setValidEmail(true)
+        // Handle the response data here
+      })
+      .catch((error) => {
+        console.error(error);
+        setValidEmail(false)
+        // Handle any errors that occurred during the request
+      });
+  };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -30,32 +61,7 @@ const ContactMe: React.FC = () => {
         formValues["message"]
       );
 
-      const postData = {
-        userName: formValues["username"],
-        userEmail: formValues["email"],
-        userMessage: formValues["message"]
-      };
-      
-      // UPDATE WHEN I HOST THE SITE
-      const baseURL = "http://localhost:5000"
-      
-      fetch(`${baseURL}/api/user/message`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postData)
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-          // Handle the response data here
-        })
-        .catch(error => {
-          console.error(error);
-          // Handle any errors that occurred during the request
-        });
-
+      sendEmail()
     } else {
       setHasSubmitted(false);
     }
@@ -132,8 +138,16 @@ const ContactMe: React.FC = () => {
                   <h1 className="contact-form-thank-you">
                     Thank you, {`${formValues["username"]}`}!
                     <p>
-                      Your message has been submitted. <br />I usually respond
-                      via email within 1-2 business days.
+                      Your message has been submitted. 
+                      <br />
+                      <br />
+                      I usually respond within 1-2 business days!
+                      <br />
+                      <br />
+                      {validEmail && <span style={{'color':'var(--teal)'}}>
+                      An automated email with a copy of
+                      your message has been sent to {formValues["email"]}.
+                      </span>}
                     </p>
                   </h1>
                 </div>
@@ -145,6 +159,9 @@ const ContactMe: React.FC = () => {
                 >
                   {/* Form Row 1: title */}
                   <h1 className="contact-form-title">Drop a message!</h1>
+                  <p className="contact-form-subtitle">
+                    This message will be emailed to me.
+                  </p>
 
                   {/* Form Row 2: Name input */}
                   {/* breaking inputs into ContactInput components */}
