@@ -41,7 +41,7 @@ const messageGmail = async (req, res) => {
   let message = {
     from: EMAIL,
     to: `${userEmail}`,
-    subject: `Maria Panagos Portfolio Site`,
+    subject: `Thank you for your message via my portfolio site`,
     text: `
     Hi ${userName},
     
@@ -49,7 +49,7 @@ const messageGmail = async (req, res) => {
 
         "${userMessage}"
 
-    I usually reply within 1-2 business days. I look forward to connecting!
+    I usually reply within 1-2 business days. Looking forward to connecting!
 
     Thank you,
     Maria
