@@ -29,6 +29,33 @@ const ContactMe: React.FC = () => {
         formValues["email"],
         formValues["message"]
       );
+
+      const postData = {
+        userName: formValues["username"],
+        userEmail: formValues["email"],
+        userMessage: formValues["message"]
+      };
+      
+      // UPDATE WHEN I HOST THE SITE
+      const baseURL = "http://localhost:5000"
+      
+      fetch(`${baseURL}/api/user/message`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          // Handle the response data here
+        })
+        .catch(error => {
+          console.error(error);
+          // Handle any errors that occurred during the request
+        });
+
     } else {
       setHasSubmitted(false);
     }
