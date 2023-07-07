@@ -15,32 +15,11 @@ const messageGmail = async (req, res) => {
 
   let transporter = nodemailer.createTransport(config);
 
-  // send email from myself to myself with contents of their email
-  let messageToSelf = {
-    from: EMAIL,
-    to: EMAIL,
-    subject: `${userName} via MP Portfolio Site`,
-    text: `
-    From: ${userName} (${userEmail})
-    Message: ${userMessage}
-    `,
-  };
-
-  transporter
-    .sendMail(messageToSelf)
-    .then(() => {
-      return res.status(201).json({
-        msg: "You should recieve a gmail response.",
-      });
-    })
-    .catch((err) => {
-      return res.status(500).json({ err });
-    });
-
   // this is a message to the user letting them know I have recieved the email and what they sent.
   let message = {
     from: EMAIL,
     to: `${userEmail}`,
+    bcc: EMAIL,
     subject: `Thank you for your message via my portfolio site`,
     text: `
     Hi ${userName},
@@ -54,19 +33,35 @@ const messageGmail = async (req, res) => {
     Thank you,
     Maria
     `,
+    html: `
+      <p>
+        Hi ${userName},
+        <br />
+        <br />
+        This is an automated message from Maria Panagos just letting you know I
+        have recieved your message via my portfolio site! Here's what you wrote:
+        <br />
+        <br />
+        "${userMessage}"
+        <br />
+        <br />
+        I usually reply within 1-2 business days. Looking forward to connecting!
+        <br />
+        Thank you, Maria
+      </p>
+    `
   };
 
   transporter
     .sendMail(message)
     .then(() => {
       return res.status(201).json({
-        msg: "They should recieve a gmail response.",
+        msg: "They should recieve a gmail response that bcc's you.",
       });
     })
     .catch((err) => {
       return res.status(500).json({ err });
     });
-
 };
 
 module.exports = { messageGmail };
