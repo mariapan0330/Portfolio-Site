@@ -72,7 +72,7 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
       live: "",
       repo: "https://github.com/mariapan0330/Personal-Website",
       technologies: renderTechnologies(
-        frontendTech.slice(0, -1).concat(["TypeScript", "Netlify"])
+        frontendTech.slice(0, -1).concat(["TypeScript", "Express", "Netlify", "Nodemailer"])
       ),
     },
     {

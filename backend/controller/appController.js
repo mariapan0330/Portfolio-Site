@@ -1,51 +1,9 @@
 const nodemailer = require("nodemailer");
 const { EMAIL, PASSWORD } = require("../env.js");
 
-// send mail from random Ethereal testing account
-const messageTestAccount = async (req, res) => {
-  let testAccount = await nodemailer.createTestAccount();
-  //   creates random username and pw
-
-  // create reusable transporter object using the default STMP transport
-  let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      // replace with real account when ready
-      user: testAccount.user, // generated ethereal user
-      pass: testAccount.pass, // generated ethereal password
-    },
-  });
-
-  // send mail with defined transport object
-  let messageInfo = {
-    from: '"Fred Foo 👻" <foo@example.com>', // sender address
-    to: "bar@example.com, baz@example.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "You have successfully registered! Thank you for doin business together.", // plain text body
-    // html: "<b>successfully</b>", // html body
-  };
-
-  transporter
-    .sendMail(messageInfo)
-    .then((info) => {
-      return res.status(201).json({
-        msg: "You should recieve an email :))",
-        info: info.messageId,
-        preview: nodemailer.getTestMessageUrl(info),
-      });
-    })
-    .catch((err) => {
-      return res.status(500).json({ err });
-    });
-
-  //   res.status(201).json("You have successfully logged a message!!");
-};
-
 // send mail from real Gmail account
 const messageGmail = async (req, res) => {
-  let { userEmail } = req.body;
+  let { userName, userEmail, userMessage } = req.body;
 
   let config = {
     service: "gmail",
@@ -57,15 +15,19 @@ const messageGmail = async (req, res) => {
 
   let transporter = nodemailer.createTransport(config);
 
-  let message = {
+  // send email from myself to myself with contents of their email
+  let messageToSelf = {
     from: EMAIL,
     to: EMAIL,
-    subject: "Message from someone through your portfolio email",
-    text: `This is an example message from ${userEmail}`,
+    subject: `${userName} via MP Portfolio Site`,
+    text: `
+    From: ${userName} (${userEmail})
+    Message: ${userMessage}
+    `,
   };
 
   transporter
-    .sendMail(message)
+    .sendMail(messageToSelf)
     .then(() => {
       return res.status(201).json({
         msg: "You should recieve a gmail response.",
@@ -75,7 +37,36 @@ const messageGmail = async (req, res) => {
       return res.status(500).json({ err });
     });
 
-  //   res.status(201).json("Trying to send message with Gmail");
+  // this is a message to the user letting them know I have recieved the email and what they sent.
+  let message = {
+    from: EMAIL,
+    to: `${userEmail}`,
+    subject: `Maria Panagos Portfolio Site`,
+    text: `
+    Hi ${userName},
+    
+    This is an automated message from Maria Panagos just letting you know I have recieved your message via my portfolio site! Here's what you wrote:
+
+        "${userMessage}"
+
+    I usually reply within 1-2 business days. I look forward to connecting!
+
+    Thank you,
+    Maria
+    `,
+  };
+
+  transporter
+    .sendMail(message)
+    .then(() => {
+      return res.status(201).json({
+        msg: "They should recieve a gmail response.",
+      });
+    })
+    .catch((err) => {
+      return res.status(500).json({ err });
+    });
+
 };
 
-module.exports = { messageTestAccount, messageGmail };
+module.exports = { messageGmail };

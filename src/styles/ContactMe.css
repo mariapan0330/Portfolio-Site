@@ -164,7 +164,8 @@
 .contact-form-error {
   display: none;
   color: var(--red);
-  font-size: 1vw;
+  font-size: 1.3vw;
+  line-height: 150%;
 }
 
 /* ------------- Contact form submit button! ------------- */
