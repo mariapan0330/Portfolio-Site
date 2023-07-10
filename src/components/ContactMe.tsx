@@ -30,7 +30,7 @@ const ContactMe: React.FC = () => {
     // UPDATE WHEN I HOST THE SITE
     const baseURL = "https://maria-panagos.netlify.app";
 
-    fetch(`${baseURL}/api/user/message`, {
+    fetch(`${baseURL}/.netlify/functions/sendEmail`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
