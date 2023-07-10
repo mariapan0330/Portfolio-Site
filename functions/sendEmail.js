@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const { EMAIL, PASSWORD } = require("./env.js");
+// const { EMAIL, PASSWORD } = require("./env.js");
 
 exports.handler = async function (event, context) {
   let { userName, userEmail, userMessage } = event.body;
@@ -7,15 +7,15 @@ exports.handler = async function (event, context) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: EMAIL,
-      pass: PASSWORD,
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD,
     },
   });
 
   let message = {
-    from: EMAIL,
+    from: process.env.EMAIL,
     to: `${userEmail}`,
-    bcc: EMAIL,
+    bcc: process.env.EMAIL,
     subject: `Thank you for your message via my portfolio site`,
     text: `
         Hi ${userName},
