@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 exports.handler = async function (event, context, callback) {
   return {
     statusCode: 200,
-    body: JSON.stringify({message: "this is the sendEmail file"})
+    body: JSON.stringify({message: "this is the sendEmail file." + process.env.EMAIL})
   }
   console.log("Trying to send an email....");
   let { userName, userEmail, userMessage } = event.body;
