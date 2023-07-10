@@ -3,8 +3,10 @@ const nodemailer = require("nodemailer");
 
 exports.handler = async function (event, context) {
   console.log("Trying to send an email....");
-  let { userName, userEmail, userMessage } = JSON.parse(event.body);
+  let body = JSON.parse(event.body);
+  console.log(body)
 
+  /*
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -69,9 +71,10 @@ exports.handler = async function (event, context) {
       };
     });
 
-    
+    */
+
   return {
     statusCode: 200,
-    body: JSON.stringify({message: "this is the sendEmail file." + process.env.EMAIL + " You tried to send an email to " + userEmail})
+    body: JSON.stringify({message: "this is the sendEmail file." + body})
   }
 };
