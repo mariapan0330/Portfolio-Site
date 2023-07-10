@@ -41,7 +41,10 @@ const ContactMe: React.FC = () => {
         if (response.ok){
           return response.json()
         } else {
-          throw new Error("Request failed with status " + response.status + " :(")
+          return response.json().then((data) => {
+            throw new Error(data.msg)
+          })
+          // throw new Error("Request failed with status " + response.status + " :(")
         }
       })
       .then((data) => {

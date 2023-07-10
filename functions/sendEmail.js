@@ -64,7 +64,7 @@ exports.handler = async function (event, context, callback) {
         statusCode: 500,
         body: JSON.stringify({
           msg: "You have reached sendEmail, but something went wrong.",
-          err: err,
+          err: err.stack,
         })
       });
     });
