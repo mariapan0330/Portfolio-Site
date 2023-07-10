@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const { EMAIL, PASSWORD } = require("../backend/env.js");
+const { EMAIL, PASSWORD } = require("./env.js");
 
 exports.handler = async function (event, context) {
   let { userName, userEmail, userMessage } = event.body;
