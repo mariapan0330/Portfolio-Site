@@ -3,7 +3,11 @@ const nodemailer = require("nodemailer");
 
 exports.handler = async function (event, context) {
   console.log("Trying to send an email....");
-  let body = JSON.parse(event.body);
+  const body2 = event.body;
+  const body = JSON.parse(event.body);
+  const userEmail = JSON.parse(event.body.userEmail)
+  const userMessage = JSON.parse(event.body.userMessage)
+  const userName = JSON.parse(event.body.userName)
   console.log(body)
 
   /*
@@ -77,7 +81,11 @@ exports.handler = async function (event, context) {
     statusCode: 200,
     body: JSON.stringify({
       message: "this is the sendEmail file.",
-      bod: body
+      bod: body,
+      bod2: body2,
+      userEmail: userEmail,
+      userMessage: userMessage,
+      userName: userName,
     })
   }
 };
