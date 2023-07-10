@@ -1,9 +1,9 @@
 const nodemailer = require("nodemailer");
 // const { EMAIL, PASSWORD } = require("./env.js");
 
-exports.handler = async function (event, context, callback) {
+exports.handler = async function (event, context) {
   console.log("Trying to send an email....");
-  let { userName, userEmail, userMessage } = event.body;
+  let { userName, userEmail, userMessage } = JSON.parse(event.body);
 
   let transporter = nodemailer.createTransport({
     service: "gmail",
