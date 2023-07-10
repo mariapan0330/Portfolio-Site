@@ -135,9 +135,9 @@ const ContactMe: React.FC = () => {
               {hasSubmitted ? (
                 // if you've submitted a message, show the thank you message
                 <div className="contact-form">
-                  <h1 className="contact-form-thank-you">
-                    Thank you, {`${formValues["username"]}`}!
-                    {validEmail ? (
+                  {validEmail ? (
+                    <h1 className="contact-form-thank-you">
+                      Thank you, {`${formValues["username"]}`}!
                       <p>
                         Your message has been submitted.
                         <br />
@@ -150,11 +150,15 @@ const ContactMe: React.FC = () => {
                           been sent to {formValues["email"]}.
                         </span>
                       </p>
-                    ) : (<h1>
+                    </h1>
+                  ) : (
+                    <h1 className="contact-form-thank-you">
                       There was an error sending your message.
-                      <p>If this error persists, you can try emailing me at maria.pan0330@gmail.com instead!</p>
-                    </h1>)}
-                  </h1>
+                      <br />
+                      <p>If this error persists, you can try emailing me at
+                      maria.pan0330@gmail.com instead.</p>
+                    </h1>
+                  )}
                 </div>
               ) : (
                 // if you haven't submitted a message yet (this render anyway), show the form
