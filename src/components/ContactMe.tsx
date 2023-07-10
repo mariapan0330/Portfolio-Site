@@ -40,12 +40,12 @@ const ContactMe: React.FC = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setValidEmail(true)
+        setValidEmail(true);
         // Handle the response data here
       })
       .catch((error) => {
         console.error(error);
-        setValidEmail(false)
+        setValidEmail(false);
         // Handle any errors that occurred during the request
       });
   };
@@ -61,7 +61,7 @@ const ContactMe: React.FC = () => {
         formValues["message"]
       );
 
-      sendEmail()
+      sendEmail();
     } else {
       setHasSubmitted(false);
     }
@@ -137,18 +137,23 @@ const ContactMe: React.FC = () => {
                 <div className="contact-form">
                   <h1 className="contact-form-thank-you">
                     Thank you, {`${formValues["username"]}`}!
-                    <p>
-                      Your message has been submitted. 
-                      <br />
-                      <br />
-                      I usually respond within 1-2 business days!
-                      <br />
-                      <br />
-                      {validEmail && <span style={{'color':'var(--teal)'}}>
-                      An automated email with a copy of
-                      your message has been sent to {formValues["email"]}.
-                      </span>}
-                    </p>
+                    {validEmail ? (
+                      <p>
+                        Your message has been submitted.
+                        <br />
+                        <br />
+                        I usually respond within 1-2 business days!
+                        <br />
+                        <br />
+                        <span style={{ color: "var(--teal)" }}>
+                          An automated email with a copy of your message has
+                          been sent to {formValues["email"]}.
+                        </span>
+                      </p>
+                    ) : (<h1>
+                      There was an error sending your message.
+                      <p>If this error persists, you can try emailing me at maria.pan0330@gmail.com instead!</p>
+                    </h1>)}
                   </h1>
                 </div>
               ) : (
@@ -161,7 +166,7 @@ const ContactMe: React.FC = () => {
                   <h1 className="contact-form-title">Drop a message!</h1>
                   <p className="contact-form-subtitle">
                     This message will be emailed to me.
-                  </p> 
+                  </p>
 
                   {/* Form Row 2: Name input */}
                   {/* breaking inputs into ContactInput components */}
