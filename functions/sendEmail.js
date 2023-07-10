@@ -3,14 +3,12 @@ const nodemailer = require("nodemailer");
 
 exports.handler = async function (event, context) {
   console.log("Trying to send an email....");
-  const body2 = event.body;
   const body = JSON.parse(event.body);
-  const userEmail = JSON.parse(event.body.userEmail)
-  const userMessage = JSON.parse(event.body.userMessage)
-  const userName = JSON.parse(event.body.userName)
-  console.log(body)
+  const userEmail = JSON.parse(event.body.userEmail);
+  const userMessage = JSON.parse(event.body.userMessage);
+  const userName = JSON.parse(event.body.userName);
+  console.log(body);
 
-  /*
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -36,23 +34,23 @@ exports.handler = async function (event, context) {
         Thank you,
         Maria
         `,
-    html: `
-          <p>
-            Hi ${userName},
-            <br />
-            <br />
-            This is an automated message from Maria Panagos just letting you know I
-            have recieved your message via my portfolio site! Here's what you wrote:
-            <br />
-            <br />
-            "${userMessage}"
-            <br />
-            <br />
-            I usually reply within 1-2 business days. Looking forward to connecting!
-            <br />
-            Thank you, Maria
-          </p>
-        `,
+    // html: `
+    //       <p>
+    //         Hi ${userName},
+    //         <br />
+    //         <br />
+    //         This is an automated message from Maria Panagos just letting you know I
+    //         have recieved your message via my portfolio site! Here's what you wrote:
+    //         <br />
+    //         <br />
+    //         "${userMessage}"
+    //         <br />
+    //         <br />
+    //         I usually reply within 1-2 business days. Looking forward to connecting!
+    //         <br />
+    //         Thank you, Maria
+    //       </p>
+    //     `,
   };
 
   transporter
@@ -71,11 +69,9 @@ exports.handler = async function (event, context) {
         body: JSON.stringify({
           msg: "You have reached sendEmail, but something went wrong.",
           err: err.stack,
-        })
+        }),
       };
     });
-
-    */
 
   return {
     statusCode: 200,
@@ -86,6 +82,6 @@ exports.handler = async function (event, context) {
       userEmail: userEmail,
       userMessage: userMessage,
       userName: userName,
-    })
-  }
+    }),
+  };
 };
