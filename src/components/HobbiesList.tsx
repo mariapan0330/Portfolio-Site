@@ -1,5 +1,6 @@
 import React from "react";
 import HandleHobbyEnterT from "src/types/hobby-enter";
+import SetShowTetris from "src/types/setshowtetris";
 
 type HobbiesListProps = {
   handleHobbyEnter: HandleHobbyEnterT;
