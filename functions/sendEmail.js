@@ -75,6 +75,9 @@ exports.handler = async function (event, context) {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({message: "this is the sendEmail file." + body})
+    body: JSON.stringify({
+      message: "this is the sendEmail file.",
+      bod: body
+    })
   }
 };
