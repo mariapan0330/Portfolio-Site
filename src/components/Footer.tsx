@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           <div className="footer-contact-col">
             {/* first item: email*/}
             <div className="footer-contact-item">
-              <a
+              <p
                 className="footer-contact-link"
                 // email doesnt have an external link, but can be copied to clipboard when clicked
                 onClick={() => {
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
                   src={require(`../images/contact links/email.png`)}
                 />
                 &nbsp;maria.pan0330@gmail.com
-              </a>
+              </p>
               <div
                 className="footer-copied"
                 // sets opacity to 100% if the user has copied it, and back to 0 after 2000ms (see useEffect [copied])

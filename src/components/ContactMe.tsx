@@ -161,7 +161,7 @@ const ContactMe: React.FC = () => {
                   <h1 className="contact-form-title">Drop a message!</h1>
                   <p className="contact-form-subtitle">
                     This message will be emailed to me.
-                  </p>
+                  </p> 
 
                   {/* Form Row 2: Name input */}
                   {/* breaking inputs into ContactInput components */}

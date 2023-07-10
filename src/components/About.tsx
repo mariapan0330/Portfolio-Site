@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "../styles/About.css";
 import "../styles/HobbiesList.css";
 import SkillsList from "./SkillsList";
@@ -14,7 +14,7 @@ const About: React.FC = () => {
   const [animateTetris, setAnimateTetris] = useState<boolean>(false);
   const [currHobby, setCurrHobby] = useState<string>("");
   const [currTetris, setCurrTetris] = useState<string>("i");
-  const tetrisPieces: string[] = ["t", "s", "z", "l", "i", "o"];
+  const tetrisPieces: string[] = useMemo(()=> ["t", "s", "z", "l", "i", "o"], []);
 
   useEffect(() => {
     // console.log('show tetris has been activated')
@@ -32,7 +32,7 @@ const About: React.FC = () => {
         clearTimeout(tetrisTimeout);
       };
     }
-  }, [showTetris, animateTetris, currTetris]);
+  }, [showTetris, animateTetris, currTetris, tetrisPieces]);
 
   // self portrait carousel
   useEffect(() => {

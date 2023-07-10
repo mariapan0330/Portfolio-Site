@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import "../styles/IAm.css";
 
 const IAm: React.FC = () => {
-  const wordsList = [
+  const words = useMemo(()=> [
     "a Software Developer!",
     // 'a friend.',
     "an entrepreneur.",
@@ -14,9 +14,7 @@ const IAm: React.FC = () => {
     "a creator.",
     "a statistician.",
     // 'big brained.',
-  ];
-
-  const words = useMemo(() => wordsList, []);
+  ], []);
 
   const [word, setWord] = useState<string>(words[0]);
   // white: '#aecebd', green: '#3b4f44'
