@@ -2,10 +2,6 @@ const nodemailer = require("nodemailer");
 // const { EMAIL, PASSWORD } = require("./env.js");
 
 exports.handler = async function (event, context, callback) {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({message: "this is the sendEmail file." + process.env.EMAIL})
-  }
   console.log("Trying to send an email....");
   let { userName, userEmail, userMessage } = event.body;
 
@@ -72,4 +68,10 @@ exports.handler = async function (event, context, callback) {
         })
       };
     });
+
+    
+  return {
+    statusCode: 200,
+    body: JSON.stringify({message: "this is the sendEmail file." + process.env.EMAIL + " You tried to send an email to " + userEmail})
+  }
 };
