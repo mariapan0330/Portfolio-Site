@@ -1,8 +1,8 @@
 const nodemailer = require("nodemailer");
 // const { EMAIL, PASSWORD } = require("./env.js");
 
-exports.handler = async function (event, context) {
-  console.log("Trying to send an email....")
+exports.handler = async function (event, context, callback) {
+  console.log("Trying to send an email....");
   let { userName, userEmail, userMessage } = event.body;
 
   let transporter = nodemailer.createTransport({
@@ -49,16 +49,23 @@ exports.handler = async function (event, context) {
         `,
   };
 
-
   transporter
     .sendMail(message)
     .then(() => {
-      return res.status(201).json({
-        msg: "Sending an email to the user and BCCing Maria Panagos.",
+      callback(null, {
+        statusCode: 201,
+        body: JSON.stringify({
+          msg: "Sending an email to the user and BCCing Maria Panagos.",
+        }),
       });
     })
     .catch((err) => {
-      return res.status(500).json({ err });
+      callback(null, {
+        statusCode: 500,
+        body: JSON.stringify({
+          msg: "You have reached sendEmail, but something went wrong.",
+          err: err,
+        })
+      });
     });
-
 };
