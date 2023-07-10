@@ -37,7 +37,13 @@ const ContactMe: React.FC = () => {
       },
       body: JSON.stringify(postData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok){
+          return response.json()
+        } else {
+          throw new Error("Request failed with status" + response.status + ":(")
+        }
+      })
       .then((data) => {
         console.log(data);
         setValidEmail(true);
