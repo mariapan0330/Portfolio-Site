@@ -52,7 +52,7 @@ exports.handler = async function (event, context, callback) {
   transporter
     .sendMail(message)
     .then(() => {
-      callback(null, {
+      return callback(null, {
         statusCode: 201,
         body: JSON.stringify({
           msg: "Sending an email to the user and BCCing Maria Panagos.",
@@ -60,7 +60,7 @@ exports.handler = async function (event, context, callback) {
       });
     })
     .catch((err) => {
-      callback(null, {
+      return callback(null, {
         statusCode: 500,
         body: JSON.stringify({
           msg: "You have reached sendEmail, but something went wrong.",
