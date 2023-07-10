@@ -28,7 +28,7 @@ const ContactMe: React.FC = () => {
     };
 
     // UPDATE WHEN I HOST THE SITE
-    const baseURL = "http://localhost:5000";
+    const baseURL = "https://maria-panagos.netlify.app";
 
     fetch(`${baseURL}/api/user/message`, {
       method: "POST",
