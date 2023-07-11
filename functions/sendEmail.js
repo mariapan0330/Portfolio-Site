@@ -49,6 +49,7 @@ exports.handler = async function (event, context) {
       //       </p>
       //     `,
     };
+    try {
 
     transporter
       // .sendMail(message)
@@ -60,23 +61,32 @@ exports.handler = async function (event, context) {
       })
       .then(() => {
         console.log('Transporter sent email')
-        // return {
-        //   statusCode: 200,
-        //   body: JSON.stringify({
-        //     msg: "Sending an email to the user and BCCing Maria Panagos."
-        //   }),
-        // };
+        return {
+          statusCode: 200,
+          body: JSON.stringify({
+            msg: "Sending an email to the user and BCCing Maria Panagos."
+          }),
+        };
       })
       .catch((err) => {
         console.log('Transporter tried but NO')
-        // return {
-        //   statusCode: 500,
-        //   body: JSON.stringify({
-        //     msg: "Transporter tried to deliver msg, but something went wrong."
-        //     // err: err.stack,
-        //   }),
-        // };
+        return {
+          statusCode: 500,
+          body: JSON.stringify({
+            msg: "Transporter tried to deliver msg, but something went wrong."
+            // err: err.stack,
+          }),
+        };
       });
+    } catch {
+      console.log('transporter failed')
+      return {
+        statusCode: 500,
+        body: JSON.stringify({
+          msg: "transporter failed. :("
+        })
+      }
+    }
 
 
   } catch {
