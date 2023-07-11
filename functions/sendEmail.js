@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 exports.handler = async function (event, context) {
   console.log("Trying to send an email....");
   try {
-    const { userName, userEmail, userMessage } = JSON.parse(event.body || {});
+    const { userName, userEmail, userMessage } = JSON.parse(event.body || "");
 
     let transporter = nodemailer.createTransport({
       service: "gmail",
@@ -77,7 +77,7 @@ exports.handler = async function (event, context) {
       body: JSON.stringify({
         message: "Something went wrong with the parsing",
         typeEventBody: typeof event.body,
-        typeJSONParseEventBody: typeof JSON.parse(event.body)
+        typeJSONParseEventBody: typeof JSON.parse(event.body || "")
       }),
     };
   }
