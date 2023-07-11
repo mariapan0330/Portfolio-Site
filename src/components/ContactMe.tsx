@@ -24,7 +24,7 @@ const ContactMe: React.FC = () => {
     const postData = {
       userName: formValues["username"],
       userEmail: formValues["email"],
-      userMessage: formValues["message"],
+      userMessage: formValues["message"]
     };
 
     // UPDATE WHEN I HOST THE SITE
