@@ -36,15 +36,15 @@ const ContactMe: React.FC = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(postData),
+      body: JSON.stringify(postData)
     })
       .then((response) => {
-        if (response.ok){
-          return response.json()
+        if (response.ok) {
+          return response.json();
         } else {
           return response.json().then((data) => {
-            throw new Error(data.msg)
-          })
+            throw new Error(data.msg);
+          });
           // throw new Error("Request failed with status " + response.status + " :(")
         }
       })
@@ -165,8 +165,10 @@ const ContactMe: React.FC = () => {
                     <h1 className="contact-form-thank-you">
                       There was an error sending your message.
                       <br />
-                      <p>If this error persists, you can try emailing me at
-                      maria.pan0330@gmail.com instead.</p>
+                      <p>
+                        If this error persists, you can try emailing me at
+                        maria.pan0330@gmail.com instead.
+                      </p>
                     </h1>
                   )}
                 </div>
