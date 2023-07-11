@@ -50,15 +50,15 @@ exports.handler = async function (event, context) {
       //     `,
     };
     try {
-
+      
+      // .sendMail({
+      //   from: process.env.EMAIL,
+      //   to: process.env.EMAIL,
+      //   subject: 'test email',
+      //   text: 'test text'
+      // })
     transporter
-      // .sendMail(message)
-      .sendMail({
-        from: process.env.EMAIL,
-        to: process.env.EMAIL,
-        subject: 'test email',
-        text: 'test text'
-      })
+      .sendMail(message)
       .then(() => {
         console.log('Transporter sent email')
         return {
