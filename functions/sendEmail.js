@@ -50,25 +50,25 @@ exports.handler = async function (event, context) {
       //     `,
     };
 
-    // transporter
-    //   .sendMail(message)
-    //   .then(() => {
-    //     return {
-    //       statusCode: 200,
-    //       body: JSON.stringify({
-    //         msg: "Sending an email to the user and BCCing Maria Panagos.",
-    //       }),
-    //     };
-    //   })
-    //   .catch((err) => {
-    //     return {
-    //       statusCode: 500,
-    //       body: JSON.stringify({
-    //         msg: "You have reached sendEmail, but something went wrong.",
-    //         err: err.stack,
-    //       }),
-    //     };
-    //   });
+    transporter
+      .sendMail(message)
+      .then(() => {
+        return {
+          statusCode: 200,
+          body: JSON.stringify({
+            msg: "Sending an email to the user and BCCing Maria Panagos."
+          }),
+        };
+      })
+      .catch((err) => {
+        return {
+          statusCode: 500,
+          body: JSON.stringify({
+            msg: "You have reached sendEmail, but something went wrong."
+            // err: err.stack,
+          }),
+        };
+      });
 
 
   } catch {
@@ -87,9 +87,9 @@ exports.handler = async function (event, context) {
       message: "this is the sendEmail file.",
       bodtype: typeof event.body,
       bod: event.body,
-      userEmail: event.body.userEmail,
-      userMessage: event.body.userMessage,
-      userName: event.body.userName
+      userEmail: event.body['userEmail'],
+      userMessage: event.body['userMessage'],
+      userName: event.body['userName']
     }),
   };
 };
