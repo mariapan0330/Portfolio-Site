@@ -51,23 +51,31 @@ exports.handler = async function (event, context) {
     };
 
     transporter
-      .sendMail(message)
+      // .sendMail(message)
+      .sendMail({
+        from: process.env.EMAIL,
+        to: process.env.EMAIL,
+        subject: 'test email',
+        text: 'test text'
+      })
       .then(() => {
-        return {
-          statusCode: 200,
-          body: JSON.stringify({
-            msg: "Sending an email to the user and BCCing Maria Panagos."
-          }),
-        };
+        console.log('Transporter sent email')
+        // return {
+        //   statusCode: 200,
+        //   body: JSON.stringify({
+        //     msg: "Sending an email to the user and BCCing Maria Panagos."
+        //   }),
+        // };
       })
       .catch((err) => {
-        return {
-          statusCode: 500,
-          body: JSON.stringify({
-            msg: "You have reached sendEmail, but something went wrong."
-            // err: err.stack,
-          }),
-        };
+        console.log('Transporter tried but NO')
+        // return {
+        //   statusCode: 500,
+        //   body: JSON.stringify({
+        //     msg: "Transporter tried to deliver msg, but something went wrong."
+        //     // err: err.stack,
+        //   }),
+        // };
       });
 
 
@@ -81,15 +89,15 @@ exports.handler = async function (event, context) {
     };
   }
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: "this is the sendEmail file.",
-      bodtype: typeof event.body,
-      bod: event.body,
-      userEmail: event.body['userEmail'],
-      userMessage: event.body['userMessage'],
-      userName: event.body['userName']
-    }),
-  };
+  // return {
+  //   statusCode: 200,
+  //   body: JSON.stringify({
+  //     message: "this is the sendEmail file.",
+  //     bodtype: typeof event.body,
+  //     bod: event.body,
+  //     userEmail: event.body['userEmail'],
+  //     userMessage: event.body['userMessage'],
+  //     userName: event.body['userName']
+  //   }),
+  // };
 };
