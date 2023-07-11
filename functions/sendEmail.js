@@ -86,7 +86,7 @@ exports.handler = async function (event, context) {
     body: JSON.stringify({
       message: "this is the sendEmail file.",
       bodtype: typeof event.body,
-      bod: body,
+      bod: event.body,
       userEmail: userEmail,
       userMessage: userMessage,
       userName: userName
