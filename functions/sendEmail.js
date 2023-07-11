@@ -3,7 +3,6 @@ const nodemailer = require("nodemailer");
 
 exports.handler = async function (event, context) {
   console.log("Trying to send an email....");
-  try {
     const { userName, userEmail, userMessage } = event.body;
 
     let transporter = nodemailer.createTransport({
@@ -87,17 +86,6 @@ exports.handler = async function (event, context) {
         })
       }
     }
-
-
-  } catch {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        message: "Something went wrong with the parsing",
-        typeEventBody: typeof event.body,
-      }),
-    };
-  }
 
   // return {
   //   statusCode: 200,

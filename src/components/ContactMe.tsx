@@ -26,6 +26,7 @@ const ContactMe: React.FC = () => {
       userEmail: formValues["email"],
       userMessage: formValues["message"]
     };
+    console.log('sending data: ' + postData)
 
     // UPDATE WHEN I HOST THE SITE
     const baseURL = "https://maria-panagos.netlify.app";
