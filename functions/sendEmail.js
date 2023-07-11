@@ -87,9 +87,9 @@ exports.handler = async function (event, context) {
       message: "this is the sendEmail file.",
       bodtype: typeof event.body,
       bod: event.body,
-      userEmail: userEmail,
-      userMessage: userMessage,
-      userName: userName
+      userEmail: event.body.userEmail,
+      userMessage: event.body.userMessage,
+      userName: event.body.userName
     }),
   };
 };
