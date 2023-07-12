@@ -29,10 +29,10 @@ const ContactMe: React.FC = () => {
     console.log('sending data: ' + postData)
 
     // UPDATE WHEN I HOST THE SITE
-    const baseURL = "https://maria-panagos.netlify.app";
+    const baseURL = "https://spontaneous-platypus-910d0f.netlify.app";
     // const baseURL = "https://localhost:8888";
 
-    fetch(`${baseURL}/.netlify/functions/sendEmail`, {
+    fetch(`${baseURL}/.netlify/functions/api/${process.env.API_KEY}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
