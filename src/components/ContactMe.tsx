@@ -31,8 +31,8 @@ const ContactMe: React.FC = () => {
     // UPDATE WHEN I HOST THE SITE
     const baseURL = "https://spontaneous-platypus-910d0f.netlify.app";
     // const baseURL = "https://localhost:8888";
-    console.log(process.env.API_KEY)
-    fetch(`${baseURL}/.netlify/functions/api/${process.env.API_KEY}`, {
+    console.log(process.env.REACT_APP_API_KEY)
+    fetch(`${baseURL}/.netlify/functions/api/${process.env.REACT_APP_API_KEY}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
