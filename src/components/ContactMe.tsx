@@ -22,9 +22,9 @@ const ContactMe: React.FC = () => {
 
   const sendEmail = () => {
     const postData = {
-      userName: formValues["username"],
-      userEmail: formValues["email"],
-      userMessage: formValues["message"]
+      "userName": formValues["username"],
+      "userEmail": formValues["email"],
+      "userMessage": formValues["message"]
     };
     console.log('sending data: ' + postData)
 
