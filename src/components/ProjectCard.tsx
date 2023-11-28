@@ -17,7 +17,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   repo,
   handleOverlayOpen,
 }) => {
-
   return (
     <>
       <div className="project-card">
@@ -37,14 +36,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* {liveRepo} */}
         <p className="project-card-links">
           {live && (
-            <a href={live} target="_blank" rel='noreferrer' title='Opens live site in a new tab'>
-              LIVE&nbsp;<i className="fa-solid fa-arrow-up-right-from-square" />
+            <a
+              href={live}
+              target="_blank"
+              rel="noreferrer"
+              title="Opens live site in a new tab"
+            >
+              LIVE&nbsp;
+              <i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           )}
           {live && repo && <p className="project-card-or">|</p>}
           {repo && (
-            <a href={repo} target="_blank" rel='noreferrer' title='Opens repository in a new tab'>
-              REPO&nbsp;<i className="fa-solid fa-arrow-up-right-from-square" />
+            <a
+              href={repo}
+              target="_blank"
+              rel="noreferrer"
+              title="Opens repository in a new tab"
+            >
+              REPO&nbsp;
+              <i className="fa-solid fa-arrow-up-right-from-square" />
             </a>
           )}
         </p>

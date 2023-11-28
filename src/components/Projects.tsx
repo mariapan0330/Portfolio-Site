@@ -44,35 +44,60 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
     return (
       <>
         {techStack.map((tech, i) => (
-            <div key={`project-tech-${i}`} className="projects-tech-stack">
-              {checkImgExists(tech) && (
-                // if an image exists, render the image too. Otherwise just the word.
-                <img
-                  src={require(`../images/tech stack/${tech.toLowerCase()}.png`)}
-                  // key={`project-tech-img-${i}`}
-                  className="projects-tech-img"
-                  alt={tech}
-                />
-              )}
-              <p className="projects-tech-description">{tech}</p>
-            </div>
+          <div key={`project-tech-${i}`} className="projects-tech-stack">
+            {checkImgExists(tech) && (
+              // if an image exists, render the image too. Otherwise just the word.
+              <img
+                src={require(`../images/tech stack/${tech.toLowerCase()}.png`)}
+                // key={`project-tech-img-${i}`}
+                className="projects-tech-img"
+                alt={tech}
+              />
+            )}
+            <p className="projects-tech-description">{tech}</p>
+          </div>
         ))}
       </>
     );
   };
 
   // noticed that the front end tech I use is mostly the same throughout.
-  const frontendTech = ["React", "NodeJS", "HTML", "CSS", "JavaScript"];
+  const frontendTech = ["ReactJS", "NodeJS", "HTML", "CSS", "JavaScript"];
 
   const projects: ProjectInfo[] = [
     // passing in the information to the project cards
+    {
+      image: "snoozesense",
+      title: "SnoozeSense",
+      live: "",
+      repo: "https://github.com/JackCasica/rune-dance-party",
+      technologies: renderTechnologies([
+        "React Native",
+        "Expo",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Firebase",
+      ]),
+    },
+    {
+      image: "dance off",
+      title: "Dance Party Game",
+      live: "https://app.rune.ai/dev-yVITCJX9",
+      repo: "https://github.com/JackCasica/rune-dance-party",
+      technologies: renderTechnologies(
+        frontendTech.slice(0, -1).concat(["TypeScript", "Tailwind"])
+      ),
+    },
     {
       image: "personal website",
       title: "This site!",
       live: "",
       repo: "https://github.com/mariapan0330/Personal-Website",
       technologies: renderTechnologies(
-        frontendTech.slice(0, -1).concat(["TypeScript", "Express", "Netlify", "Nodemailer"])
+        frontendTech
+          .slice(0, -1)
+          .concat(["TypeScript", "Express", "Netlify", "Nodemailer"])
       ),
     },
     {
@@ -133,10 +158,7 @@ const Projects: React.FC<ProjectsProps> = ({ handleOverlayOpen }) => {
             Projects
           </h1>
         </Plx>
-        <ProjectCarousel
-          projects={projects}
-          handleOverlayOpen={handleOverlayOpen}
-        />
+        <ProjectCarousel projects={projects} handleOverlayOpen={handleOverlayOpen} />
       </div>
     </>
   );

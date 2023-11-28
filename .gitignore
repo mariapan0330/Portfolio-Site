@@ -3,6 +3,7 @@
 # env
 /functions/env.js
 /backend/env.js
+backend
 
 # dependencies
 /node_modules

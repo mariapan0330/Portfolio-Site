@@ -17,7 +17,7 @@ const App: React.FC = () => {
   const [overlayAlt, setOverlayAlt] = useState<string>('')
   
   const handleOverlayOpen = (img:string, alt:string) => {
-    console.log('this is just to indicate that stuff is back to normal')
+    // console.log('this is just to indicate that stuff is back to normal')
     setOverlayAlt(alt)
     setOverlayImg(img)
     setShowOverlay(true)
